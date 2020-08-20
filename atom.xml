@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://juewuy.github.io</id>
+    <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-08-20T13:15:19.799Z</updated>
+    <updated>2020-08-20T13:19:11.532Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://juewuy.github.io"/>
-    <link rel="self" href="https://juewuy.github.io/atom.xml"/>
+    <link rel="alternate" href="http://juewuy.github.io"/>
+    <link rel="self" href="http://juewuy.github.io/atom.xml"/>
     <subtitle>大家好！</subtitle>
-    <logo>https://juewuy.github.io/images/avatar.png</logo>
-    <icon>https://juewuy.github.io/favicon.ico</icon>
+    <logo>http://juewuy.github.io/images/avatar.png</logo>
+    <icon>http://juewuy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Juewuy&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[Clash for Miwifi安装及使用教程]]></title>
-        <id>https://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/</id>
-        <link href="https://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">
+        <id>http://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/</id>
+        <link href="http://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">
         </link>
         <updated>2020-08-20T12:54:52.000Z</updated>
         <content type="html"><![CDATA[<p>在小米等基于openwrt内核定制的路由器原生系统上使用clash做透明代理</p>
