@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://juewuy.github.io</id>
     <title>Gridea</title>
-    <updated>2020-08-20T12:48:33.659Z</updated>
+    <updated>2020-08-20T12:56:12.084Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://juewuy.github.io"/>
     <link rel="self" href="https://juewuy.github.io/atom.xml"/>
@@ -11,35 +11,46 @@
     <icon>https://juewuy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://juewuy.github.io/post/hello-gridea/</id>
-        <link href="https://juewuy.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[Clash for Miwifi安装及使用教程]]></title>
+        <id>https://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/</id>
+        <link href="https://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2020-08-20T12:54:52.000Z</updated>
+        <content type="html"><![CDATA[<p>在小米等基于openwrt内核定制的路由器原生系统上使用clash做透明代理</p>
+<h3 id="使用步骤">使用步骤：</h3>
+<h4 id="获取路由器ssh权限">获取路由器SSH权限</h4>
+<p>不同路由器开启SSH权限的方法不同，请使用“路由器型号+开启SSH”的关键词使用百度搜索即可获取路由器SSH权限的开启方法教程，本文只详解小米AX3600,AX1800,AX5这3款路由器的SSH开启方法。</p>
+<p>可用于开启SSH权限的固件版本为：AX3600 1.0.17版本/AX1800 1.0.34/1.0.328/1.0.336版本/AX5 1.0.16/1.0.26版本，如果您的固件版本高于以上版本，请先执行降级操作！否则请直接跳到“开启SSH”</p>
+<h4 id="手动降级">手动降级</h4>
+<p>降级的具体固件下载地址为：<a href="https://www.right.com.cn/forum/thread-4032490-1-1.html">https://www.right.com.cn/forum/thread-4032490-1-1.html</a> ，下载合适的固件到本地后，登陆路由器的管理界面：Miwifi.com ，然后在：常用设置——系统状态——升级检测中，点击手动升级按钮。之后在弹出的界面中点击选择文件——选择您刚刚下载的固件bin文件，之后点击开始上传即可。降级之前，建议在此界面下方先使用备份功能新建一份配置备份。</p>
+<p>成功降级后，请重新设置及登陆路由器。</p>
+<p>开启SSH权限</p>
+<p>首先登陆你的路由器管理界面，点击路由状态页签，此时地址栏应该显示如下地址：</p>
+<p>http://miwifi.com/cgi-bin/luci/;stok=xxxxxxx****/web/home#router****</p>
+<p>将我加粗的/web/home#router（注意不要把那一串xxxx代表的密码替换掉）替换为如下文本，之后输入回车访问，此时页面返回{“code”:0}，即可使用ssh工具测试是否开启成功。</p>
+<p>（注意不要使用mac或iOS自带的safari浏览器）</p>
+<p><code>/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20's%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg'%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B%20echo%20-e%20'admin%5Cnadmin'%20%7C%20passwd%20root%3B</code></p>
+<p>最终应该是（http://miwifi.com/cgi-bin/luci/;stok=一小串密码/api/misystem/后面一大串）这样的形式，如果不对，可能无法开启，请认真检查，不要弄错！！！</p>
+<p>如果以上方式无法开启SSH，请参考：<a href="https://www.right.com.cn/forum/thread-4032490-1-1.html">https://www.right.com.cn/forum/thread-4032490-1-1.html</a>或者参考：<a href="https://www.right.com.cn/forum/thread-4039512-1-1.html">https://www.right.com.cn/forum/thread-4039512-1-1.html</a> 尝试更多方法开启。</p>
+<h4 id="登陆ssh">登陆SSH</h4>
+<p>使用SSH连接工具来登陆SSH，推荐putty（体积最小），JuiceSSH（支持安卓手机），或其他工具，SSH工具请自行下载。</p>
+<p>打开SSH工具，在IP（或者host）一栏填写你路由器的网关IP，即刚刚登陆路由器管理界面的IP地址或网址（例如192.168.31.1或者miwifi.com）,端口为默认的22端口不变，密码为admin（刚刚那串破解码中设定的密码），设置好之后点击连接即可登陆路由器SSH！</p>
+<p>建议修改默认的登陆密码，在SSH界面输入passwd即可修改密码，注意修改时需要输入2次密码，且输入的密码不会显示，输入好直接回车即可完成修改。</p>
+<h4 id="使用一键脚本安装clash-for-miwifi">使用一键脚本安装clash for Miwifi</h4>
+<p>成功登陆SSH后，直接输入以下命令</p>
+<p><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@latest/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null</code></p>
+<p>或者：</p>
+<p><code>sh -c &quot;$(curl -kfsSl https://juewuy.xyz/clash/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null</code></p>
+<p>安装完成后，直接在SSH中使用：clash 命令即可管理脚本！</p>
+<p>之后可以通过在浏览器访问 <a href="http://clash.razord.top">http://clash.razord.top</a> 或者 <a href="https://yacd.haishan.me">https://yacd.haishan.me</a> 或者<a href="http://app.tossp.com">http://app.tossp.com</a> 来管理clash内置规则以及开启直连访问</p>
+<p>访问管理界面时需要提供的Host地址即为你的网关IP地址；端口为9999，密钥为空</p>
+<h3 id="问题反馈使用交流">问题反馈&amp;使用交流：</h3>
+<p><a href="https://t.me/clashfm">https://t.me/clashfm</a></p>
+<h3 id="感谢">感谢：</h3>
+<p><a href="https://lancellc.gitbook.io/clash/start-clash/clash-tun-mode">https://lancellc.gitbook.io/clash/start-clash/clash-tun-mode</a></p>
+<p><a href="https://comzyh.gitbook.io/clash/">https://comzyh.gitbook.io/clash/</a></p>
+<p><a href="https://h-cheung.gitlab.io/post/%E4%BD%BF%E7%94%A8clash%E5%92%8C%E8%B7%AF%E7%94%B1%E8%A1%A8%E5%AE%9E%E7%8E%B0%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86">https://h-cheung.gitlab.io/post/</a></p>
+<p><a href="https://www.right.com.cn/forum/thread-4042741-1-1.html">https://www.right.com.cn/forum/thread-4042741-1-1.html</a></p>
 ]]></content>
     </entry>
 </feed>
