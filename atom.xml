@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-09-13T12:58:13.887Z</updated>
+    <updated>2020-09-19T13:08:47.872Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -40,9 +40,9 @@
 <p>建议修改默认的登陆密码，在SSH界面输入passwd即可修改密码，注意修改时需要输入2次密码，且输入的密码不会显示，输入好直接回车即可完成修改。</p>
 <h4 id="使用一键脚本安装shellclash">使用一键脚本安装ShellClash</h4>
 <p>成功登陆SSH后，直接输入以下命令</p>
-<p><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@latest/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null</code></p>
+<p><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null</code></p>
 <p>如果系统为debian/armbian/ubuntu，则使用如下命令：<br>
-<code>bash -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@latest/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null</code></p>
+<code>bash -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null</code></p>
 <p>按照提示即可完成安装！<br>
 安装完成后，直接在SSH中使用：clash 命令即可管理脚本！</p>
 <p>之后可以通过在浏览器访问 <a href="http://clash.razord.top">http://clash.razord.top</a> 或者 <a href="https://yacd.haishan.me">https://yacd.haishan.me</a> 或者<a href="http://app.tossp.com">http://app.tossp.com</a> 来管理clash内置规则以及开启直连访问</p>
