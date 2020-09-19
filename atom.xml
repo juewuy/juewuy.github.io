@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-09-19T13:47:23.191Z</updated>
+    <updated>2020-09-19T13:47:36.536Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>http://juewuy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Juewuy&apos;s Blog</rights>
     <entry>
-        <title type="html"><![CDATA[# ShellClash说明文档]]></title>
+        <title type="html"><![CDATA[ShellClash说明文档]]></title>
         <id>http://juewuy.github.io/post/shellclash-shuo-ming-wen-dang/</id>
         <link href="http://juewuy.github.io/post/shellclash-shuo-ming-wen-dang/">
         </link>
