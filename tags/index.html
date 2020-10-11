@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#000">
 <title>Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1600703740380">
+<link rel="shortcut icon" href="/favicon.ico?v=1602423570396">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1101,9 +1101,12 @@
 &lt;p&gt;建议修改默认的登陆密码，在SSH界面输入passwd即可修改密码，注意修改时需要输入2次密码，且输入的密码不会显示，输入好直接回车即可完成修改。&lt;/p&gt;
 &lt;h4 id=&#34;使用一键脚本安装shellclash&#34;&gt;使用一键脚本安装ShellClash&lt;/h4&gt;
 &lt;p&gt;成功登陆SSH后，直接输入以下命令&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sh -c &amp;quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sh -c &amp;quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null&lt;/code&gt;&lt;br&gt;
+或者&lt;br&gt;
+sh -c &amp;quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&amp;quot;&amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null&lt;/p&gt;
 &lt;p&gt;按照提示即可完成安装！&lt;br&gt;
 安装完成后，直接在SSH中使用：clash 命令即可管理脚本！&lt;/p&gt;
+&lt;p&gt;按照脚本提示下载clash核心及GeoIP数据库文件，之后输入1即可启动（按照提示导入配置文件）&lt;/p&gt;
 &lt;p&gt;之后可以通过在浏览器访问 &lt;a href=&#34;http://clash.razord.top&#34;&gt;http://clash.razord.top&lt;/a&gt; 或者 &lt;a href=&#34;https://yacd.haishan.me&#34;&gt;https://yacd.haishan.me&lt;/a&gt; 或者&lt;a href=&#34;http://app.tossp.com&#34;&gt;http://app.tossp.com&lt;/a&gt; 来管理clash内置规则以及开启直连访问&lt;/p&gt;
 &lt;p&gt;访问管理界面时需要提供的Host地址即为你的网关IP地址；端口为9999，密钥为空&lt;/p&gt;
 &lt;h3 id=&#34;问题反馈使用交流&#34;&gt;问题反馈&amp;amp;使用交流：&lt;/h3&gt;
