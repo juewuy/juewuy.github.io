@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#000">
-<title>ShellClash说明文档 | Juewuy&#39;s Blog</title>
+<title>在Linux系统安装及使用ShellClash的教程 | Juewuy&#39;s Blog</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1603209783285">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,7 +38,7 @@
 
 
 
-  <meta name="description" content="ShellClash说明文档" />
+  <meta name="description" content="在Linux系统安装及使用ShellClash的教程" />
   <meta name="keywords" content="" />
 </head>
 
@@ -221,28 +221,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">目录结构</a><br>
-*
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4">使用步骤：</a>
 <ul>
-<li><a href="#%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">·安装目录</a></li>
-<li><a href="#%E6%9C%8D%E5%8A%A1%E6%96%87%E4%BB%B6">·服务文件</a></li>
+<li><a href="#%E7%99%BB%E9%99%86ssh">登陆SSH</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85shellclash">使用一键脚本安装ShellClash</a></li>
 </ul>
 </li>
-<li><a href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E">功能说明</a><br>
-*
-<ul>
-<li><a href="#1-%E5%90%AF%E5%8A%A8%E9%87%8D%E5%90%AFclash%E6%9C%8D%E5%8A%A1">1 启动/重启clash服务：</a></li>
-<li><a href="#2-clash%E5%8A%9F%E8%83%BD%E8%AE%BE%E7%BD%AE">2 clash功能设置：</a></li>
-<li><a href="#3-%E5%81%9C%E6%AD%A2clash%E6%9C%8D%E5%8A%A1">3 停止clash服务：</a></li>
-<li><a href="#4-%E7%A6%81%E7%94%A8%E5%90%AF%E7%94%A8clash%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8">4 禁用/启用clash开机启动</a></li>
-<li><a href="#5-%E8%AE%BE%E7%BD%AE%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1">5 设置定时任务</a></li>
-<li><a href="#6-%E5%AF%BC%E5%85%A5%E8%8A%82%E7%82%B9%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5">6 导入节点/订阅链接</a></li>
-<li><a href="#7-clash%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE">7 clash进阶设置</a></li>
-<li><a href="#8-%E6%B5%8B%E8%AF%95%E8%8F%9C%E5%8D%95">8 测试菜单</a></li>
-<li><a href="#9-%E6%9B%B4%E6%96%B0%E5%8D%B8%E8%BD%BD">9 更新/卸载</a></li>
-</ul>
-</li>
-<li><a href="#%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4">快捷命令</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88%E4%BD%BF%E7%94%A8%E4%BA%A4%E6%B5%81">问题反馈&amp;使用交流：</a></li>
 </ul>
 </li>
 </ul>
@@ -512,8 +497,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="http://juewuy.github.io/post/shellclash-shuo-ming-wen-dang/">
-      ShellClash说明文档
+    <a class="post-title-link" href="http://juewuy.github.io/post/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/">
+      在Linux系统安装及使用ShellClash的教程
     </a>
   </h1>
   <div class="post-meta">
@@ -521,78 +506,47 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-09-19 21:46:53">2020-09-19</span>
+      <span class="publish-time" data-t="2020-10-20 23:55:01">2020-10-20</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>4<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>979<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>470<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="目录结构">目录结构</h3>
-<h5 id="安装目录">·安装目录</h5>
-<p>默认安装目录为/etc/clash</p>
-<p>可手动指定任意目录安装，安装完成后可以使用【echo $clashdir】命令查询安装目录</p>
-<p>目录包含以下文件：</p>
-<p>~clash：clash核心文件</p>
-<p>~clash.sh/start.sh/getdate.sh：ShellClash运行脚本文件</p>
-<p>~Country.mmdb：Geoip数据库文件</p>
-<p>~config.yaml：clash基础配置文件</p>
-<p>~config.yaml.bak：clash配置文件备份</p>
-<p>~mark：脚本运行配置文件</p>
-<p>~mac：脚本mac过滤功能配置文件</p>
-<p>~/ui/*：本地dashboard网页文件</p>
-<h5 id="服务文件">·服务文件</h5>
-<p>OpenWrt的服务文件为/etc/init.d/clash</p>
-<p>Debian/Centos/Armbian等标准Linux系统的服务文件在/etc/systemd/system或者/usr/lib/systemd/system/下，名为clash.service</p>
-<h3 id="功能说明">功能说明</h3>
-<h5 id="1-启动重启clash服务">1 启动/重启clash服务：</h5>
-<p>如果服务未运行则启动，如果服务器已运行则先关闭clash后再启动clash服务</p>
-<h5 id="2-clash功能设置">2 clash功能设置：</h5>
-<p>​	1 切换clash运行模式：支持切换多种运行模式，主要涉及iptables的不同配置</p>
-<p>​	2 切换DNS运行模式：支持切换fake-ip或者真实ip的dns模式</p>
-<p>​	3 跳过本地证书验证：当节点出现证书验证错误时使用此选项可以使节点正常使用</p>
-<p>​	4 只代理常用端口：只代理22,53,587,465,995,993,143,80,443这些常用端口，主要用于屏蔽p2p</p>
-<p>​	5 过滤局域网mac地址：列表内设备不走代理</p>
-<p>​	6 不使用本地DNS服务：不使用基于本机的127.0.0.1:53的dns服务作为clash内置dns服务之一</p>
-<h5 id="3-停止clash服务">3 停止clash服务：</h5>
-<p>停止clash服务并且停止相关iptables规则</p>
-<h5 id="4-禁用启用clash开机启动">4 禁用/启用clash开机启动</h5>
-<p>禁止或者启用clash的开机启动服务，OpenWrt下使用service，Debian/Centos使用systemd</p>
-<h5 id="5-设置定时任务">5 设置定时任务</h5>
-<p>使用系统自带的crontab功能，智能配置与clash相关的定时任务，支持配置定时启动、重启、关闭clash功能，支持配置定时更新订阅功能。</p>
-<h5 id="6-导入节点订阅链接">6 导入节点/订阅链接</h5>
-<p>使用在线的sub服务，快速导入ss/ssr/vmess/trojan等节点链接，并生成在线配置文件下载到本地作为clash的配置文件</p>
-<h5 id="7-clash进阶设置">7 clash进阶设置</h5>
-<p>​	1 不修饰config.yaml：禁用脚本在启动clash服务时对config.yaml的配置修饰，完全使用用户自定义的配置文件。开启此功能后，clash功能设置中的部分改动均将不再生效。</p>
-<p>​	2 启用ipv6支持：使用ipv6的iptables转发相关ipv6流量，只支持redir_host模式，可能有bug，如非必要请勿使用此功能。</p>
-<p>​	3 使用保守方式启动：仅限部分不兼容rc.common或者systemd启动clash服务的设备使用，当启用改功能时，无法使用开机自启功能。脚本会自动在crontab中添加一个守护进程，每分钟检测进程并在进程不存在时自动启动。</p>
-<p>​	4 代理本机流量：使用环境变量export http_proxy的方式代理本机流量，部分应用可能无法代理</p>
-<h5 id="8-测试菜单">8 测试菜单</h5>
-<p>一些用于debug或者测试clash运行的快捷命令</p>
-<h5 id="9-更新卸载">9 更新/卸载</h5>
-<p>​	1 更新管理脚本：在线更新管理脚本</p>
-<p>​	2 切换clash核心：在线更新/切换clash核心</p>
-<p>​	3 更新GeoIP数据库：在线更新GeoIP数据库文件</p>
-<p>​	4 安装本地Dashboard面板：安装一个基于clash内置web服务的本地面板</p>
-<p>​	5 生成本地PAC文件：用户部分设备快捷配置本地http代理</p>
-<p>​	7 切换安装源地址：内置了多个不同安装源</p>
-<p>​	9 卸载：完全移除所有ShellClash的相关文件和相关环境变量，该操作不可逆</p>
-<h3 id="快捷命令">快捷命令</h3>
-<p>启动脚本：clash</p>
-<p>启动clash服务：$clashdir/start.sh start</p>
-<p>停止clash服务：$clashdir/start.sh stop</p>
-<p>重启clash服务：$clashdir/start.sh restart</p>
-<p>更新订阅文件：$clashdir/start.sh getyaml</p>
+              <p>支持Debian、CentOS、Ubuntu、Armbian等绝大多数发行版Linux系统下安装及使用本脚本！</p>
+<h3 id="使用步骤">使用步骤：</h3>
+<h4 id="登陆ssh">登陆SSH</h4>
+<p>使用SSH连接工具来登陆SSH，推荐putty（体积最小），JuiceSSH（支持安卓手机），或其他工具，SSH工具请自行下载。</p>
+<p>建议使用root用户登录</p>
+<h4 id="使用一键脚本安装shellclash">使用一键脚本安装ShellClash</h4>
+<p>成功登陆SSH后，</p>
+<p>root用户直接输入以下命令，非root用户请先使用sudo -i提权后再输入以下命令：</p>
+<p><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null</code><br>
+或者<br>
+<code>sh -c &quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&quot;&amp;&amp; source /etc/profile &amp;&gt; /dev/null</code></p>
+<p>按照提示即可完成安装！<br>
+安装完成后，直接在SSH中使用：<br>
+<code>clash</code><br>
+命令即可管理脚本！</p>
+<p>按照脚本的提示下载clash核心及GeoIP数据库文件<br>
+之后输入1即可启动（请按照提示导入配置文件）<br>
+导入配置时，使用1的方式可以导入订阅链接或者节点分享链接<br>
+使用2的方式可以导入完整的clash配置文件，请针对自己的使用情况酌情使用</p>
+<p>clash服务成功启动后可以通过在浏览器访问 <a href="http://clash.razord.top">http://clash.razord.top</a> 或者 <a href="https://yacd.haishan.me">https://yacd.haishan.me</a> 或者<a href="http://app.tossp.com">http://app.tossp.com</a> 来管理clash内置规则以及开启直连访问<br>
+访问管理界面时需要提供的Host地址即为你的网关IP地址；端口为9999，密钥为空</p>
+<p>Linux下如需要开启本机代理，请使用 7-clash进阶设置中的设置本机代理功能（浏览器等部分应用可能无法正常代理，需要在应用内设置http或者sock5代理，端口均为7890）</p>
+<h3 id="问题反馈使用交流">问题反馈&amp;使用交流：</h3>
+<p><a href="https://t.me/clashfm">https://t.me/clashfm</a></p>
 
             </div>
             
@@ -605,7 +559,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="http://juewuy.github.io/post/shellclash-shuo-ming-wen-dang/" title="ShellClash说明文档">http://juewuy.github.io/post/shellclash-shuo-ming-wen-dang/</a>
+      <a href="http://juewuy.github.io/post/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/" title="在Linux系统安装及使用ShellClash的教程">http://juewuy.github.io/post/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -618,12 +572,12 @@
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="在路由器上安装及使用ShellClash的教程" href="http://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">在路由器上安装及使用ShellClash的教程</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="在路由器上安装及使用ShellClash的教程" href="http://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">上一篇</a>
-      
     </div>
     <div class="nav-next">
+      
+        <a class="nav-pc-next" title="在路由器上安装及使用ShellClash的教程" href="http://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">在路由器上安装及使用ShellClash的教程</a>
+        <a class="nav-mobile-next" title="在路由器上安装及使用ShellClash的教程" href="http://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
