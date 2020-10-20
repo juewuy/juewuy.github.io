@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-10-20T16:45:22.237Z</updated>
+    <updated>2020-10-20T16:46:39.097Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="http://juewuy.github.io"/>
+    <link rel="self" href="http://juewuy.github.io/atom.xml"/>
     <subtitle>大家好！</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>http://juewuy.github.io/images/avatar.png</logo>
+    <icon>http://juewuy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Juewuy&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[常见问题]]></title>
-        <id>http://localhost:4000/post/chang-jian-wen-ti/</id>
-        <link href="http://localhost:4000/post/chang-jian-wen-ti/">
+        <id>http://juewuy.github.io/post/chang-jian-wen-ti/</id>
+        <link href="http://juewuy.github.io/post/chang-jian-wen-ti/">
         </link>
         <updated>2020-10-20T16:08:55.000Z</updated>
         <content type="html"><![CDATA[<p>一些运行中常见的问题汇总，请先在此处了解！</p>
@@ -52,8 +52,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[在Linux系统安装及使用ShellClash的教程]]></title>
-        <id>http://localhost:4000/post/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/</id>
-        <link href="http://localhost:4000/post/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/">
+        <id>http://juewuy.github.io/post/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/</id>
+        <link href="http://juewuy.github.io/post/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/">
         </link>
         <updated>2020-10-20T15:55:01.000Z</updated>
         <content type="html"><![CDATA[<p>支持Debian、CentOS、Ubuntu、Armbian等绝大多数发行版Linux系统下安装及使用本脚本！</p>
@@ -84,8 +84,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[在路由器上安装及使用ShellClash的教程]]></title>
-        <id>http://localhost:4000/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/</id>
-        <link href="http://localhost:4000/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">
+        <id>http://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/</id>
+        <link href="http://juewuy.github.io/post/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">
         </link>
         <updated>2020-09-20T12:54:52.000Z</updated>
         <content type="html"><![CDATA[<p>在小米等基于openwrt内核定制的路由器原生系统上使用clash做透明代理</p>
@@ -130,8 +130,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ShellClash说明文档]]></title>
-        <id>http://localhost:4000/post/shellclash-shuo-ming-wen-dang/</id>
-        <link href="http://localhost:4000/post/shellclash-shuo-ming-wen-dang/">
+        <id>http://juewuy.github.io/post/shellclash-shuo-ming-wen-dang/</id>
+        <link href="http://juewuy.github.io/post/shellclash-shuo-ming-wen-dang/">
         </link>
         <updated>2020-09-19T13:46:53.000Z</updated>
         <content type="html"><![CDATA[<h3 id="目录结构">目录结构</h3>
