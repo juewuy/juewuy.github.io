@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>在路由器上安装及使用ShellClash的教程 | Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1603411877087">
+<link rel="shortcut icon" href="/favicon.ico?v=1603442265753">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -202,7 +202,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-count">5</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1619,11 +1619,52 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/teqmh0oev/"" data-c="
+          &lt;p&gt;Openwrt 官网在国外，国内访问速度超级慢，简直不能忍，不过可以通过修改软件源到国内解决：&lt;/p&gt;
+&lt;p&gt;目前很多官方固件都是基于openwrt的修改版固件，通常会在系统内部屏蔽opkg的下载源或者干脆使用的开发时内网自建的安装源。导致运行opkg update命令时失败报错&lt;/p&gt;
+&lt;p&gt;本文主要介绍通过切换openwrt系统内置安装源的方式来启用opkg功能并安装curl或其他依赖软件包&lt;/p&gt;
+&lt;h2 id=&#34;第一步获取软件源地址&#34;&gt;第一步：获取软件源地址&lt;/h2&gt;
+&lt;p&gt;中国科技大学教育网官方主镜像网站：&lt;br&gt;
+http://mirrors.ustc.edu.cn/openwrt/releases/&lt;/p&gt;
+&lt;p&gt;官方旧版本备份源：&lt;/p&gt;
+&lt;p&gt;http://archive.openwrt.org/releases/&lt;/p&gt;
+&lt;h2 id=&#34;第二步找到系统opkg配置文件路径&#34;&gt;第二步：找到系统opkg配置文件路径&lt;/h2&gt;
+&lt;p&gt;通常opkg的配置文件为 /etc/opkg/distfeeds.conf&lt;/p&gt;
+&lt;p&gt;或者/etc/opkg.conf&lt;/p&gt;
+&lt;p&gt;软件源的配置格式通常是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;src/gz openwrt_core http://192.168.1.99/releases/19.04/targets/XXX
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;第三步替换openwrt软件源&#34;&gt;第三步：替换Openwrt软件源&lt;/h2&gt;
+&lt;p&gt;将上述配置文件中的http://downloads.openwrt.org/releases替换为上述源中的地址，比如说http://archive.openwrt.org/releases/&lt;/p&gt;
+&lt;p&gt;使最终的配置文件变成：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;src/gz openwrt_core http://archive.openwrt.org/releases/19.04/targets/XXX
+src/gz openwrt_base http://archive.openwrt.org/releases/19.04/packages/XXX
+src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;的形式(注意可以自己先手动复制到浏览器测试一下你不能正常打开)，之后保存即可。&lt;/p&gt;
+&lt;h2 id=&#34;第四步更新软件包列表&#34;&gt;第四步：更新软件包列表&lt;/h2&gt;
+&lt;p&gt;在命令行直接执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;opkg update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;即可更新软件源&lt;/p&gt;
+&lt;p&gt;之后使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;opkg install curl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;即可完成curl的安装&lt;/p&gt;
+">OpenWrt安装Curl时提示无法连接服务器的解决办法</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/chang-jian-wen-ti/"" data-c="
           &lt;p&gt;一些运行中常见的问题汇总，请先在此处了解！&lt;/p&gt;
 &lt;h2 id=&#34;脚本安装运行相关&#34;&gt;脚本安装运行相关&lt;/h2&gt;
 &lt;h3 id=&#34;安装失败提示curl-not-found&#34;&gt;·安装失败，提示curl not found&lt;/h3&gt;
-&lt;p&gt;​	请自行谷歌目标设备系统安装curl的方式，不同设备安装方式不同，这里不赘述&lt;/p&gt;
+&lt;p&gt;​	各个Linux系统安装方式不同，具体可以参考：&lt;/p&gt;
+&lt;p&gt;​	https://m.isolves.com/it/rj/czxt/linux/2020-06-25/21510.html&lt;/p&gt;
+&lt;p&gt;​	Openwrt可以使用以下命令安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;opkg update &amp;amp;&amp;amp; opkg install curl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​	 如果提示opkg无法连接，请参考此篇文章：https://juewuy.github.io/teqmh0oev/&lt;/p&gt;
 &lt;h3 id=&#34;安装失败提示tar-相关错误&#34;&gt;·安装失败，提示tar 相关错误&lt;/h3&gt;
 &lt;p&gt;​	可能是安装目录剩余空间不足或者权限不足，请切换安装目录或者使用root用户安装&lt;/p&gt;
 &lt;h3 id=&#34;下载clash核心或者更新脚本失败&#34;&gt;·下载clash核心或者更新脚本失败&lt;/h3&gt;
