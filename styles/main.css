@@ -2051,8 +2051,10 @@ p > code {
     margin-bottom: 10px;
   }
 }
-body {
-      background-color: #eee;
+.bg-color .bg-color {
+      background: transparent !important;
+    }body {
+      background-color: #ced4da;
     }.header {
         width: 960px;
         margin: 0 auto;
@@ -2072,7 +2074,7 @@ body {
       border-bottom-color: #555;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
-      background: #eeeeeefe;
+      background: #212529cc;
     }h1, h2, h3, h4, h5, h6 {
       color: #555;
     }
@@ -2088,12 +2090,12 @@ body {
     .node-title::before {
       background-color: #555;
     }a {
-      color: #555;
+      color: #3bc9db;
     }
     
     .next-md-body a, .friends-box a  {
-      color: #555;
-      border-bottom: 1px solid #555;
+      color: #3bc9db;
+      border-bottom: 1px solid #3bc9db;
     }a:hover {
       color: #222;
     }
@@ -2119,11 +2121,11 @@ body {
       }.nav-item a:hover {
         color: #222;
       }.nav-item-active {
-      background: #f9f9f9fe;
+      background: #f9f9f9cc;
     }
 
     .nav-item:hover {
-      background: #f9f9f9fe;
+      background: #f9f9f9cc;
       color: rgba(0, 0, 0, 0.98);
     }.site-author-image {
       border-radius: 50%;
@@ -2135,46 +2137,52 @@ body {
       transition-duration: 59s;
       transition-timing-function: cubic-bezier(.34,0,.84,1);
     }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #212529;
+      border-bottom-color: #212529;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #a61e4d;
+      border-bottom-color: #a61e4d;
     }.active-current > a {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #364fc7 !important;
+      border-bottom-color: #364fc7 !important;
     }
     .sidebar-title-active {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #364fc7;
+      border-bottom-color: #364fc7;
     }
     .sidebar-title-item:hover {
-      color: #fc6423 !important;
+      color: #364fc7 !important;
     }
     .active-show > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #364fc7;
+      border-bottom-color: #364fc7;
     }
     .active-hidden > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #364fc7;
+      border-bottom-color: #364fc7;
     }.bg-color {
-      background-color: #fffffffe;
+      background-color: #e9ecefcc;
+    }
+    .gemini .blog-header, .gemini .sidebar-wrapper, .gemini .article-wrapper, .gemini .post, .gemini .page, .gemini .section, .gemini .section-box, .gemini .sidebar-box, .gemini .friends-section {
+      border-radius: 10px;
+    }
+    .pisces .blog-header, .pisces .sidebar-wrapper, .pisces .article-wrapper, .pisces .section, .pisces .sidebar-box, .pisces .friends-section {
+      border-radius: 10px;
     }
     .site-meta {
-      background: #000 !important;
+      background: #212529 !important;
     }
     .head-top-line {
-      background: #000;
+      background: #212529;
     }
     .brand {
-      background: #000000fe;
+      background: #212529cc;
     }
     .main-title, .brand {
-      color: #FFF !important;
+      color: #f8f9fa !important;
     }
     .mist .site-title i {
-      background: #FFFFFFfe;
+      background: #f8f9facc;
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {

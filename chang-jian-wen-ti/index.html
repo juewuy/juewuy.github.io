@@ -8,7 +8,7 @@
 <meta name="keywords" content="Juewuy个人博客">
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
-<title>Juewuy&#39;s Blog</title>
+<title>常见问题 | Juewuy&#39;s Blog</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1603411877087">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,6 +38,8 @@
 
 
 
+  <meta name="description" content="常见问题" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -172,8 +174,24 @@
     <div
       class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -209,55 +227,404 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper  auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8C%E7%9B%B8%E5%85%B3">脚本安装运行相关</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcurl-not-found">·安装失败，提示curl not found</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAtar-%E7%9B%B8%E5%85%B3%E9%94%99%E8%AF%AF">·安装失败，提示tar 相关错误</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BDclash%E6%A0%B8%E5%BF%83%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0%E8%84%9A%E6%9C%AC%E5%A4%B1%E8%B4%A5">·下载clash核心或者更新脚本失败</a></li>
+<li><a href="#%E5%AF%BC%E5%85%A5%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%A4%B1%E8%B4%A5%E6%88%96%E8%80%85%E5%AF%BC%E5%85%A5%E8%AE%A2%E9%98%85%E5%A4%B1%E8%B4%A5">·导入配置文件失败或者导入订阅失败</a></li>
+</ul>
+</li>
+<li><a href="#clash%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%A1%8C%E7%9B%B8%E5%85%B3">Clash服务运行相关</a>
+<ul>
+<li><a href="#clash%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E8%BF%90%E8%A1%8C">·Clash服务无法正常运行</a></li>
+<li><a href="#%E8%BF%9B%E4%B8%8D%E5%8E%BBdashboard%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF">·进不去Dashboard管理面板</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E7%9B%B8%E5%85%B3">代理服务相关</a>
+<ul>
+<li><a href="#%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91">·无法访问外网</a></li>
+<li><a href="#%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E8%B0%B7%E6%AD%8Cyoutube%E5%8F%AF%E8%AE%BF%E9%97%AE%E4%BD%86%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E8%A7%86%E9%A2%91">·无法访问谷歌，YouTube可访问但无法加载视频</a></li>
+<li><a href="#tv%E6%88%96%E6%B8%B8%E6%88%8F%E6%9C%BA%E8%AE%BE%E5%A4%87%E4%B8%8A%E7%9A%84%E5%A5%88%E9%A3%9E%E6%8F%90%E7%A4%BA%E4%BB%A3%E7%90%86">·TV或游戏机设备上的奈飞提示代理</a></li>
+<li><a href="#%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E9%85%8D%E7%BD%AE%E6%97%81%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F">·无法正确配置旁路由模式</a></li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8">·游戏无法连接服务器</a></li>
+<li><a href="#%E5%85%A8%E5%B1%80%E6%A8%A1%E5%BC%8F%E4%B8%8D%E7%94%9F%E6%95%88">·全局模式不生效</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box pisces box-shadow-wrapper">
-          <section class="friends-section bg-color slide-down-in">
-            <div class="firends-box">
-              <h1 class="firends-title" itemprop="name headline">友情链接</h1>
-              
-              
-              
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
             </div>
-            <hr>
-            <div style="text-align:center">
-              <span class="with-love">
-                <i class="fa fa-heart"></i>
-              </span>
-              <span class="language" data-lan="leave-message">留言添加友链</span>
-              <span class="with-love">
-                <i class="fa fa-heart"></i>
-              </span>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="http://juewuy.github.io/chang-jian-wen-ti/">
+      常见问题
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-10-21 00:08:55">2020-10-21</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>4<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>861<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <p>一些运行中常见的问题汇总，请先在此处了解！</p>
+<h2 id="脚本安装运行相关">脚本安装运行相关</h2>
+<h3 id="安装失败提示curl-not-found">·安装失败，提示curl not found</h3>
+<p>​	请自行谷歌目标设备系统安装curl的方式，不同设备安装方式不同，这里不赘述</p>
+<h3 id="安装失败提示tar-相关错误">·安装失败，提示tar 相关错误</h3>
+<p>​	可能是安装目录剩余空间不足或者权限不足，请切换安装目录或者使用root用户安装</p>
+<h3 id="下载clash核心或者更新脚本失败">·下载clash核心或者更新脚本失败</h3>
+<p>​	请使用0-返回上级菜单，9-更新，7-切换安装源功能，切换安装源，并尝试使用可以正常更新的源</p>
+<h3 id="导入配置文件失败或者导入订阅失败">·导入配置文件失败或者导入订阅失败</h3>
+<p>​	请确保配置文件是标准的clash配置文件格式，如果不确定配置文件格式请使用导入订阅功能</p>
+<p>​	导入订阅失败可能是本机DNS污染导致的问题，可以手动下载文件后上传到clash运行目录，改名为config.yaml即可正常使用</p>
+<h2 id="clash服务运行相关">Clash服务运行相关</h2>
+<h3 id="clash服务无法正常运行">·Clash服务无法正常运行</h3>
+<p>​	请先使用8-测试菜单，1-查看clash运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。如无法确定问题所在，可以前往tg群：t.me/clashfm 进行咨询</p>
+<h3 id="进不去dashboard管理面板">·进不去Dashboard管理面板</h3>
+<p>​	默认的host地址为设备的ip地址，端口9999，秘钥为空</p>
+<p>​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问</p>
+<h2 id="代理服务相关">代理服务相关</h2>
+<h3 id="无法访问外网">·无法访问外网</h3>
+<p>​	大概率是节点配置问题，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在</p>
+<h3 id="无法访问谷歌youtube可访问但无法加载视频">·无法访问谷歌，YouTube可访问但无法加载视频</h3>
+<p>​	是由于本地DNS污染导致的，redir-host模式下，需禁用本地DNS。部分设备可能是ipv6dns未能正确拦截导致，可以关闭设备ipv6以解决</p>
+<h3 id="tv或游戏机设备上的奈飞提示代理">·TV或游戏机设备上的奈飞提示代理</h3>
+<p>​	是由于使用的规则未能准确覆盖奈飞的IP地址导致的，</p>
+<p>​	解决方式1：更换更详细的clash配置规则</p>
+<p>​	解决方式2：将面板中的“漏网之鱼”或者“黑名单”代理节点设置为可以解锁奈飞的节点（注意该方式可能会造成奈飞节点流量滥用）</p>
+<h3 id="无法正确配置旁路由模式">·无法正确配置旁路由模式</h3>
+<p>​	配置旁路由的模式与其他类似应用的配置模式是完全一致的，请自行搜索配置方式，这里不赘述</p>
+<h3 id="游戏无法连接服务器">·游戏无法连接服务器</h3>
+<p>​	请使用2-功能设置，1-切换clash运行模式功能，切换使用tun模式或者混合模式，即可对游戏的udp流量进行代理</p>
+<p>​	已知部分Linux系统无法使用tun模式或者混合模式，将在后续更新修复</p>
+<h3 id="全局模式不生效">·全局模式不生效</h3>
+<p>​	clash的全局模式设置后，默认使用的规则其实是全局直连，需要回到节点选择界面手动指定用于全局模式的节点方可正常使用全局代理模式</p>
+
             </div>
-            <hr>
-            <div class="friends-note">
-              <p><strong class="language" data-lan="format">友链格式：</strong></p>
-              <ul>
-                <li><span class="language" data-lan="site-name">网站名称：</span>Juewuy&#39;s Blog</li>
-                <li><span class="language" data-lan="site-link">网站地址：</span><a href="http://juewuy.github.io" data-pjax-state="">http://juewuy.github.io</a></li>
-                <li><span class="language" data-lan="site-desc">网站描述：</span>大家好！</li>
-                <li><span class="language" data-lan="site-img">网站头像：</span>
-                  <a href="http://juewuy.github.io/images/avatar.png">http://juewuy.github.io/images/avatar.png</a>
-                </li>
-              </ul>
-            </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      Juewuy
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="http://juewuy.github.io/chang-jian-wen-ti/" title="常见问题">http://juewuy.github.io/chang-jian-wen-ti/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="在Linux系统安装及使用ShellClash的教程" href="http://juewuy.github.io/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/">在Linux系统安装及使用ShellClash的教程</a>
+        <a class="nav-mobile-next" title="在Linux系统安装及使用ShellClash的教程" href="http://juewuy.github.io/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
             
   
 
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -991,6 +1358,253 @@
   }
 
 </script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px;border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
+</script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -1472,7 +2086,6 @@
 
 
 <script src="/media/js/cool.js"></script>
-
 
 
 
