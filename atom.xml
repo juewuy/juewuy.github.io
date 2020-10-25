@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-10-24T13:46:08.618Z</updated>
+    <updated>2020-10-25T06:49:11.030Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>http://juewuy.github.io/images/avatar.png</logo>
     <icon>http://juewuy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Juewuy&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[各个操作系统或软件中使用PAC的方式]]></title>
+        <id>http://juewuy.github.io/ehRUeewcv/</id>
+        <link href="http://juewuy.github.io/ehRUeewcv/">
+        </link>
+        <updated>2020-10-25T06:38:11.000Z</updated>
+        <content type="html"><![CDATA[<p>ShellClash提供局域网的PAC自动配置方式，可以在各个操作系统上快速完成PROXY配置而无需启用静态路由</p>
+<h2 id="windows-10">Windows 10</h2>
+<p>设置 -&gt; 网络和intentnet -&gt; 代理 -&gt; 使用设置脚本（开） -&gt; 脚本地址 -&gt; 填入PAC地址 -&gt; 保存</p>
+<h2 id="windows-7">Windows 7</h2>
+<p>Internet选项 -&gt; 连接 选项卡 -&gt; 局域网设置(如果是电脑拨号上网, 这里点'设置') -&gt; 使用自动配置脚本 -&gt; 填入PAC地址 -&gt; 确定</p>
+<h2 id="macox">MacOX</h2>
+<p>系统设置 -&gt; 网络 -&gt; 高级 -&gt; 代理 -&gt; 自动代理配置 -&gt; URL中填入PAC地址 -&gt; 好</p>
+<h2 id="安卓">安卓</h2>
+<p>设置 -&gt; 连接 -&gt; 当前网络 -&gt; 高级设置 -&gt; 代理服务器 -&gt; 自动配置 -&gt; 填入PAC地址 -&gt; 保存</p>
+<h2 id="ios">IOS</h2>
+<p>设置 WiFi 当前WiFi 代理设置 自动 填入PAC地址</p>
+<h2 id="更多设备请参考">更多设备请参考：</h2>
+<p>https://www.wervps.com/we/3113.html</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[OpenWrt安装Curl时提示无法连接服务器的解决办法]]></title>
         <id>http://juewuy.github.io/teqmh0oev/</id>
