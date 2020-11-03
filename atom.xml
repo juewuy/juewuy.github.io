@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-10-25T06:49:11.030Z</updated>
+    <updated>2020-11-03T08:12:20.641Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>http://juewuy.github.io/images/avatar.png</logo>
     <icon>http://juewuy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Juewuy&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[捐赠ShellClash项目！]]></title>
+        <id>http://juewuy.github.io/yOF4Yf06Q/</id>
+        <link href="http://juewuy.github.io/yOF4Yf06Q/">
+        </link>
+        <updated>2020-11-03T08:05:51.000Z</updated>
+        <content type="html"><![CDATA[<p>感谢您的捐赠！项目会变得越来越好！</p>
+<p>支付宝<br>
+<img src="http://juewuy.github.io/post-images/1604390977172.png" alt="" loading="lazy"><br>
+微信<br>
+<img src="http://juewuy.github.io/post-images/1604391042406.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[各个操作系统或软件中使用PAC的方式]]></title>
         <id>http://juewuy.github.io/ehRUeewcv/</id>
@@ -77,6 +90,12 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
         </link>
         <updated>2020-10-20T16:08:55.000Z</updated>
         <content type="html"><![CDATA[<p>一些运行中常见的问题汇总，请先在此处了解！</p>
+<h2 id="日经问题">日经问题</h2>
+<h3 id="xxx设备能不能安装">·XXX设备能不能安装</h3>
+<p>理论上只要破解了ssh的Linux设备都可以安装，请先用安装脚本自行尝试，如果无法安装或者运行也可以找作者适配</p>
+<h3 id="xxx设备能跑多快">·XXX设备能跑多快</h3>
+<p>设备能跑多快取决于你设备的CPU性能，clash内核基于go本身对性能已经充分优化，已经是类似应用中的佼佼者了。</p>
+<p>常见的双核mt7621，使用chacha20系加密，极限可以跑满100M；常见的A53 4核SOC，极限可以跑500-700M。</p>
 <h2 id="脚本安装运行相关">脚本安装运行相关</h2>
 <h3 id="安装失败提示curl-not-found">·安装失败，提示curl not found</h3>
 <p>​	各个Linux系统安装方式不同，具体可以参考：</p>
@@ -103,6 +122,8 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>​	大概率是节点配置问题，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在</p>
 <h3 id="无法访问谷歌youtube可访问但无法加载视频">·无法访问谷歌，YouTube可访问但无法加载视频</h3>
 <p>​	是由于本地DNS污染导致的，redir-host模式下，需禁用本地DNS。部分设备可能是ipv6dns未能正确拦截导致，可以关闭设备ipv6以解决</p>
+<h3 id="一部分网页打不开网页错版乱码等">·一部分网页打不开，网页错版，乱码等</h3>
+<p>​	这是由于使用了部分去广告规则，规则误杀导致的，如果不喜欢去广告规则请使用默认不带去广告的规则或者使用自己定义的规则文件，也可以在网页面板中手动开关去广告规则。</p>
 <h3 id="tv或游戏机设备上的奈飞提示代理">·TV或游戏机设备上的奈飞提示代理</h3>
 <p>​	是由于使用的规则未能准确覆盖奈飞的IP地址导致的，</p>
 <p>​	解决方式1：更换更详细的clash配置规则</p>
@@ -114,6 +135,11 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>​	已知部分Linux系统无法使用tun模式或者混合模式，将在后续更新修复</p>
 <h3 id="全局模式不生效">·全局模式不生效</h3>
 <p>​	clash的全局模式设置后，默认使用的规则其实是全局直连，需要回到节点选择界面手动指定用于全局模式的节点方可正常使用全局代理模式</p>
+<h3 id="如何添加自定义规则">·如何添加自定义规则？</h3>
+<p>​	可以通过winscp或者其他sftp/scp连接工具，连接设备后打开shellclash安装目录（不知道的可以看测试菜单）。之后手动修改或者添加config.yaml文件即可添加自定义规则，具体规则添加方式参考：https://lancellc.gitbook.io/clash/</p>
+<h3 id="如何添加自定义config设定">·如何添加自定义config设定？</h3>
+<p>​	如果只是想修改运行端口、面板访问秘钥、自定义DNS的功能，可以直接在管理脚本的进阶设置中进行设置，无需额外操作。</p>
+<p>​	如果想添加其他自定义设定需要在shellclash安装目录下（不知道的可以看测试菜单）自行创建一个user.yaml文件，并将你需要修改的条目，比如自定义host，tun网卡设定等内容直接填写到这个文件中，之后重启clash服务即可。</p>
 ]]></content>
     </entry>
     <entry>
