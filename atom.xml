@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-11-07T02:58:46.230Z</updated>
+    <updated>2020-11-10T09:44:21.629Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -118,7 +118,7 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>​	请使用0-返回上级菜单，9-更新，7-切换安装源功能，切换安装源，并尝试使用可以正常更新的源</p>
 <h3 id="导入配置文件失败或者导入订阅失败">·导入配置文件失败或者导入订阅失败</h3>
 <p>​	请确保配置文件是标准的clash配置文件格式，如果不确定配置文件格式请使用导入订阅功能</p>
-<p>​	导入订阅失败可能是本机DNS污染导致的问题，可以手动下载文件后上传到clash运行目录，改名为config.yaml即可正常使用</p>
+<p>​	导入订阅失败可能是本机DNS污染导致的问题，可以使用提示的链接手动下载配置文件后上传到clash运行目录，改名为config.yaml即可正常使用</p>
 <h2 id="clash服务运行相关">Clash服务运行相关</h2>
 <h3 id="clash服务无法正常运行">·Clash服务无法正常运行</h3>
 <p>​	请先使用8-测试菜单，1-查看clash运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。如无法确定问题所在，可以前往tg群：t.me/clashfm 进行咨询</p>
@@ -126,6 +126,8 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>​	默认的host地址为设备的ip地址，端口9999，秘钥为空</p>
 <p>​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问</p>
 <h2 id="代理服务相关">代理服务相关</h2>
+<h3 id="如何使用pac">·如何使用PAC？</h3>
+<p>​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请<a href="https://juewuy.github.io/ehRUeewcv/">参考此处</a>。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。</p>
 <h3 id="无法访问外网">·无法访问外网</h3>
 <p>​	大概率是节点配置问题，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在</p>
 <h3 id="无法访问谷歌youtube可访问但无法加载视频">·无法访问谷歌，YouTube可访问但无法加载视频</h3>
@@ -147,7 +149,7 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>​	可以通过winscp或者其他sftp/scp连接工具，连接设备后打开shellclash安装目录（不知道的可以看测试菜单）。之后手动修改或者添加config.yaml文件即可添加自定义规则，具体规则添加方式参考：https://lancellc.gitbook.io/clash/</p>
 <h3 id="如何添加自定义config设定">·如何添加自定义config设定？</h3>
 <p>​	如果只是想修改运行端口、面板访问秘钥、自定义DNS的功能，可以直接在管理脚本的进阶设置中进行设置，无需额外操作。</p>
-<p>​	如果想添加其他自定义设定需要在shellclash安装目录下（不知道的可以看测试菜单）自行创建一个user.yaml文件，并将你需要修改的条目，比如自定义host，tun网卡设定等内容直接填写到这个文件中，之后重启clash服务即可。</p>
+<p>​	如果想添加其他自定义设定，或者自定义规则，可以使用【进阶设置-自定义配置】功能，启用此功能后会给出使用自定义配置文件的具体说明，并在ShellClash安装目录下生成2个示例文件（user.yaml用于自定义设定，rules.yaml用于自定义规则），之后使用winscp或其他工具手动编写对应的示例文件即可。每次重启clash服务时，会自动将以上配置文件的内容加载合并到config.yaml配置文件中。</p>
 ]]></content>
     </entry>
     <entry>

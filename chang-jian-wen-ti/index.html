@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>ShellClash使用的常见问题 | Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1604717851394">
+<link rel="shortcut icon" href="/favicon.ico?v=1605001444938">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -259,6 +259,7 @@
 </li>
 <li><a href="#%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E7%9B%B8%E5%85%B3">代理服务相关</a>
 <ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pac">·如何使用PAC？</a></li>
 <li><a href="#%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91">·无法访问外网</a></li>
 <li><a href="#%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E8%B0%B7%E6%AD%8Cyoutube%E5%8F%AF%E8%AE%BF%E9%97%AE%E4%BD%86%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E8%A7%86%E9%A2%91">·无法访问谷歌，YouTube可访问但无法加载视频</a></li>
 <li><a href="#%E4%B8%80%E9%83%A8%E5%88%86%E7%BD%91%E9%A1%B5%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5%E9%94%99%E7%89%88%E4%B9%B1%E7%A0%81%E7%AD%89">·一部分网页打不开，网页错版，乱码等</a></li>
@@ -563,7 +564,7 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1499<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1659<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
@@ -596,7 +597,7 @@
 <p>​	请使用0-返回上级菜单，9-更新，7-切换安装源功能，切换安装源，并尝试使用可以正常更新的源</p>
 <h3 id="导入配置文件失败或者导入订阅失败">·导入配置文件失败或者导入订阅失败</h3>
 <p>​	请确保配置文件是标准的clash配置文件格式，如果不确定配置文件格式请使用导入订阅功能</p>
-<p>​	导入订阅失败可能是本机DNS污染导致的问题，可以手动下载文件后上传到clash运行目录，改名为config.yaml即可正常使用</p>
+<p>​	导入订阅失败可能是本机DNS污染导致的问题，可以使用提示的链接手动下载配置文件后上传到clash运行目录，改名为config.yaml即可正常使用</p>
 <h2 id="clash服务运行相关">Clash服务运行相关</h2>
 <h3 id="clash服务无法正常运行">·Clash服务无法正常运行</h3>
 <p>​	请先使用8-测试菜单，1-查看clash运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。如无法确定问题所在，可以前往tg群：t.me/clashfm 进行咨询</p>
@@ -604,6 +605,8 @@
 <p>​	默认的host地址为设备的ip地址，端口9999，秘钥为空</p>
 <p>​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问</p>
 <h2 id="代理服务相关">代理服务相关</h2>
+<h3 id="如何使用pac">·如何使用PAC？</h3>
+<p>​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请<a href="https://juewuy.github.io/ehRUeewcv/">参考此处</a>。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。</p>
 <h3 id="无法访问外网">·无法访问外网</h3>
 <p>​	大概率是节点配置问题，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在</p>
 <h3 id="无法访问谷歌youtube可访问但无法加载视频">·无法访问谷歌，YouTube可访问但无法加载视频</h3>
@@ -625,7 +628,7 @@
 <p>​	可以通过winscp或者其他sftp/scp连接工具，连接设备后打开shellclash安装目录（不知道的可以看测试菜单）。之后手动修改或者添加config.yaml文件即可添加自定义规则，具体规则添加方式参考：https://lancellc.gitbook.io/clash/</p>
 <h3 id="如何添加自定义config设定">·如何添加自定义config设定？</h3>
 <p>​	如果只是想修改运行端口、面板访问秘钥、自定义DNS的功能，可以直接在管理脚本的进阶设置中进行设置，无需额外操作。</p>
-<p>​	如果想添加其他自定义设定需要在shellclash安装目录下（不知道的可以看测试菜单）自行创建一个user.yaml文件，并将你需要修改的条目，比如自定义host，tun网卡设定等内容直接填写到这个文件中，之后重启clash服务即可。</p>
+<p>​	如果想添加其他自定义设定，或者自定义规则，可以使用【进阶设置-自定义配置】功能，启用此功能后会给出使用自定义配置文件的具体说明，并在ShellClash安装目录下生成2个示例文件（user.yaml用于自定义设定，rules.yaml用于自定义规则），之后使用winscp或其他工具手动编写对应的示例文件即可。每次重启clash服务时，会自动将以上配置文件的内容加载合并到config.yaml配置文件中。</p>
 
             </div>
             
@@ -1763,7 +1766,7 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;​	请使用0-返回上级菜单，9-更新，7-切换安装源功能，切换安装源，并尝试使用可以正常更新的源&lt;/p&gt;
 &lt;h3 id=&#34;导入配置文件失败或者导入订阅失败&#34;&gt;·导入配置文件失败或者导入订阅失败&lt;/h3&gt;
 &lt;p&gt;​	请确保配置文件是标准的clash配置文件格式，如果不确定配置文件格式请使用导入订阅功能&lt;/p&gt;
-&lt;p&gt;​	导入订阅失败可能是本机DNS污染导致的问题，可以手动下载文件后上传到clash运行目录，改名为config.yaml即可正常使用&lt;/p&gt;
+&lt;p&gt;​	导入订阅失败可能是本机DNS污染导致的问题，可以使用提示的链接手动下载配置文件后上传到clash运行目录，改名为config.yaml即可正常使用&lt;/p&gt;
 &lt;h2 id=&#34;clash服务运行相关&#34;&gt;Clash服务运行相关&lt;/h2&gt;
 &lt;h3 id=&#34;clash服务无法正常运行&#34;&gt;·Clash服务无法正常运行&lt;/h3&gt;
 &lt;p&gt;​	请先使用8-测试菜单，1-查看clash运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。如无法确定问题所在，可以前往tg群：t.me/clashfm 进行咨询&lt;/p&gt;
@@ -1771,6 +1774,8 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;​	默认的host地址为设备的ip地址，端口9999，秘钥为空&lt;/p&gt;
 &lt;p&gt;​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问&lt;/p&gt;
 &lt;h2 id=&#34;代理服务相关&#34;&gt;代理服务相关&lt;/h2&gt;
+&lt;h3 id=&#34;如何使用pac&#34;&gt;·如何使用PAC？&lt;/h3&gt;
+&lt;p&gt;​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请&lt;a href=&#34;https://juewuy.github.io/ehRUeewcv/&#34;&gt;参考此处&lt;/a&gt;。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。&lt;/p&gt;
 &lt;h3 id=&#34;无法访问外网&#34;&gt;·无法访问外网&lt;/h3&gt;
 &lt;p&gt;​	大概率是节点配置问题，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在&lt;/p&gt;
 &lt;h3 id=&#34;无法访问谷歌youtube可访问但无法加载视频&#34;&gt;·无法访问谷歌，YouTube可访问但无法加载视频&lt;/h3&gt;
@@ -1792,7 +1797,7 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;​	可以通过winscp或者其他sftp/scp连接工具，连接设备后打开shellclash安装目录（不知道的可以看测试菜单）。之后手动修改或者添加config.yaml文件即可添加自定义规则，具体规则添加方式参考：https://lancellc.gitbook.io/clash/&lt;/p&gt;
 &lt;h3 id=&#34;如何添加自定义config设定&#34;&gt;·如何添加自定义config设定？&lt;/h3&gt;
 &lt;p&gt;​	如果只是想修改运行端口、面板访问秘钥、自定义DNS的功能，可以直接在管理脚本的进阶设置中进行设置，无需额外操作。&lt;/p&gt;
-&lt;p&gt;​	如果想添加其他自定义设定需要在shellclash安装目录下（不知道的可以看测试菜单）自行创建一个user.yaml文件，并将你需要修改的条目，比如自定义host，tun网卡设定等内容直接填写到这个文件中，之后重启clash服务即可。&lt;/p&gt;
+&lt;p&gt;​	如果想添加其他自定义设定，或者自定义规则，可以使用【进阶设置-自定义配置】功能，启用此功能后会给出使用自定义配置文件的具体说明，并在ShellClash安装目录下生成2个示例文件（user.yaml用于自定义设定，rules.yaml用于自定义规则），之后使用winscp或其他工具手动编写对应的示例文件即可。每次重启clash服务时，会自动将以上配置文件的内容加载合并到config.yaml配置文件中。&lt;/p&gt;
 ">ShellClash使用的常见问题</a>
       </div>
       
