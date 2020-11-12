@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1605001444938">
+<link rel="shortcut icon" href="/favicon.ico?v=1605167633211">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1100,6 +1100,10 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;​	 如果提示opkg无法连接，请参考此篇文章：https://juewuy.github.io/teqmh0oev/&lt;/p&gt;
 &lt;h3 id=&#34;安装失败提示tar-相关错误&#34;&gt;·安装失败，提示tar 相关错误&lt;/h3&gt;
 &lt;p&gt;​	可能是安装目录剩余空间不足或者权限不足，请切换安装目录或者使用root用户安装&lt;/p&gt;
+&lt;h3 id=&#34;安装重装失败提示failed-to-connect-127001&#34;&gt;·安装/重装失败，提示Failed to connect 127.0.0.1……&lt;/h3&gt;
+&lt;p&gt;​	可能是之前设置了本机代理，并且没有正确使用脚本卸载的原因，可以使用如下命令安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;unset all_proxy &amp;amp;&amp;amp; unset ALL_PROXY &amp;amp;&amp;amp; unset http_proxy &amp;amp;&amp;amp; unset https_proxy &amp;amp;&amp;amp; sh -c &amp;quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;下载clash核心或者更新脚本失败&#34;&gt;·下载clash核心或者更新脚本失败&lt;/h3&gt;
 &lt;p&gt;​	请使用0-返回上级菜单，9-更新，7-切换安装源功能，切换安装源，并尝试使用可以正常更新的源&lt;/p&gt;
 &lt;h3 id=&#34;导入配置文件失败或者导入订阅失败&#34;&gt;·导入配置文件失败或者导入订阅失败&lt;/h3&gt;

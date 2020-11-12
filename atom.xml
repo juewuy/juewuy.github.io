@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-11-10T09:44:21.629Z</updated>
+    <updated>2020-11-12T07:54:26.130Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -114,6 +114,10 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>​	 如果提示opkg无法连接，请参考此篇文章：https://juewuy.github.io/teqmh0oev/</p>
 <h3 id="安装失败提示tar-相关错误">·安装失败，提示tar 相关错误</h3>
 <p>​	可能是安装目录剩余空间不足或者权限不足，请切换安装目录或者使用root用户安装</p>
+<h3 id="安装重装失败提示failed-to-connect-127001">·安装/重装失败，提示Failed to connect 127.0.0.1……</h3>
+<p>​	可能是之前设置了本机代理，并且没有正确使用脚本卸载的原因，可以使用如下命令安装：</p>
+<pre><code class="language-sh">unset all_proxy &amp;&amp; unset ALL_PROXY &amp;&amp; unset http_proxy &amp;&amp; unset https_proxy &amp;&amp; sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
 <h3 id="下载clash核心或者更新脚本失败">·下载clash核心或者更新脚本失败</h3>
 <p>​	请使用0-返回上级菜单，9-更新，7-切换安装源功能，切换安装源，并尝试使用可以正常更新的源</p>
 <h3 id="导入配置文件失败或者导入订阅失败">·导入配置文件失败或者导入订阅失败</h3>
