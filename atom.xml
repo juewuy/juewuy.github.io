@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-11-12T07:54:26.130Z</updated>
+    <updated>2020-11-21T07:01:20.696Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -16,10 +16,8 @@
         <link href="http://juewuy.github.io/yOF4Yf06Q/">
         </link>
         <updated>2020-11-03T08:05:51.000Z</updated>
-        <content type="html"><![CDATA[<p>感谢您的捐赠！项目会变得越来越好！<br>
-支付宝扫码领红包：</p>
-<p><img src="http://juewuy.github.io/post-images/1604717831543.jpg" alt="" loading="lazy"><br>
-支付宝转账：</p>
+        <content type="html"><![CDATA[<p>感谢您的捐赠！项目会变得越来越好！</p>
+<p>支付宝转账：</p>
 <p><img src="http://juewuy.github.io/post-images/1604390977172.png" alt="" loading="lazy"><br>
 微信转账：</p>
 <figure data-type="image" tabindex="1"><img src="http://juewuy.github.io/post-images/1604391042406.png" alt="" loading="lazy"></figure>
@@ -103,7 +101,7 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>理论上可以支持，实际上需要自己设置，原则上不推荐使用~</p>
 <p>clash自带DNS优选以及防污染机制，fakeIP模式更是有极强的抗污染以及超高速的dns查询功能，实际使用并不需要搭配smartdns这类第三方插件！</p>
 <h3 id="有视频教程吗">·有视频教程吗？</h3>
-<p>目前没有，如果您感兴趣也可以帮忙制作一份，作者比较没时间也不会做视频，请见谅。</p>
+<p>目前没有，如果您感兴趣也可以帮忙制作一份，作者不会做视频，请见谅。</p>
 <h2 id="脚本安装运行相关">脚本安装运行相关</h2>
 <h3 id="安装失败提示curl-not-found">·安装失败，提示curl not found</h3>
 <p>​	各个Linux系统安装方式不同，具体可以参考：</p>
