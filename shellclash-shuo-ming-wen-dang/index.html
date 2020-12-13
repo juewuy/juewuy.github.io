@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>ShellClash说明文档 | Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1605942076551">
+<link rel="shortcut icon" href="/favicon.ico?v=1607839530451">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1708,21 +1708,21 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
           &lt;p&gt;一些运行中常见的问题汇总，请先在此处了解！&lt;/p&gt;
 &lt;h2 id=&#34;日经问题&#34;&gt;日经问题&lt;/h2&gt;
 &lt;h3 id=&#34;xx设备能不能安装&#34;&gt;·XX设备能不能安装？&lt;/h3&gt;
-&lt;p&gt;理论上只要破解了SSH的Linux设备都可以安装，请先用安装脚本自行尝试，如果无法安装或者运行也可以找作者适配&lt;/p&gt;
-&lt;p&gt;红米AX6短时间内都无法破解SSH也自然就无法安装！&lt;/p&gt;
+&lt;p&gt;理论上只要破解了SSH的Linux设备都可以安装，请先用安装脚本自行尝试，如果无法安装或者无法运行也可以找作者适配&lt;/p&gt;
 &lt;h3 id=&#34;xx设备能跑多快&#34;&gt;·XX设备能跑多快？&lt;/h3&gt;
 &lt;p&gt;设备能跑多快取决于你设备的CPU性能，clash内核基于go本身对性能已经充分优化，已经是类似应用中的佼佼者了。&lt;/p&gt;
 &lt;p&gt;常见的双核mt7621，使用chacha20系加密，极限可以跑满100M；常见的A53 4核SOC，极限可以跑500-700M。&lt;/p&gt;
 &lt;h3 id=&#34;支持smartdns吗&#34;&gt;·支持smartdns吗？&lt;/h3&gt;
 &lt;p&gt;理论上可以支持，实际上需要自己设置，原则上不推荐使用~&lt;/p&gt;
-&lt;p&gt;clash自带DNS优选以及防污染机制，fakeIP模式更是有极强的抗污染以及超高速的dns查询功能，实际使用并不需要搭配smartdns这类第三方插件！&lt;/p&gt;
+&lt;p&gt;clash自带DNS优选以及防污染机制，fakeIP模式更是有极强的抗污染以及超高速的dns查询功能，实际使用并不需要搭配smartdns这类第三方插件。&lt;/p&gt;
 &lt;h3 id=&#34;有视频教程吗&#34;&gt;·有视频教程吗？&lt;/h3&gt;
 &lt;p&gt;目前没有，如果您感兴趣也可以帮忙制作一份，作者不会做视频，请见谅。&lt;/p&gt;
 &lt;h2 id=&#34;脚本安装运行相关&#34;&gt;脚本安装运行相关&lt;/h2&gt;
 &lt;h3 id=&#34;安装失败提示curl-not-found&#34;&gt;·安装失败，提示curl not found&lt;/h3&gt;
-&lt;p&gt;​	各个Linux系统安装方式不同，具体可以参考：&lt;/p&gt;
+&lt;p&gt;​	可以先尝试使用wget的方式安装，如果wget也不可用，可以尝试安装curl：&lt;/p&gt;
+&lt;p&gt;​	各个Linux系统安装curl的方式并不相同，具体可以参考：&lt;/p&gt;
 &lt;p&gt;​	https://m.isolves.com/it/rj/czxt/linux/2020-06-25/21510.html&lt;/p&gt;
-&lt;p&gt;​	Openwrt可以使用以下命令安装：&lt;/p&gt;
+&lt;p&gt;​	而Openwrt下可以使用以下命令安装：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;opkg update &amp;amp;&amp;amp; opkg install curl
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;​	 如果提示opkg无法连接，请参考此篇文章：https://juewuy.github.io/teqmh0oev/&lt;/p&gt;
@@ -1739,7 +1739,11 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;​	导入订阅失败可能是本机DNS污染导致的问题，可以使用提示的链接手动下载配置文件后上传到clash运行目录，改名为config.yaml即可正常使用&lt;/p&gt;
 &lt;h2 id=&#34;clash服务运行相关&#34;&gt;Clash服务运行相关&lt;/h2&gt;
 &lt;h3 id=&#34;clash服务无法正常运行&#34;&gt;·Clash服务无法正常运行&lt;/h3&gt;
-&lt;p&gt;​	请先使用8-测试菜单，1-查看clash运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。如无法确定问题所在，可以前往tg群：t.me/clashfm 进行咨询&lt;/p&gt;
+&lt;p&gt;​	请先使用8-测试菜单，1-查看clash运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。如无法确定问题所在，可以前往tg群：&lt;a href=&#34;&#34;&gt;t.me/clashfm&lt;/a&gt; 进行咨询&lt;/p&gt;
+&lt;p&gt;​	如果是提示不支持rule_set或者类似的形式，应该是你的配置文件使用了高级规则，此时前往更新菜单，将clash核心切换至pre版重启服务即可。&lt;/p&gt;
+&lt;h3 id=&#34;内核报错提示各种看不懂的错误且无法运行&#34;&gt;·内核报错，提示各种看不懂的错误且无法运行&lt;/h3&gt;
+&lt;p&gt;​	这种情况下可能是脚本内置的识别功能未能正确识别以及匹配你的设备架构，可能需要手动下载及安装内核文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Dreamacro/clash/releases&#34;&gt;请前往官方内核发布页&lt;/a&gt;下载内核，手动解压后改名为clash，之后使用winscp或在终端使用scp命令，将改内核文件上传到你的ShellClash安装目录（如果不知道目录，请在ssh里输入 echo $clashdir 命令查看）&lt;/p&gt;
 &lt;h3 id=&#34;进不去dashboard管理面板&#34;&gt;·进不去Dashboard管理面板&lt;/h3&gt;
 &lt;p&gt;​	默认的host地址为设备的ip地址，端口9999，秘钥为空&lt;/p&gt;
 &lt;p&gt;​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问&lt;/p&gt;
@@ -1749,7 +1753,7 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;h3 id=&#34;无法访问外网&#34;&gt;·无法访问外网&lt;/h3&gt;
 &lt;p&gt;​	大概率是节点配置问题，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在&lt;/p&gt;
 &lt;h3 id=&#34;无法访问谷歌youtube可访问但无法加载视频&#34;&gt;·无法访问谷歌，YouTube可访问但无法加载视频&lt;/h3&gt;
-&lt;p&gt;​	是由于本地DNS污染导致的，redir-host模式下，需禁用本地DNS。部分设备可能是ipv6dns未能正确拦截导致，可以关闭设备ipv6以解决&lt;/p&gt;
+&lt;p&gt;​	是由于本地DNS污染导致的，redir-host模式下，可能需要手动配置dot或者doh类型的加密dns；通常直接把dns模式切换到fake-ip模式都能够解决此类问题&lt;/p&gt;
 &lt;h3 id=&#34;一部分网页打不开网页错版乱码等&#34;&gt;·一部分网页打不开，网页错版，乱码等&lt;/h3&gt;
 &lt;p&gt;​	这是由于使用了部分去广告规则，规则误杀导致的，如果不喜欢去广告规则请使用默认不带去广告的规则或者使用自己定义的规则文件，也可以在网页面板中手动开关去广告规则。&lt;/p&gt;
 &lt;h3 id=&#34;tv或游戏机设备上的奈飞提示代理&#34;&gt;·TV或游戏机设备上的奈飞提示代理&lt;/h3&gt;
@@ -1760,7 +1764,7 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;​	配置旁路由的模式与其他类似应用的配置模式是完全一致的，请自行搜索配置方式，这里不赘述&lt;/p&gt;
 &lt;h3 id=&#34;游戏无法连接服务器&#34;&gt;·游戏无法连接服务器&lt;/h3&gt;
 &lt;p&gt;​	请使用2-功能设置，1-切换clash运行模式功能，切换使用tun模式或者混合模式，即可对游戏的udp流量进行代理&lt;/p&gt;
-&lt;p&gt;​	已知部分Linux系统无法使用tun模式或者混合模式，将在后续更新修复&lt;/p&gt;
+&lt;p&gt;​	部分虚拟机下执行本脚本可能无法使用tun或者混合模式（可能是由于虚拟网卡设置问题），请尝试使用进阶设置-tproxy模式来使用tproxy来代理udp流量&lt;/p&gt;
 &lt;h3 id=&#34;全局模式不生效&#34;&gt;·全局模式不生效&lt;/h3&gt;
 &lt;p&gt;​	clash的全局模式设置后，默认使用的规则其实是全局直连，需要回到节点选择界面手动指定用于全局模式的节点方可正常使用全局代理模式&lt;/p&gt;
 &lt;h3 id=&#34;如何添加自定义规则&#34;&gt;·如何添加自定义规则？&lt;/h3&gt;
