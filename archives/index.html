@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1608029116029">
+<link rel="shortcut icon" href="/favicon.ico?v=1608029482502">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1256,15 +1256,20 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;使用SSH连接工具来登陆SSH，推荐putty（体积最小），JuiceSSH（支持安卓手机），或其他工具，SSH工具请自行下载。&lt;/p&gt;
 &lt;p&gt;建议使用root用户登录&lt;/p&gt;
 &lt;h2 id=&#34;使用一键脚本安装shellclash&#34;&gt;使用一键脚本安装ShellClash&lt;/h2&gt;
-&lt;p&gt;成功登陆SSH后，&lt;/p&gt;
-&lt;h5 id=&#34;直接输入以下命令&#34;&gt;直接输入以下命令：&lt;/h5&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sh -c &amp;quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+&lt;p&gt;成功登陆SSH后，直接输入以下命令&lt;/p&gt;
+&lt;p&gt;~&lt;strong&gt;使用curl安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#Release版本-github直连
+sh -c &amp;quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+#Release版本-jsdelivrCDN源
+sh -c &amp;quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+#Test版本-github直连
+sh -c &amp;quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&amp;quot; -s 1 &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;或者&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sh -c &amp;quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&amp;quot;&amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+&lt;p&gt;~&lt;strong&gt;使用wget安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#Release版本-jsdelivrCDN源
+wget -q --no-check-certificate -O /tmp/install.sh https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;之后按照页面提示即可完成安装！&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;非root用户安装后&lt;/strong&gt;请额外执行以下命令以读取环境变量：&lt;/p&gt;
+&lt;p&gt;~&lt;strong&gt;非root用户安装后&lt;/strong&gt;请额外执行以下命令以读取环境变量：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;source ~/.bashrc &amp;amp;&amp;gt; /dev/null
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h5 id=&#34;安装完成后直接在ssh中使用&#34;&gt;安装完成后，直接在SSH中使用：&lt;/h5&gt;
@@ -1304,13 +1309,26 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;建议修改默认的登陆密码，在SSH界面输入passwd即可修改密码，注意修改时需要输入2次密码，且输入的密码不会显示，输入好直接回车即可完成修改。&lt;/p&gt;
 &lt;h2 id=&#34;使用一键脚本安装shellclash&#34;&gt;使用一键脚本安装ShellClash&lt;/h2&gt;
 &lt;p&gt;成功登陆SSH后，直接输入以下命令&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sh -c &amp;quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null&lt;/code&gt;&lt;br&gt;
-或者&lt;br&gt;
-&lt;code&gt;sh -c &amp;quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&amp;quot;&amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;~&lt;strong&gt;使用curl安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#Release版本-github直连
+sh -c &amp;quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+#Release版本-jsdelivrCDN源
+sh -c &amp;quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+#Test版本-github直连
+sh -c &amp;quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&amp;quot; -s 1 &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;~&lt;strong&gt;使用wget安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#Release版本-jsdelivrCDN源
+wget -q --no-check-certificate -O /tmp/install.sh https://cdn.jsdelivr.net/gh/juewuy/ShellClash@master/install.sh 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;~&lt;strong&gt;非root用户安装后&lt;/strong&gt;请额外执行以下命令以读取环境变量：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;source ~/.bashrc &amp;amp;&amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;按照提示即可完成安装！&lt;br&gt;
-安装完成后，直接在SSH中使用：&lt;br&gt;
-&lt;code&gt;clash&lt;/code&gt;&lt;br&gt;
-命令即可管理脚本！&lt;/p&gt;
+安装完成后，直接在SSH中使用：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;clash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;命令即可管理脚本！&lt;/p&gt;
 &lt;p&gt;按照脚本的提示下载clash核心及GeoIP数据库文件&lt;br&gt;
 之后输入1即可启动（请按照提示导入配置文件）&lt;br&gt;
 导入配置时，使用1的方式可以导入订阅链接或者节点分享链接&lt;br&gt;
