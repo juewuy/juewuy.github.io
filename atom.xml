@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-12-13T06:05:55.628Z</updated>
+    <updated>2020-12-15T10:45:27.634Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -121,7 +121,15 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <h3 id="导入配置文件失败或者导入订阅失败">·导入配置文件失败或者导入订阅失败</h3>
 <p>​	请确保配置文件是标准的clash配置文件格式，如果不确定配置文件格式请使用导入订阅功能</p>
 <p>​	导入订阅失败可能是本机DNS污染导致的问题，可以使用提示的链接手动下载配置文件后上传到clash运行目录，改名为config.yaml即可正常使用</p>
+<h3 id="安装的新版本有问题如何回退到旧版本">·安装的新版本有问题，如何回退到旧版本？</h3>
+<p>​	目前只支持回退到一部分release版本</p>
+<p>​	使用9-更新，切换安装源，切换版本功能，切换至想回退的版本，之后重新更新脚本或内核文件即可完成回退</p>
 <h2 id="clash服务运行相关">Clash服务运行相关</h2>
+<h3 id="如何导入配置文件-订阅链接-节点分享链接">·如何导入配置文件、订阅链接、节点分享链接？</h3>
+<p>​	目前支持导入clash/http/https格式的配置文件，使用6-2功能即可</p>
+<p>​	支持导入各种形式的订阅链接，使用6-1功能即可</p>
+<p>​	支持导入各种形式的节点分享链接，使用6-1功能即可</p>
+<p>​	不支持直接填写节点数据，请尽量使用分享链接！</p>
 <h3 id="clash服务无法正常运行">·Clash服务无法正常运行</h3>
 <p>​	请先使用8-测试菜单，1-查看clash运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。如无法确定问题所在，可以前往tg群：<a href="">t.me/clashfm</a> 进行咨询</p>
 <p>​	如果是提示不支持rule_set或者类似的形式，应该是你的配置文件使用了高级规则，此时前往更新菜单，将clash核心切换至pre版重启服务即可。</p>
@@ -171,21 +179,23 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>建议使用root用户登录</p>
 <h2 id="使用一键脚本安装shellclash">使用一键脚本安装ShellClash</h2>
 <p>成功登陆SSH后，</p>
-<p>root用户直接输入以下命令，非root用户请先使用sudo -i提权后再输入以下命令：</p>
-<p><code>sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null</code><br>
-或者<br>
-<code>sh -c &quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&quot;&amp;&amp; source /etc/profile &amp;&gt; /dev/null</code></p>
-<p>按照提示即可完成安装！<br>
-安装完成后，直接在SSH中使用：<br>
-<code>clash</code><br>
-命令即可管理脚本！</p>
-<p>按照脚本的提示下载clash核心及GeoIP数据库文件<br>
-之后输入1即可启动（请按照提示导入配置文件）<br>
-导入配置时，使用1的方式可以导入订阅链接或者节点分享链接<br>
-使用2的方式可以导入完整的clash配置文件，请针对自己的使用情况酌情使用</p>
+<h5 id="直接输入以下命令">直接输入以下命令：</h5>
+<pre><code class="language-sh">sh -c &quot;$(curl -kfsSl https://cdn.jsdelivr.net/gh/juewuy/clash-for-Miwifi@master/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<p>或者</p>
+<pre><code class="language-sh">sh -c &quot;$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/juewuy/ShellClash/master/install.sh)&quot;&amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<p>之后按照页面提示即可完成安装！</p>
+<p><strong>非root用户安装后</strong>请额外执行以下命令以读取环境变量：</p>
+<pre><code class="language-sh">source ~/.bashrc &amp;&gt; /dev/null
+</code></pre>
+<h5 id="安装完成后直接在ssh中使用">安装完成后，直接在SSH中使用：</h5>
+<pre><code>clash
+</code></pre>
+<p>命令即可管理脚本！</p>
+<h5 id="之后按照新手引导完成配置后即可使用">之后按照新手引导完成配置后即可使用</h5>
 <p>clash服务成功启动后可以通过在浏览器访问 <a href="http://clash.razord.top">http://clash.razord.top</a> 或者 <a href="https://yacd.haishan.me">https://yacd.haishan.me</a> 或者<a href="http://app.tossp.com">http://app.tossp.com</a> 来管理clash内置规则以及开启直连访问<br>
 访问管理界面时需要提供的Host地址即为你的网关IP地址；端口为9999，密钥为空</p>
-<p>Linux下如需要开启本机代理，请使用 7-clash进阶设置中的设置本机代理功能（浏览器等部分应用可能无法正常代理，需要在应用内设置http或者sock5代理，端口均为7890）</p>
 <h2 id="问题反馈使用交流">问题反馈&amp;使用交流：</h2>
 <p><a href="https://t.me/clashfm">https://t.me/clashfm</a></p>
 ]]></content>
