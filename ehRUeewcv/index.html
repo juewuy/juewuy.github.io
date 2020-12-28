@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>各个操作系统或软件中使用PAC的方式 | Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1608029482502">
+<link rel="shortcut icon" href="/favicon.ico?v=1609130244955">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1710,8 +1710,9 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请&lt;a href=&#34;https://juewuy.github.io/ehRUeewcv/&#34;&gt;参考此处&lt;/a&gt;。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。&lt;/p&gt;
 &lt;h3 id=&#34;无法访问外网&#34;&gt;·无法访问外网&lt;/h3&gt;
 &lt;p&gt;​	大概率是节点配置问题，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在&lt;/p&gt;
-&lt;h3 id=&#34;无法访问谷歌youtube可访问但无法加载视频&#34;&gt;·无法访问谷歌，YouTube可访问但无法加载视频&lt;/h3&gt;
-&lt;p&gt;​	是由于本地DNS污染导致的，redir-host模式下，可能需要手动配置dot或者doh类型的加密dns；通常直接把dns模式切换到fake-ip模式都能够解决此类问题&lt;/p&gt;
+&lt;h3 id=&#34;无法访问https网站提示证书错误或者ssl验证失败&#34;&gt;·无法访问https网站，提示证书错误或者ssl验证失败&lt;/h3&gt;
+&lt;p&gt;​	可能是由于本地DNS污染导致的，redir-host模式下，可能需要手动配置dot或者doh类型的加密dns；通常直接把dns模式切换到fake-ip模式都能够解决此类问题&lt;/p&gt;
+&lt;p&gt;​	也可能是部分老旧设备固件版本太低不支持iptables-nat协议，此类设备建议使用纯净模式&lt;/p&gt;
 &lt;h3 id=&#34;一部分网页打不开网页错版乱码等&#34;&gt;·一部分网页打不开，网页错版，乱码等&lt;/h3&gt;
 &lt;p&gt;​	这是由于使用了部分去广告规则，规则误杀导致的，如果不喜欢去广告规则请使用默认不带去广告的规则或者使用自己定义的规则文件，也可以在网页面板中手动开关去广告规则。&lt;/p&gt;
 &lt;h3 id=&#34;tv或游戏机设备上的奈飞提示代理&#34;&gt;·TV或游戏机设备上的奈飞提示代理&lt;/h3&gt;
@@ -1720,16 +1721,24 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;p&gt;​	解决方式2：将面板中的“漏网之鱼”或者“黑名单”代理节点设置为可以解锁奈飞的节点（注意该方式可能会造成奈飞节点流量滥用）&lt;/p&gt;
 &lt;h3 id=&#34;无法正确配置旁路由模式&#34;&gt;·无法正确配置旁路由模式&lt;/h3&gt;
 &lt;p&gt;​	配置旁路由的模式与其他类似应用的配置模式是完全一致的，请自行搜索配置方式，这里不赘述&lt;/p&gt;
-&lt;h3 id=&#34;游戏无法连接服务器&#34;&gt;·游戏无法连接服务器&lt;/h3&gt;
+&lt;h3 id=&#34;游戏无法连接服务器-谷歌商店应用无法下载&#34;&gt;·游戏无法连接服务器、谷歌商店应用无法下载……&lt;/h3&gt;
 &lt;p&gt;​	请使用2-功能设置，1-切换clash运行模式功能，切换使用tun模式或者混合模式，即可对游戏的udp流量进行代理&lt;/p&gt;
 &lt;p&gt;​	部分虚拟机下执行本脚本可能无法使用tun或者混合模式（可能是由于虚拟网卡设置问题），请尝试使用进阶设置-tproxy模式来使用tproxy来代理udp流量&lt;/p&gt;
 &lt;h3 id=&#34;全局模式不生效&#34;&gt;·全局模式不生效&lt;/h3&gt;
 &lt;p&gt;​	clash的全局模式设置后，默认使用的规则其实是全局直连，需要回到节点选择界面手动指定用于全局模式的节点方可正常使用全局代理模式&lt;/p&gt;
+&lt;h3 id=&#34;上传的配置文件导入机场配置文件后面板显示空白&#34;&gt;·上传的配置文件/导入机场配置文件后面板显示空白&lt;/h3&gt;
+&lt;p&gt;​	可能是你的设备缺少openssl根证书文件导致无法正确获取在线规则，请使用9-更新，安装本地根证书功能进行安装&lt;/p&gt;
 &lt;h3 id=&#34;如何添加自定义规则&#34;&gt;·如何添加自定义规则？&lt;/h3&gt;
 &lt;p&gt;​	可以通过winscp或者其他sftp/scp连接工具，连接设备后打开shellclash安装目录（不知道的可以看测试菜单）。之后手动修改或者添加config.yaml文件即可添加自定义规则，具体规则添加方式参考：https://lancellc.gitbook.io/clash/&lt;/p&gt;
 &lt;h3 id=&#34;如何添加自定义config设定&#34;&gt;·如何添加自定义config设定？&lt;/h3&gt;
 &lt;p&gt;​	如果只是想修改运行端口、面板访问秘钥、自定义DNS的功能，可以直接在管理脚本的进阶设置中进行设置，无需额外操作。&lt;/p&gt;
 &lt;p&gt;​	如果想添加其他自定义设定，或者自定义规则，可以使用【进阶设置-自定义配置】功能，启用此功能后会给出使用自定义配置文件的具体说明，并在ShellClash安装目录下生成2个示例文件（user.yaml用于自定义设定，rules.yaml用于自定义规则），之后使用winscp或其他工具手动编写对应的示例文件即可。每次重启clash服务时，会自动将以上配置文件的内容加载合并到config.yaml配置文件中。&lt;/p&gt;
+&lt;h1 id=&#34;其他问题&#34;&gt;其他问题&lt;/h1&gt;
+&lt;h3 id=&#34;如何禁止视频流量使用udp协议提升速度&#34;&gt;·如何禁止视频流量使用UDP协议（提升速度）？&lt;/h3&gt;
+&lt;p&gt;​	chrome浏览器或者使用chrome内核的浏览器，可以通过在浏览器中输入并访问&lt;a href=&#34;chrome://flags/#enable-quic&#34;&gt;chrome://flags/#enable-quic&lt;/a&gt;关闭quic来禁止视频流量使用UDP协议&lt;/p&gt;
+&lt;h3 id=&#34;如何添加自建节点&#34;&gt;·如何添加自建节点？&lt;/h3&gt;
+&lt;p&gt;​	在导入配置文件功能中，使用在线生成配置文件功能，之后输入节点分享链接后选择生成配置文件即可&lt;/p&gt;
+&lt;p&gt;​	trojan的分享链接格式为trojan://password@host:port&lt;/p&gt;
 ">ShellClash使用的常见问题</a>
       </div>
       

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-12-15T10:51:42.298Z</updated>
+    <updated>2020-12-28T04:37:30.545Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
@@ -144,8 +144,9 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请<a href="https://juewuy.github.io/ehRUeewcv/">参考此处</a>。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。</p>
 <h3 id="无法访问外网">·无法访问外网</h3>
 <p>​	大概率是节点配置问题，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在</p>
-<h3 id="无法访问谷歌youtube可访问但无法加载视频">·无法访问谷歌，YouTube可访问但无法加载视频</h3>
-<p>​	是由于本地DNS污染导致的，redir-host模式下，可能需要手动配置dot或者doh类型的加密dns；通常直接把dns模式切换到fake-ip模式都能够解决此类问题</p>
+<h3 id="无法访问https网站提示证书错误或者ssl验证失败">·无法访问https网站，提示证书错误或者ssl验证失败</h3>
+<p>​	可能是由于本地DNS污染导致的，redir-host模式下，可能需要手动配置dot或者doh类型的加密dns；通常直接把dns模式切换到fake-ip模式都能够解决此类问题</p>
+<p>​	也可能是部分老旧设备固件版本太低不支持iptables-nat协议，此类设备建议使用纯净模式</p>
 <h3 id="一部分网页打不开网页错版乱码等">·一部分网页打不开，网页错版，乱码等</h3>
 <p>​	这是由于使用了部分去广告规则，规则误杀导致的，如果不喜欢去广告规则请使用默认不带去广告的规则或者使用自己定义的规则文件，也可以在网页面板中手动开关去广告规则。</p>
 <h3 id="tv或游戏机设备上的奈飞提示代理">·TV或游戏机设备上的奈飞提示代理</h3>
@@ -154,16 +155,24 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <p>​	解决方式2：将面板中的“漏网之鱼”或者“黑名单”代理节点设置为可以解锁奈飞的节点（注意该方式可能会造成奈飞节点流量滥用）</p>
 <h3 id="无法正确配置旁路由模式">·无法正确配置旁路由模式</h3>
 <p>​	配置旁路由的模式与其他类似应用的配置模式是完全一致的，请自行搜索配置方式，这里不赘述</p>
-<h3 id="游戏无法连接服务器">·游戏无法连接服务器</h3>
+<h3 id="游戏无法连接服务器-谷歌商店应用无法下载">·游戏无法连接服务器、谷歌商店应用无法下载……</h3>
 <p>​	请使用2-功能设置，1-切换clash运行模式功能，切换使用tun模式或者混合模式，即可对游戏的udp流量进行代理</p>
 <p>​	部分虚拟机下执行本脚本可能无法使用tun或者混合模式（可能是由于虚拟网卡设置问题），请尝试使用进阶设置-tproxy模式来使用tproxy来代理udp流量</p>
 <h3 id="全局模式不生效">·全局模式不生效</h3>
 <p>​	clash的全局模式设置后，默认使用的规则其实是全局直连，需要回到节点选择界面手动指定用于全局模式的节点方可正常使用全局代理模式</p>
+<h3 id="上传的配置文件导入机场配置文件后面板显示空白">·上传的配置文件/导入机场配置文件后面板显示空白</h3>
+<p>​	可能是你的设备缺少openssl根证书文件导致无法正确获取在线规则，请使用9-更新，安装本地根证书功能进行安装</p>
 <h3 id="如何添加自定义规则">·如何添加自定义规则？</h3>
 <p>​	可以通过winscp或者其他sftp/scp连接工具，连接设备后打开shellclash安装目录（不知道的可以看测试菜单）。之后手动修改或者添加config.yaml文件即可添加自定义规则，具体规则添加方式参考：https://lancellc.gitbook.io/clash/</p>
 <h3 id="如何添加自定义config设定">·如何添加自定义config设定？</h3>
 <p>​	如果只是想修改运行端口、面板访问秘钥、自定义DNS的功能，可以直接在管理脚本的进阶设置中进行设置，无需额外操作。</p>
 <p>​	如果想添加其他自定义设定，或者自定义规则，可以使用【进阶设置-自定义配置】功能，启用此功能后会给出使用自定义配置文件的具体说明，并在ShellClash安装目录下生成2个示例文件（user.yaml用于自定义设定，rules.yaml用于自定义规则），之后使用winscp或其他工具手动编写对应的示例文件即可。每次重启clash服务时，会自动将以上配置文件的内容加载合并到config.yaml配置文件中。</p>
+<h1 id="其他问题">其他问题</h1>
+<h3 id="如何禁止视频流量使用udp协议提升速度">·如何禁止视频流量使用UDP协议（提升速度）？</h3>
+<p>​	chrome浏览器或者使用chrome内核的浏览器，可以通过在浏览器中输入并访问<a href="chrome://flags/#enable-quic">chrome://flags/#enable-quic</a>关闭quic来禁止视频流量使用UDP协议</p>
+<h3 id="如何添加自建节点">·如何添加自建节点？</h3>
+<p>​	在导入配置文件功能中，使用在线生成配置文件功能，之后输入节点分享链接后选择生成配置文件即可</p>
+<p>​	trojan的分享链接格式为trojan://password@host:port</p>
 ]]></content>
     </entry>
     <entry>
