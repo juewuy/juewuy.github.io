@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://juewuy.github.io</id>
     <title>Juewuy&apos;s Blog</title>
-    <updated>2020-12-28T04:37:30.545Z</updated>
+    <updated>2021-01-05T11:51:58.058Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://juewuy.github.io"/>
     <link rel="self" href="http://juewuy.github.io/atom.xml"/>
     <subtitle>大家好！</subtitle>
     <logo>http://juewuy.github.io/images/avatar.png</logo>
     <icon>http://juewuy.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Juewuy&apos;s Blog</rights>
+    <rights>All rights reserved 2021, Juewuy&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[捐赠ShellClash项目！]]></title>
         <id>http://juewuy.github.io/yOF4Yf06Q/</id>
@@ -139,7 +139,14 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 <h3 id="进不去dashboard管理面板">·进不去Dashboard管理面板</h3>
 <p>​	默认的host地址为设备的ip地址，端口9999，秘钥为空</p>
 <p>​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问</p>
-<h2 id="代理服务相关">代理服务相关</h2>
+<h3 id="ax3600也可能存在于其他设备设置开机启动无效必须手动重启clash">·AX3600(也可能存在于其他设备)设置开机启动无效，必须手动重启clash</h3>
+<p>​	这是由于在破解永久ssh时，部分分区受损以至于一部分服务无法启动而导致的问题。</p>
+<p>​	请先重置路由器，之后使用以下命令</p>
+<pre><code class="language-sh">mtd erase crash
+</code></pre>
+<p>​	清除解锁</p>
+<p>​	之后参考此文https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=4046020 重新破解永久SSH</p>
+<h2 id="请各个系统设置pac的方式请参考此处-也可以去功能设置运行模式里设置纯净模式后也会提供pac使用的链接与提示信息">请各个系统设置PAC的方式请参考此处。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。</h2>
 <h3 id="如何使用pac">·如何使用PAC？</h3>
 <p>​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请<a href="https://juewuy.github.io/ehRUeewcv/">参考此处</a>。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。</p>
 <h3 id="无法访问外网">·无法访问外网</h3>

@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>ShellClash使用的常见问题 | Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1609130244955">
+<link rel="shortcut icon" href="/favicon.ico?v=1609847510709">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -259,9 +259,10 @@
 <li><a href="#clash%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E8%BF%90%E8%A1%8C">·Clash服务无法正常运行</a></li>
 <li><a href="#%E5%86%85%E6%A0%B8%E6%8A%A5%E9%94%99%E6%8F%90%E7%A4%BA%E5%90%84%E7%A7%8D%E7%9C%8B%E4%B8%8D%E6%87%82%E7%9A%84%E9%94%99%E8%AF%AF%E4%B8%94%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C">·内核报错，提示各种看不懂的错误且无法运行</a></li>
 <li><a href="#%E8%BF%9B%E4%B8%8D%E5%8E%BBdashboard%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF">·进不去Dashboard管理面板</a></li>
+<li><a href="#ax3600%E4%B9%9F%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E4%BA%8E%E5%85%B6%E4%BB%96%E8%AE%BE%E5%A4%87%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E6%97%A0%E6%95%88%E5%BF%85%E9%A1%BB%E6%89%8B%E5%8A%A8%E9%87%8D%E5%90%AFclash">·AX3600(也可能存在于其他设备)设置开机启动无效，必须手动重启clash</a></li>
 </ul>
 </li>
-<li><a href="#%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E7%9B%B8%E5%85%B3">代理服务相关</a>
+<li><a href="#%E8%AF%B7%E5%90%84%E4%B8%AA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AEpac%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AF%B7%E5%8F%82%E8%80%83%E6%AD%A4%E5%A4%84-%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%8E%BB%E5%8A%9F%E8%83%BD%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F%E9%87%8C%E8%AE%BE%E7%BD%AE%E7%BA%AF%E5%87%80%E6%A8%A1%E5%BC%8F%E5%90%8E%E4%B9%9F%E4%BC%9A%E6%8F%90%E4%BE%9Bpac%E4%BD%BF%E7%94%A8%E7%9A%84%E9%93%BE%E6%8E%A5%E4%B8%8E%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF">请各个系统设置PAC的方式请参考此处。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。</a>
 <ul>
 <li><a href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pac">·如何使用PAC？</a></li>
 <li><a href="#%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91">·无法访问外网</a></li>
@@ -571,12 +572,12 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>9<span class="language" data-lan="minute">分钟</span></span>
+      <span>10<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>2417<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>2571<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
@@ -632,7 +633,14 @@
 <h3 id="进不去dashboard管理面板">·进不去Dashboard管理面板</h3>
 <p>​	默认的host地址为设备的ip地址，端口9999，秘钥为空</p>
 <p>​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问</p>
-<h2 id="代理服务相关">代理服务相关</h2>
+<h3 id="ax3600也可能存在于其他设备设置开机启动无效必须手动重启clash">·AX3600(也可能存在于其他设备)设置开机启动无效，必须手动重启clash</h3>
+<p>​	这是由于在破解永久ssh时，部分分区受损以至于一部分服务无法启动而导致的问题。</p>
+<p>​	请先重置路由器，之后使用以下命令</p>
+<pre><code class="language-sh">mtd erase crash
+</code></pre>
+<p>​	清除解锁</p>
+<p>​	之后参考此文https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=4046020 重新破解永久SSH</p>
+<h2 id="请各个系统设置pac的方式请参考此处-也可以去功能设置运行模式里设置纯净模式后也会提供pac使用的链接与提示信息">请各个系统设置PAC的方式请参考此处。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。</h2>
 <h3 id="如何使用pac">·如何使用PAC？</h3>
 <p>​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请<a href="https://juewuy.github.io/ehRUeewcv/">参考此处</a>。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。</p>
 <h3 id="无法访问外网">·无法访问外网</h3>
@@ -1824,7 +1832,14 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;h3 id=&#34;进不去dashboard管理面板&#34;&gt;·进不去Dashboard管理面板&lt;/h3&gt;
 &lt;p&gt;​	默认的host地址为设备的ip地址，端口9999，秘钥为空&lt;/p&gt;
 &lt;p&gt;​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问&lt;/p&gt;
-&lt;h2 id=&#34;代理服务相关&#34;&gt;代理服务相关&lt;/h2&gt;
+&lt;h3 id=&#34;ax3600也可能存在于其他设备设置开机启动无效必须手动重启clash&#34;&gt;·AX3600(也可能存在于其他设备)设置开机启动无效，必须手动重启clash&lt;/h3&gt;
+&lt;p&gt;​	这是由于在破解永久ssh时，部分分区受损以至于一部分服务无法启动而导致的问题。&lt;/p&gt;
+&lt;p&gt;​	请先重置路由器，之后使用以下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;mtd erase crash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​	清除解锁&lt;/p&gt;
+&lt;p&gt;​	之后参考此文https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;amp;tid=4046020 重新破解永久SSH&lt;/p&gt;
+&lt;h2 id=&#34;请各个系统设置pac的方式请参考此处-也可以去功能设置运行模式里设置纯净模式后也会提供pac使用的链接与提示信息&#34;&gt;请各个系统设置PAC的方式请参考此处。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。&lt;/h2&gt;
 &lt;h3 id=&#34;如何使用pac&#34;&gt;·如何使用PAC？&lt;/h3&gt;
 &lt;p&gt;​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请&lt;a href=&#34;https://juewuy.github.io/ehRUeewcv/&#34;&gt;参考此处&lt;/a&gt;。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。&lt;/p&gt;
 &lt;h3 id=&#34;无法访问外网&#34;&gt;·无法访问外网&lt;/h3&gt;

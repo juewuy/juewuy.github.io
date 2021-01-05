@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1609130244955">
+<link rel="shortcut icon" href="/favicon.ico?v=1609847510709">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1125,7 +1125,14 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;h3 id=&#34;进不去dashboard管理面板&#34;&gt;·进不去Dashboard管理面板&lt;/h3&gt;
 &lt;p&gt;​	默认的host地址为设备的ip地址，端口9999，秘钥为空&lt;/p&gt;
 &lt;p&gt;​	也可以使用9-更新，4-安装本地面板功能，安装本地面板后会自动配置ip和端口，使用clash运行后提示的面板地址可以直接免配置访问&lt;/p&gt;
-&lt;h2 id=&#34;代理服务相关&#34;&gt;代理服务相关&lt;/h2&gt;
+&lt;h3 id=&#34;ax3600也可能存在于其他设备设置开机启动无效必须手动重启clash&#34;&gt;·AX3600(也可能存在于其他设备)设置开机启动无效，必须手动重启clash&lt;/h3&gt;
+&lt;p&gt;​	这是由于在破解永久ssh时，部分分区受损以至于一部分服务无法启动而导致的问题。&lt;/p&gt;
+&lt;p&gt;​	请先重置路由器，之后使用以下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;mtd erase crash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​	清除解锁&lt;/p&gt;
+&lt;p&gt;​	之后参考此文https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;amp;tid=4046020 重新破解永久SSH&lt;/p&gt;
+&lt;h2 id=&#34;请各个系统设置pac的方式请参考此处-也可以去功能设置运行模式里设置纯净模式后也会提供pac使用的链接与提示信息&#34;&gt;请各个系统设置PAC的方式请参考此处。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。&lt;/h2&gt;
 &lt;h3 id=&#34;如何使用pac&#34;&gt;·如何使用PAC？&lt;/h3&gt;
 &lt;p&gt;​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请&lt;a href=&#34;https://juewuy.github.io/ehRUeewcv/&#34;&gt;参考此处&lt;/a&gt;。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。&lt;/p&gt;
 &lt;h3 id=&#34;无法访问外网&#34;&gt;·无法访问外网&lt;/h3&gt;
