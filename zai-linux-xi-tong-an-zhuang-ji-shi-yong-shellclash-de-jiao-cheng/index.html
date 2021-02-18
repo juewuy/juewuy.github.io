@@ -9,7 +9,7 @@
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
 <title>在Linux系统安装及使用ShellClash的教程 | Juewuy&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1609847510709">
+<link rel="shortcut icon" href="/favicon.ico?v=1613645539381">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -202,7 +202,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">7</span>
+        <span class="site-item-stat-count">8</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -244,6 +244,7 @@
 *<br>
 *<br>
 * <a href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E7%9B%B4%E6%8E%A5%E5%9C%A8ssh%E4%B8%AD%E4%BD%BF%E7%94%A8">安装完成后，直接在SSH中使用：</a><br>
+* <a href="#%E5%A6%82%E6%9E%9C%E6%98%AF%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E7%94%A8%E4%BA%8E%E5%B1%80%E5%9F%9F%E7%BD%91%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86">如果是在虚拟机中用于局域网透明代理</a><br>
 * <a href="#%E4%B9%8B%E5%90%8E%E6%8C%89%E7%85%A7%E6%96%B0%E6%89%8B%E5%BC%95%E5%AF%BC%E5%AE%8C%E6%88%90%E9%85%8D%E7%BD%AE%E5%90%8E%E5%8D%B3%E5%8F%AF%E4%BD%BF%E7%94%A8">之后按照新手引导完成配置后即可使用</a></li>
 <li><a href="#%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88%E4%BD%BF%E7%94%A8%E4%BA%A4%E6%B5%81">问题反馈&amp;使用交流：</a></li>
 </ul>
@@ -528,12 +529,12 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
+      <span>3<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>406<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>502<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
@@ -565,6 +566,13 @@ wget -q --no-check-certificate -O /tmp/install.sh https://cdn.jsdelivr.net/gh/ju
 <pre><code>clash
 </code></pre>
 <p>命令即可管理脚本！</p>
+<h5 id="如果是在虚拟机中用于局域网透明代理">如果是在虚拟机中用于局域网透明代理</h5>
+<p>请确保已经开启虚拟Linux系统内置的ip转发功能</p>
+<p>使用如下命令判断是否开启ip转发：（返回0代表未开启，1代表已开启）</p>
+<pre><code class="language-shell">cat /proc/sys/net/ipv4/ip_forward
+</code></pre>
+<p>如尚未开启ip转发，请参考如下教程开启</p>
+<p>https://www.linuxprobe.com/ubuntu-ip-forward.html</p>
 <h5 id="之后按照新手引导完成配置后即可使用">之后按照新手引导完成配置后即可使用</h5>
 <p>clash服务成功启动后可以通过在浏览器访问 <a href="http://clash.razord.top">http://clash.razord.top</a> 或者 <a href="https://yacd.haishan.me">https://yacd.haishan.me</a> 或者<a href="http://app.tossp.com">http://app.tossp.com</a> 来管理clash内置规则以及开启直连访问<br>
 访问管理界面时需要提供的Host地址即为你的网关IP地址；端口为9999，密钥为空</p>
@@ -1613,6 +1621,37 @@ wget -q --no-check-certificate -O /tmp/install.sh https://cdn.jsdelivr.net/gh/ju
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/gDyfIPSsZ/"" data-c="
+          &lt;p&gt;教程转自：https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;amp;tid=4046020&lt;br&gt;
+原作者Github地址：https://github.com/paldier/ax3600_tool&lt;/p&gt;
+&lt;h4 id=&#34;首先需要参考此文破解ssh权限已破解则略过&#34;&gt;首先需要参考此文破解SSH权限（已破解则略过）&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/#%E8%8E%B7%E5%8F%96%E8%B7%AF%E7%94%B1%E5%99%A8ssh%E6%9D%83%E9%99%90&#34;&gt;https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/#获取路由器ssh权限&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;之后备份nand运行如下命令&#34;&gt;之后备份nand，运行如下命令：&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;nanddump -f /tmp/bdata_mtd9.img /dev/mtd9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行成功后用winscp下载到电脑上备份好（以防万一）&lt;/p&gt;
+&lt;h4 id=&#34;接下来下载网盘中的破解文件fuckax3600&#34;&gt;接下来下载网盘中的破解文件（fuckax3600）&lt;/h4&gt;
+&lt;h6 id=&#34;链接-httpspanbaiducoms15qsnvm9qwgtvtk8zf843ea-提取码-8rcu&#34;&gt;链接: https://pan.baidu.com/s/15QsNvM9qwgTVtk8zF843eA 提取码: 8rcu&lt;/h6&gt;
+&lt;h5 id=&#34;之后用winscp将该文件上传到路由器的tmp目录下执行如下代码&#34;&gt;之后用winscp将该文件上传到路由器的/tmp目录下，执行如下代码：&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;chmod +x /tmp/fuckax3600 &amp;amp;&amp;amp; /tmp/fuckax3600 unlock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;机器会自动重启重启后执行&#34;&gt;机器会自动重启，重启后执行：&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;/tmp/fuckax3600 hack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;会自动设置永久ssh、telnet、uart权限，同时会计算出默认的root密码，注意记录密码，恢复出厂后telnet和ssh需要用&lt;/p&gt;
+&lt;h5 id=&#34;最后执行&#34;&gt;最后执行：&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;/tmp/fuckax3600 lock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启后即使恢复出厂ssid也能正常了&lt;/p&gt;
+&lt;h5 id=&#34;如升级后ssh被禁用可以用telnet登录执行下面代码再次启用ssh&#34;&gt;如升级后ssh被禁用可以用telnet登录，执行下面代码再次启用ssh&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sed -i &#39;s/channel=.*/channel=&amp;quot;debug&amp;quot;/g&#39; /etc/init.d/dropbear
+/etc/init.d/dropbear start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此基本可以保证机器长期拥有root权限&lt;/p&gt;
+">AX3600等小米路由设备破解固化永久SSH教程</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/yOF4Yf06Q/"" data-c="
           &lt;p&gt;感谢您的捐赠！项目会变得越来越好！&lt;/p&gt;
 &lt;p&gt;支付宝转账：&lt;/p&gt;
@@ -1735,7 +1774,6 @@ src/gz openwrt_packages http://archive.openwrt.org/releases/19.04/packages/XXX
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;​	清除解锁&lt;/p&gt;
 &lt;p&gt;​	之后参考此文https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;amp;tid=4046020 重新破解永久SSH&lt;/p&gt;
-&lt;h2 id=&#34;请各个系统设置pac的方式请参考此处-也可以去功能设置运行模式里设置纯净模式后也会提供pac使用的链接与提示信息&#34;&gt;请各个系统设置PAC的方式请参考此处。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。&lt;/h2&gt;
 &lt;h3 id=&#34;如何使用pac&#34;&gt;·如何使用PAC？&lt;/h3&gt;
 &lt;p&gt;​	PAC现在由系统自动生成，使用你的面板地址（如：http://192.168.31.1:9999/ui）后面添加/pac即可使用，各个系统设置PAC的方式请&lt;a href=&#34;https://juewuy.github.io/ehRUeewcv/&#34;&gt;参考此处&lt;/a&gt;。也可以去功能设置，运行模式里设置纯净模式后，也会提供PAC使用的链接与提示信息。&lt;/p&gt;
 &lt;h3 id=&#34;无法访问外网&#34;&gt;·无法访问外网&lt;/h3&gt;
@@ -1800,6 +1838,13 @@ wget -q --no-check-certificate -O /tmp/install.sh https://cdn.jsdelivr.net/gh/ju
 &lt;pre&gt;&lt;code&gt;clash
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;命令即可管理脚本！&lt;/p&gt;
+&lt;h5 id=&#34;如果是在虚拟机中用于局域网透明代理&#34;&gt;如果是在虚拟机中用于局域网透明代理&lt;/h5&gt;
+&lt;p&gt;请确保已经开启虚拟Linux系统内置的ip转发功能&lt;/p&gt;
+&lt;p&gt;使用如下命令判断是否开启ip转发：（返回0代表未开启，1代表已开启）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cat /proc/sys/net/ipv4/ip_forward
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如尚未开启ip转发，请参考如下教程开启&lt;/p&gt;
+&lt;p&gt;https://www.linuxprobe.com/ubuntu-ip-forward.html&lt;/p&gt;
 &lt;h5 id=&#34;之后按照新手引导完成配置后即可使用&#34;&gt;之后按照新手引导完成配置后即可使用&lt;/h5&gt;
 &lt;p&gt;clash服务成功启动后可以通过在浏览器访问 &lt;a href=&#34;http://clash.razord.top&#34;&gt;http://clash.razord.top&lt;/a&gt; 或者 &lt;a href=&#34;https://yacd.haishan.me&#34;&gt;https://yacd.haishan.me&lt;/a&gt; 或者&lt;a href=&#34;http://app.tossp.com&#34;&gt;http://app.tossp.com&lt;/a&gt; 来管理clash内置规则以及开启直连访问&lt;br&gt;
 访问管理界面时需要提供的Host地址即为你的网关IP地址；端口为9999，密钥为空&lt;/p&gt;
@@ -1827,6 +1872,12 @@ wget -q --no-check-certificate -O /tmp/install.sh https://cdn.jsdelivr.net/gh/ju
 &lt;p&gt;&lt;code&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;amp;user_id=longdike&amp;amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20&#39;s%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg&#39;%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B%20echo%20-e%20&#39;admin%5Cnadmin&#39;%20%7C%20passwd%20root%3B&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;最终应该是（http://miwifi.com/cgi-bin/luci/;stok=一小串密码/api/misystem/后面一大串）这样的形式，如果不对，可能无法开启，请认真检查，不要弄错！！！&lt;/p&gt;
 &lt;p&gt;如果以上方式无法开启SSH，请参考：&lt;a href=&#34;https://www.right.com.cn/forum/thread-4032490-1-1.html&#34;&gt;https://www.right.com.cn/forum/thread-4032490-1-1.html&lt;/a&gt;或者参考：&lt;a href=&#34;https://www.right.com.cn/forum/thread-4039512-1-1.html&#34;&gt;https://www.right.com.cn/forum/thread-4039512-1-1.html&lt;/a&gt; 尝试更多方法开启。&lt;/p&gt;
+&lt;h3 id=&#34;固化ssh权限&#34;&gt;固化SSH权限&lt;/h3&gt;
+&lt;p&gt;部分设备升级系统后会丢失SSH权限且无法使用上面的开启方式直接开启，这里提供小米AX3600固化SSH权限的相关教程：&lt;/p&gt;
+&lt;p&gt;https://juewuy.github.io/gDyfIPSsZ/&lt;/p&gt;
+&lt;p&gt;其他小米AX设备请参考此教程进行设置（未测试）&lt;/p&gt;
+&lt;p&gt;其他品牌设备请自行搜索相关教程。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;您也可以通过路由器web或app中的相关设置，禁止其自动升级以防止其丢失SSH权限。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;登陆ssh&#34;&gt;登陆SSH&lt;/h3&gt;
 &lt;p&gt;使用SSH连接工具来登陆SSH，推荐putty（体积最小），JuiceSSH（支持安卓手机），或其他工具，SSH工具请自行下载。&lt;/p&gt;
 &lt;p&gt;打开SSH工具，在IP（或者host）一栏填写你路由器的网关IP，即刚刚登陆路由器管理界面的IP地址或网址（例如192.168.31.1或者miwifi.com）,端口为默认的22端口不变，密码为admin（刚刚那串破解码中设定的密码），设置好之后点击连接即可登陆路由器SSH！&lt;/p&gt;

@@ -8,7 +8,7 @@
 <meta name="keywords" content="Juewuy个人博客">
 <meta name="description" content="大家好！">
 <meta name="theme-color" content="#212529">
-<title>ShellClash说明文档 | Juewuy&#39;s Blog</title>
+<title>AX3600等小米路由设备破解固化永久SSH教程 | Juewuy&#39;s Blog</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1613645539381">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,7 +38,7 @@
 
 
 
-  <meta name="description" content="ShellClash说明文档" />
+  <meta name="description" content="AX3600等小米路由设备破解固化永久SSH教程" />
   <meta name="keywords" content="" />
 </head>
 
@@ -237,20 +237,22 @@
 <ul>
 <li>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">目录结构</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">·安装目录</a></li>
-<li><a href="#%E6%9C%8D%E5%8A%A1%E6%96%87%E4%BB%B6">·服务文件</a></li>
-<li><a href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E">功能说明</a></li>
-<li><a href="#1-%E5%90%AF%E5%8A%A8%E9%87%8D%E5%90%AFclash%E6%9C%8D%E5%8A%A1">1 启动/重启clash服务：</a></li>
-<li><a href="#2-clash%E5%8A%9F%E8%83%BD%E8%AE%BE%E7%BD%AE">2 clash功能设置：</a></li>
-<li><a href="#3-%E5%81%9C%E6%AD%A2clash%E6%9C%8D%E5%8A%A1">3 停止clash服务：</a></li>
-<li><a href="#4-%E7%A6%81%E7%94%A8%E5%90%AF%E7%94%A8clash%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8">4 禁用/启用clash开机启动</a></li>
-<li><a href="#5-%E8%AE%BE%E7%BD%AE%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1">5 设置定时任务</a></li>
-<li><a href="#6-%E5%AF%BC%E5%85%A5%E8%8A%82%E7%82%B9%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5">6 导入节点/订阅链接</a></li>
-<li><a href="#7-clash%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE">7 clash进阶设置</a></li>
-<li><a href="#8-%E6%B5%8B%E8%AF%95%E8%8F%9C%E5%8D%95">8 测试菜单</a></li>
-<li><a href="#9-%E6%9B%B4%E6%96%B0%E5%8D%B8%E8%BD%BD">9 更新/卸载</a></li>
-<li><a href="#%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4">快捷命令</a></li>
+<li>
+<ul>
+<li><a href="#%E9%A6%96%E5%85%88%E9%9C%80%E8%A6%81%E5%8F%82%E8%80%83%E6%AD%A4%E6%96%87%E7%A0%B4%E8%A7%A3ssh%E6%9D%83%E9%99%90%E5%B7%B2%E7%A0%B4%E8%A7%A3%E5%88%99%E7%95%A5%E8%BF%87">首先需要参考此文破解SSH权限（已破解则略过）</a></li>
+<li><a href="#%E4%B9%8B%E5%90%8E%E5%A4%87%E4%BB%BDnand%E8%BF%90%E8%A1%8C%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4">之后备份nand，运行如下命令：</a></li>
+<li><a href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98%E4%B8%AD%E7%9A%84%E7%A0%B4%E8%A7%A3%E6%96%87%E4%BB%B6fuckax3600">接下来下载网盘中的破解文件（fuckax3600）</a><br>
+*
+<ul>
+<li><a href="#%E9%93%BE%E6%8E%A5-httpspanbaiducoms15qsnvm9qwgtvtk8zf843ea-%E6%8F%90%E5%8F%96%E7%A0%81-8rcu">链接: https://pan.baidu.com/s/15QsNvM9qwgTVtk8zF843eA 提取码: 8rcu</a></li>
+<li><a href="#%E4%B9%8B%E5%90%8E%E7%94%A8winscp%E5%B0%86%E8%AF%A5%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84tmp%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%A7%E8%A1%8C%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81">之后用winscp将该文件上传到路由器的/tmp目录下，执行如下代码：</a></li>
+<li><a href="#%E6%9C%BA%E5%99%A8%E4%BC%9A%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF%E9%87%8D%E5%90%AF%E5%90%8E%E6%89%A7%E8%A1%8C">机器会自动重启，重启后执行：</a></li>
+<li><a href="#%E6%9C%80%E5%90%8E%E6%89%A7%E8%A1%8C">最后执行：</a></li>
+<li><a href="#%E5%A6%82%E5%8D%87%E7%BA%A7%E5%90%8Essh%E8%A2%AB%E7%A6%81%E7%94%A8%E5%8F%AF%E4%BB%A5%E7%94%A8telnet%E7%99%BB%E5%BD%95%E6%89%A7%E8%A1%8C%E4%B8%8B%E9%9D%A2%E4%BB%A3%E7%A0%81%E5%86%8D%E6%AC%A1%E5%90%AF%E7%94%A8ssh">如升级后ssh被禁用可以用telnet登录，执行下面代码再次启用ssh</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -520,8 +522,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="http://juewuy.github.io/shellclash-shuo-ming-wen-dang/">
-      ShellClash说明文档
+    <a class="post-title-link" href="http://juewuy.github.io/gDyfIPSsZ/">
+      AX3600等小米路由设备破解固化永久SSH教程
     </a>
   </h1>
   <div class="post-meta">
@@ -529,78 +531,49 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-09-19 21:46:53">2020-09-19</span>
+      <span class="publish-time" data-t="2021-02-18 18:31:55">2021-02-18</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>4<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>979<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>303<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="目录结构">目录结构</h3>
-<h3 id="安装目录">·安装目录</h3>
-<p>默认安装目录为/etc/clash</p>
-<p>可手动指定任意目录安装，安装完成后可以使用【echo $clashdir】命令查询安装目录</p>
-<p>目录包含以下文件：</p>
-<p>~clash：clash核心文件</p>
-<p>~clash.sh/start.sh/getdate.sh：ShellClash运行脚本文件</p>
-<p>~Country.mmdb：Geoip数据库文件</p>
-<p>~config.yaml：clash基础配置文件</p>
-<p>~config.yaml.bak：clash配置文件备份</p>
-<p>~mark：脚本运行配置文件</p>
-<p>~mac：脚本mac过滤功能配置文件</p>
-<p>~/ui/*：本地dashboard网页文件</p>
-<h3 id="服务文件">·服务文件</h3>
-<p>OpenWrt的服务文件为/etc/init.d/clash</p>
-<p>Debian/Centos/Armbian等标准Linux系统的服务文件在/etc/systemd/system或者/usr/lib/systemd/system/下，名为clash.service</p>
-<h3 id="功能说明">功能说明</h3>
-<h3 id="1-启动重启clash服务">1 启动/重启clash服务：</h3>
-<p>如果服务未运行则启动，如果服务器已运行则先关闭clash后再启动clash服务</p>
-<h3 id="2-clash功能设置">2 clash功能设置：</h3>
-<p>​	1 切换clash运行模式：支持切换多种运行模式，主要涉及iptables的不同配置</p>
-<p>​	2 切换DNS运行模式：支持切换fake-ip或者真实ip的dns模式</p>
-<p>​	3 跳过本地证书验证：当节点出现证书验证错误时使用此选项可以使节点正常使用</p>
-<p>​	4 只代理常用端口：只代理22,53,587,465,995,993,143,80,443这些常用端口，主要用于屏蔽p2p</p>
-<p>​	5 过滤局域网mac地址：列表内设备不走代理</p>
-<p>​	6 不使用本地DNS服务：不使用基于本机的127.0.0.1:53的dns服务作为clash内置dns服务之一</p>
-<h3 id="3-停止clash服务">3 停止clash服务：</h3>
-<p>停止clash服务并且停止相关iptables规则</p>
-<h3 id="4-禁用启用clash开机启动">4 禁用/启用clash开机启动</h3>
-<p>禁止或者启用clash的开机启动服务，OpenWrt下使用service，Debian/Centos使用systemd</p>
-<h3 id="5-设置定时任务">5 设置定时任务</h3>
-<p>使用系统自带的crontab功能，智能配置与clash相关的定时任务，支持配置定时启动、重启、关闭clash功能，支持配置定时更新订阅功能。</p>
-<h3 id="6-导入节点订阅链接">6 导入节点/订阅链接</h3>
-<p>使用在线的sub服务，快速导入ss/ssr/vmess/trojan等节点链接，并生成在线配置文件下载到本地作为clash的配置文件</p>
-<h3 id="7-clash进阶设置">7 clash进阶设置</h3>
-<p>​	1 不修饰config.yaml：禁用脚本在启动clash服务时对config.yaml的配置修饰，完全使用用户自定义的配置文件。开启此功能后，clash功能设置中的部分改动均将不再生效。</p>
-<p>​	2 启用ipv6支持：使用ipv6的iptables转发相关ipv6流量，只支持redir_host模式，可能有bug，如非必要请勿使用此功能。</p>
-<p>​	3 使用保守方式启动：仅限部分不兼容rc.common或者systemd启动clash服务的设备使用，当启用改功能时，无法使用开机自启功能。脚本会自动在crontab中添加一个守护进程，每分钟检测进程并在进程不存在时自动启动。</p>
-<p>​	4 代理本机流量：使用环境变量export http_proxy的方式代理本机流量，部分应用可能无法代理</p>
-<h3 id="8-测试菜单">8 测试菜单</h3>
-<p>一些用于debug或者测试clash运行的快捷命令</p>
-<h3 id="9-更新卸载">9 更新/卸载</h3>
-<p>​	1 更新管理脚本：在线更新管理脚本</p>
-<p>​	2 切换clash核心：在线更新/切换clash核心</p>
-<p>​	3 更新GeoIP数据库：在线更新GeoIP数据库文件</p>
-<p>​	4 安装本地Dashboard面板：安装一个基于clash内置web服务的本地面板</p>
-<p>​	5 生成本地PAC文件：用户部分设备快捷配置本地http代理</p>
-<p>​	7 切换安装源地址：内置了多个不同安装源</p>
-<p>​	9 卸载：完全移除所有ShellClash的相关文件和相关环境变量，该操作不可逆</p>
-<h3 id="快捷命令">快捷命令</h3>
-<p>启动脚本：clash</p>
-<p>启动clash服务：$clashdir/start.sh start</p>
-<p>停止clash服务：$clashdir/start.sh stop</p>
-<p>重启clash服务：$clashdir/start.sh restart</p>
-<p>更新订阅文件：$clashdir/start.sh getyaml</p>
+              <p>教程转自：https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=4046020<br>
+原作者Github地址：https://github.com/paldier/ax3600_tool</p>
+<h4 id="首先需要参考此文破解ssh权限已破解则略过">首先需要参考此文破解SSH权限（已破解则略过）</h4>
+<p><a href="https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/#%E8%8E%B7%E5%8F%96%E8%B7%AF%E7%94%B1%E5%99%A8ssh%E6%9D%83%E9%99%90">https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/#获取路由器ssh权限</a></p>
+<h4 id="之后备份nand运行如下命令">之后备份nand，运行如下命令：</h4>
+<pre><code class="language-sh">nanddump -f /tmp/bdata_mtd9.img /dev/mtd9
+</code></pre>
+<p>运行成功后用winscp下载到电脑上备份好（以防万一）</p>
+<h4 id="接下来下载网盘中的破解文件fuckax3600">接下来下载网盘中的破解文件（fuckax3600）</h4>
+<h6 id="链接-httpspanbaiducoms15qsnvm9qwgtvtk8zf843ea-提取码-8rcu">链接: https://pan.baidu.com/s/15QsNvM9qwgTVtk8zF843eA 提取码: 8rcu</h6>
+<h5 id="之后用winscp将该文件上传到路由器的tmp目录下执行如下代码">之后用winscp将该文件上传到路由器的/tmp目录下，执行如下代码：</h5>
+<pre><code class="language-sh">chmod +x /tmp/fuckax3600 &amp;&amp; /tmp/fuckax3600 unlock
+</code></pre>
+<h5 id="机器会自动重启重启后执行">机器会自动重启，重启后执行：</h5>
+<pre><code class="language-sh">/tmp/fuckax3600 hack
+</code></pre>
+<p>会自动设置永久ssh、telnet、uart权限，同时会计算出默认的root密码，注意记录密码，恢复出厂后telnet和ssh需要用</p>
+<h5 id="最后执行">最后执行：</h5>
+<pre><code>/tmp/fuckax3600 lock
+</code></pre>
+<p>重启后即使恢复出厂ssid也能正常了</p>
+<h5 id="如升级后ssh被禁用可以用telnet登录执行下面代码再次启用ssh">如升级后ssh被禁用可以用telnet登录，执行下面代码再次启用ssh</h5>
+<pre><code class="language-sh">sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear start
+</code></pre>
+<p>至此基本可以保证机器长期拥有root权限</p>
 
             </div>
             
@@ -613,7 +586,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="http://juewuy.github.io/shellclash-shuo-ming-wen-dang/" title="ShellClash说明文档">http://juewuy.github.io/shellclash-shuo-ming-wen-dang/</a>
+      <a href="http://juewuy.github.io/gDyfIPSsZ/" title="AX3600等小米路由设备破解固化永久SSH教程">http://juewuy.github.io/gDyfIPSsZ/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -626,12 +599,12 @@
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="在路由器上安装及使用ShellClash的教程" href="http://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">在路由器上安装及使用ShellClash的教程</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="在路由器上安装及使用ShellClash的教程" href="http://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">上一篇</a>
-      
     </div>
     <div class="nav-next">
+      
+        <a class="nav-pc-next" title="捐赠ShellClash项目！" href="http://juewuy.github.io/yOF4Yf06Q/">捐赠ShellClash项目！</a>
+        <a class="nav-mobile-next" title="捐赠ShellClash项目！" href="http://juewuy.github.io/yOF4Yf06Q/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
