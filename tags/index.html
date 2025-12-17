@@ -1,0 +1,2323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Juewuy个人博客">
+<meta name="description" content="欢迎使用ShellClash！">
+<meta name="theme-color" content="#212529">
+<title>Juewuy&#39;s Blog</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1765980972918">
+<link rel="stylesheet" href="/media/css/pisces.css">
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/default.css"
+  rel="stylesheet">
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="pisces">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>Juewuy&#39;s Blog</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">欢迎使用ShellClash！</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item nav-item-active">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about/" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout  pisces">
+      <div class="section-layout-wrapper">
+        <div id="sidebarMeta" class="sidebar">
+    
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">Juewuy</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">11</span>
+        <span class="site-item-stat-name language" data-lan="article">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">0</span>
+        <span class="site-item-stat-name language" data-lan="category">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">0</span>
+        <span class="site-item-stat-name language" data-lan="tag">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+  
+  
+
+
+
+</div>
+</div>
+<script>
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'pisces';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
+      }
+    });
+  }
+  </script>
+        <div class="section-box box-shadow-wrapper">
+          <section class="section tags-section bg-color posts-expand">
+            <div class="tags-box">
+  <div class="tag-cloud-title language" data-lan="cloud-tags" data-count="0">
+    目前共计 0 个标签
+  </div>
+  <div class="tag-cloud-list" id="tags">
+    
+  </div>
+</div>
+<script>
+
+  let fontStart = 12, fontEnd = 30, colorStart = '#666', colorEnd = '#000';
+  let tags = document.querySelector('#tags').children;
+  let counts = [];
+  for(let i = 0; i < tags.length; i++) {
+    counts.push(tags[i].rel);
+  }
+  let lowest = Math.min.apply(null,counts), highest = Math.max.apply(null,counts);;
+  let range = highest - lowest;
+  if (range === 0) {
+    range = 1;
+  }
+  let fontIncr, colorIncr;
+  fontIncr = (fontEnd - fontStart) / range;
+  
+  let sColorArr = toRGB(colorStart), eColorArr = toRGB(colorEnd);
+
+  for(let i = 0; i < tags.length; i++) {
+    let disCount = tags[i].rel - lowest;
+    let fontSize = fontStart + disCount * fontIncr;
+    let style = 'font-size: ' + fontSize + 'px;';
+    let arr = [];
+    for(let c = 0; c < sColorArr.length; c++) {
+      if (disCount === 0) {
+        disCount = 1;
+      }
+      let val = (sColorArr[c] - eColorArr[c]) / range * disCount;
+      if (val >= 100) {
+        val = eColorArr[c];
+      } else if (val <= 0) {
+        val = sColorArr[c];
+      }
+      arr[c] = Math.floor(val);
+    }
+    style += 'color: ' + toHex(arr);
+    tags[i].style = style;
+  }
+
+  function toRGB(code) {
+    if (code.length === 4) {
+      code = code.replace(/(\w)(\w)(\w)/gi, "\$1\$1\$2\$2\$3\$3");
+    }
+    var hex = /(\w{2})(\w{2})(\w{2})/.exec(code);
+    return [parseInt(hex[1], 16), parseInt(hex[2], 16), parseInt(hex[3], 16)];
+  }
+
+  function toHex(ary) {
+    return "#" + ((1 << 24) + (ary[0] << 16) + (ary[1] << 8) + ary[2]).toString(16).slice(1);
+  }
+
+</script>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a
+        href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/juewuy/ShellClash" target="_blank">ShellClash</a>
+    </div>
+  </footer>
+  
+  
+  <div class="pisces back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+  <div class="bg-img">
+    <img src="\media\images\custom-bgImg.jpeg" />
+  </div>
+  
+  
+  
+  
+<link rel="stylesheet" href="/media/live2d/css/live2d.css" />
+<div class="box-scale">
+  <div id="landlord" style="left: 5px;bottom: px;"
+    data-key="">
+    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+    
+
+      <div class="message" style="opacity:0"></div>
+      <div class="live_talk_input_body">
+        <div class="live_talk_input_name_body">
+          <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off"
+            placeholder="你的名字" />
+        </div>
+        <div class="live_talk_input_text_body">
+          <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off"
+            placeholder="要和我聊什么呀？" />
+          <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+        </div>
+      </div>
+      <input name="live_talk" id="live_talk" value="1" type="hidden" />
+      <div class="live_ico_box">
+        <div class="live_ico_item type_info" id="showInfoBtn"></div>
+        <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+        
+        <div class="live_ico_item type_youdu" id="youduButton"></div>
+        <div class="live_ico_item type_quit" id="hideButton"></div>
+        <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+        <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+        <input id="duType" value="douqilai" type="hidden">
+        
+      </div>
+    
+  </div>
+</div>
+<div id="open_live2d">召唤看板娘</div>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+  var message_Path = 'https://cdn.jsdelivr.net/gh/hsxyhao/live2d.github.io@master/';
+  let landlord = document.querySelector('#landlord');
+  var apiKey = landlord.dataset.key;
+</script>
+<script type="text/javascript" src="/media/live2d/js/live2d.js"></script>
+<script>
+	var home_Path = document.location.protocol + '//' + window.document.location.hostname + ":" + window.document.location.port + '/';
+	var userAgent = window.navigator.userAgent.toLowerCase();
+	var norunAI = ["android", "iphone", "ipod", "ipad", "windows phone", "mqqbrowser", "msie", "trident/7.0"];
+	var norunFlag = false;
+
+	for (var i = 0; i < norunAI.length; i++) {
+		if (userAgent.indexOf(norunAI[i]) > -1) {
+			norunFlag = true;
+			break;
+		}
+	}
+
+	if (!window.WebGLRenderingContext) {
+		norunFlag = true;
+	}
+
+	if (!norunFlag) {
+		var hitFlag = false;
+		var AIFadeFlag = false;
+		var liveTlakTimer = null;
+		var sleepTimer_ = null;
+		var AITalkFlag = false;
+		var talkNum = 0;
+		(function () {
+			function renderTip(template, context) {
+				var tokenReg = /(\\)?\{([^\{\}\\]+)(\\)?\}/g;
+				return template.replace(tokenReg, function (word, slash1, token, slash2) {
+					if (slash1 || slash2) {
+						return word.replace('\\', '');
+					}
+					var variables = token.replace(/\s/g, '').split('.');
+					var currentObject = context;
+					var i, length, variable;
+					for (i = 0, length = variables.length; i < length; ++i) {
+						variable = variables[i];
+						currentObject = currentObject[variable];
+						if (currentObject === undefined || currentObject === null) return '';
+					}
+					return currentObject;
+				});
+			}
+
+			String.prototype.renderTip = function (context) {
+				return renderTip(this, context);
+			};
+
+			var re = /x/;
+			re.toString = function () {
+				showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
+				return '';
+			};
+
+			$(document).on('copy', function () {
+				showMessage('你都复制了些什么呀，转载要记得加上出处哦~~', 5000);
+			});
+
+			function initTips() {
+				$.ajax({
+					cache: true,
+					url: message_Path + 'message.json',
+					dataType: "json",
+					success: function (result) {
+						$.each(result.mouseover, function (index, tips) {
+							$(tips.selector).mouseover(function () {
+								var text = tips.text;
+								if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
+								text = text.renderTip({ text: $(this).text() });
+								showMessage(text, 3000);
+								talkValTimer();
+								clearInterval(liveTlakTimer);
+								liveTlakTimer = null;
+							});
+							$(tips.selector).mouseout(function () {
+								showHitokoto();
+								if (liveTlakTimer == null) {
+									liveTlakTimer = window.setInterval(function () {
+										showHitokoto();
+									}, 15000);
+								};
+							});
+						});
+						$.each(result.click, function (index, tips) {
+							$(tips.selector).click(function () {
+								if (hitFlag) {
+									return false
+								}
+								hitFlag = true;
+								setTimeout(function () {
+									hitFlag = false;
+								}, 8000);
+								var text = tips.text;
+								if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
+								text = text.renderTip({ text: $(this).text() });
+								showMessage(text, 3000);
+							});
+							clearInterval(liveTlakTimer);
+							liveTlakTimer = null;
+							if (liveTlakTimer == null) {
+								liveTlakTimer = window.setInterval(function () {
+									showHitokoto();
+								}, 15000);
+							};
+						});
+					}
+				});
+			}
+			initTips();
+
+			var text;
+			if (document.referrer !== '') {
+				var referrer = document.createElement('a');
+				referrer.href = document.referrer;
+				text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';
+				var domain = referrer.hostname.split('.')[1];
+				if (domain == 'baidu') {
+					text = '嗨！ 来自 百度搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				} else if (domain == 'so') {
+					text = '嗨！ 来自 360搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				} else if (domain == 'google') {
+					text = '嗨！ 来自 谷歌搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				}
+			} else {
+				if (window.location.href == home_Path) { //主页URL判断，需要斜杠结尾
+					var now = (new Date()).getHours();
+					if (now > 23 || now <= 5) {
+						text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？';
+					} else if (now > 5 && now <= 7) {
+						text = '早上好！一日之计在于晨，美好的一天就要开始了！';
+					} else if (now > 7 && now <= 11) {
+						text = '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
+					} else if (now > 11 && now <= 14) {
+						text = '中午了，工作了一个上午，现在是午餐时间！';
+					} else if (now > 14 && now <= 17) {
+						text = '午后很容易犯困呢，今天的运动目标完成了吗？';
+					} else if (now > 17 && now <= 19) {
+						text = '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~~';
+					} else if (now > 19 && now <= 21) {
+						text = '晚上好，今天过得怎么样？';
+					} else if (now > 21 && now <= 23) {
+						text = '已经这么晚了呀，早点休息吧，晚安~~';
+					} else {
+						text = '嗨~ 快来逗我玩吧！';
+					}
+				} else {
+					text = '欢迎阅读<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				}
+			}
+			showMessage(text, 12000);
+		})();
+
+		liveTlakTimer = setInterval(function () {
+			showHitokoto();
+		}, 15000);
+
+		function showHitokoto() {
+			if (sessionStorage.getItem("Sleepy") !== "1") {
+				if (!AITalkFlag) {
+					$.getJSON('https://v1.hitokoto.cn/', function (result) {
+						talkValTimer();
+						showMessage(result.hitokoto, 0);
+					});
+				}
+			} else {
+				hideMessage(0);
+				if (sleepTimer_ == null) {
+					sleepTimer_ = setInterval(function () {
+						checkSleep();
+					}, 200);
+				}
+			}
+		}
+
+		function checkSleep() {
+			var sleepStatu = sessionStorage.getItem("Sleepy");
+			if (sleepStatu !== '1') {
+				talkValTimer();
+				showMessage('你回来啦~', 0);
+				clearInterval(sleepTimer_);
+				sleepTimer_ = null;
+			}
+		}
+
+		function showMessage(text, timeout) {
+			if (Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1) - 1];
+			$('.message').stop();
+			$('.message').html(text);
+			$('.message').fadeTo(200, 1);
+			//if (timeout === null) timeout = 5000;
+			//hideMessage(timeout);
+		}
+		function talkValTimer() {
+			$('#live_talk').val('1');
+		}
+
+		function hideMessage(timeout) {
+			//$('.message').stop().css('opacity',1);
+			if (timeout === null) timeout = 5000;
+			$('.message').delay(timeout).fadeTo(200, 0);
+		}
+
+		function initLive2d() {
+			$('#hideButton').on('click', function () {
+				if (AIFadeFlag) {
+					return false;
+				} else {
+					AIFadeFlag = true;
+					localStorage.setItem("live2dhidden", "0");
+					$('#landlord').fadeOut(200);
+					$('#open_live2d').delay(200).fadeIn(200);
+					setTimeout(function () {
+						AIFadeFlag = false;
+					}, 300);
+				}
+			});
+			$('#open_live2d').on('click', function () {
+				if (AIFadeFlag) {
+					return false;
+				} else {
+					AIFadeFlag = true;
+					localStorage.setItem("live2dhidden", "1");
+					$('#open_live2d').fadeOut(200);
+					$('#landlord').delay(200).fadeIn(200);
+					setTimeout(function () {
+						AIFadeFlag = false;
+					}, 300);
+				}
+			});
+			$('#youduButton').on('click', function () {
+				if ($('#youduButton').hasClass('doudong')) {
+					var typeIs = $('#youduButton').attr('data-type');
+					$('#youduButton').removeClass('doudong');
+					$('body').removeClass(typeIs);
+					$('#youduButton').attr('data-type', '');
+				} else {
+					var duType = $('#duType').val();
+					var duArr = duType.split(",");
+					var dataType = duArr[Math.floor(Math.random() * duArr.length)];
+
+					$('#youduButton').addClass('doudong');
+					$('#youduButton').attr('data-type', dataType);
+					$('body').addClass(dataType);
+				}
+			});
+			if (apiKey) {
+				$('#showInfoBtn').on('click', function () {
+					var live_statu = $('#live_statu_val').val();
+					if (live_statu == "0") {
+						return
+					} else {
+						$('#live_statu_val').val("0");
+						$('.live_talk_input_body').fadeOut(500);
+						AITalkFlag = false;
+						showHitokoto();
+						$('#showTalkBtn').show();
+						$('#showInfoBtn').hide();
+					}
+				});
+				$('#showTalkBtn').on('click', function () {
+					var live_statu = $('#live_statu_val').val();
+					if (live_statu == "1") {
+						return
+					} else {
+						$('#live_statu_val').val("1");
+						$('.live_talk_input_body').fadeIn(500);
+						AITalkFlag = true;
+						$('#showTalkBtn').hide();
+						$('#showInfoBtn').show();
+
+					}
+				});
+				$('#talk_send').on('click', function () {
+					var info_ = $('#AIuserText').val();
+					var userid_ = $('#AIuserName').val();
+					if (info_ == "") {
+						showMessage('写点什么吧！', 0);
+						return;
+					}
+					if (userid_ == "") {
+						showMessage('聊之前请告诉我你的名字吧！', 0);
+						return;
+					}
+					showMessage('思考中~', 0);
+					let protocol = window.location.protocol.indexOf("s") > 0 ? "https" : "http";
+					$.ajax({
+						type: "get",
+						url: `${protocol}://www.tuling123.com/openapi/api?key=${apiKey}&info=${info_}`,
+						dataType: "json",
+						success: function (res) {
+							talkValTimer();
+							showMessage(res.text, 0);
+							$('#AIuserText').val("");
+							sessionStorage.setItem("live2duser", userid_);
+						},
+						error: function (e) {
+							talkValTimer();
+							showMessage('似乎有什么错误，请和站长联系！', 0);
+						}
+					});
+				});
+			} else {
+				$('#showInfoBtn').hide();
+				$('#showTalkBtn').hide();
+			}
+			//获取音乐信息初始化
+			var bgmListInfo = $('input[name=live2dBGM]');
+			if (bgmListInfo.length == 0) {
+				$('#musicButton').hide();
+			} else {
+				var bgmPlayNow = parseInt($('#live2d_bgm').attr('data-bgm'));
+				var bgmPlayTime = 0;
+				var live2dBGM_Num = sessionStorage.getItem("live2dBGM_Num");
+				var live2dBGM_PlayTime = sessionStorage.getItem("live2dBGM_PlayTime");
+				if (live2dBGM_Num) {
+					if (live2dBGM_Num <= $('input[name=live2dBGM]').length - 1) {
+						bgmPlayNow = parseInt(live2dBGM_Num);
+					}
+				}
+				if (live2dBGM_PlayTime) {
+					bgmPlayTime = parseInt(live2dBGM_PlayTime);
+				}
+				var live2dBGMSrc = bgmListInfo.eq(bgmPlayNow).val();
+				$('#live2d_bgm').attr('data-bgm', bgmPlayNow);
+				$('#live2d_bgm').attr('src', live2dBGMSrc);
+				$('#live2d_bgm')[0].currentTime = bgmPlayTime;
+				$('#live2d_bgm')[0].volume = 0.5;
+				var live2dBGM_IsPlay = sessionStorage.getItem("live2dBGM_IsPlay");
+				var live2dBGM_WindowClose = sessionStorage.getItem("live2dBGM_WindowClose");
+				if (live2dBGM_IsPlay == '0' && live2dBGM_WindowClose == '0') {
+					$('#live2d_bgm')[0].play();
+					$('#musicButton').addClass('play');
+				}
+				sessionStorage.setItem("live2dBGM_WindowClose", '1');
+				$('#musicButton').on('click', function () {
+					if ($('#musicButton').hasClass('play')) {
+						$('#live2d_bgm')[0].pause();
+						$('#musicButton').removeClass('play');
+						sessionStorage.setItem("live2dBGM_IsPlay", '1');
+					} else {
+						$('#live2d_bgm')[0].play();
+						$('#musicButton').addClass('play');
+						sessionStorage.setItem("live2dBGM_IsPlay", '0');
+					}
+				});
+				window.onbeforeunload = function () {
+					sessionStorage.setItem("live2dBGM_WindowClose", '0');
+					if ($('#musicButton').hasClass('play')) {
+						sessionStorage.setItem("live2dBGM_IsPlay", '0');
+					}
+				}
+				document.getElementById('live2d_bgm').addEventListener("timeupdate", function () {
+					var live2dBgmPlayTimeNow = document.getElementById('live2d_bgm').currentTime;
+					sessionStorage.setItem("live2dBGM_PlayTime", live2dBgmPlayTimeNow);
+				});
+				document.getElementById('live2d_bgm').addEventListener("ended", function () {
+					var listNow = parseInt($('#live2d_bgm').attr('data-bgm'));
+					listNow++;
+					if (listNow > $('input[name=live2dBGM]').length - 1) {
+						listNow = 0;
+					}
+					var listNewSrc = $('input[name=live2dBGM]').eq(listNow).val();
+					sessionStorage.setItem("live2dBGM_Num", listNow);
+					$('#live2d_bgm').attr('src', listNewSrc);
+					$('#live2d_bgm')[0].play();
+					$('#live2d_bgm').attr('data-bgm', listNow);
+				});
+				document.getElementById('live2d_bgm').addEventListener("error", function () {
+					$('#live2d_bgm')[0].pause();
+					$('#musicButton').removeClass('play');
+					showMessage('音乐似乎加载不出来了呢！', 0);
+				});
+			}
+			//获取用户名
+			var live2dUser = sessionStorage.getItem("live2duser");
+			if (live2dUser !== null) {
+				$('#AIuserName').val(live2dUser);
+			}
+			//获取位置
+			var landL = sessionStorage.getItem("historywidth");
+			var landB = sessionStorage.getItem("historyheight");
+			if (landL == null || landB == null) {
+				landL = '5px'
+				landB = '0px'
+			}
+			$('#landlord').css('left', landL + 'px');
+			$('#landlord').css('bottom', landB + 'px');
+			//移动
+			function getEvent() {
+				return window.event || arguments.callee.caller.arguments[0];
+			}
+			var smcc = document.getElementById("landlord");
+			var moveX = 0;
+			var moveY = 0;
+			var moveBottom = 0;
+			var moveLeft = 0;
+			var moveable = false;
+			var docMouseMoveEvent = document.onmousemove;
+			var docMouseUpEvent = document.onmouseup;
+			smcc.onmousedown = function () {
+				var ent = getEvent();
+				moveable = true;
+				moveX = ent.clientX;
+				moveY = ent.clientY;
+				var obj = smcc;
+				moveBottom = parseInt(obj.style.bottom);
+				moveLeft = parseInt(obj.style.left);
+				if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
+					window.getSelection().removeAllRanges();
+				}
+				document.onmousemove = function () {
+					if (moveable) {
+						var ent = getEvent();
+						var x = moveLeft + ent.clientX - moveX;
+						var y = moveBottom + (moveY - ent.clientY);
+						obj.style.left = x + "px";
+						obj.style.bottom = y + "px";
+					}
+				};
+				document.onmouseup = function () {
+					if (moveable) {
+						var historywidth = obj.style.left;
+						var historyheight = obj.style.bottom;
+						historywidth = historywidth.replace('px', '');
+						historyheight = historyheight.replace('px', '');
+						sessionStorage.setItem("historywidth", historywidth);
+						sessionStorage.setItem("historyheight", historyheight);
+						document.onmousemove = docMouseMoveEvent;
+						document.onmouseup = docMouseUpEvent;
+						moveable = false;
+						moveX = 0;
+						moveY = 0;
+						moveBottom = 0;
+						moveLeft = 0;
+					}
+				};
+			};
+		}
+		$(document).ready(function () {
+			var AIimgSrc = [];
+			let chooseLive2d = 'rem'
+			if (chooseLive2d === 'histoire') {
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_00.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_01.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_02.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_03.png");
+			} else if (chooseLive2d === 'rem') {
+				AIimgSrc.push(message_Path + "model/rem/remu2048/texture_00.png");
+			} else if (chooseLive2d === 'aoba') {
+				AIimgSrc.push(message_Path + "model/aoba/textures/texture_00.png");
+			} else if (chooseLive2d === 'hijiki') {
+				AIimgSrc.push(message_Path + "model/hijiki/moc/hijiki.2048/texture_00.png");
+			} else if (chooseLive2d === 'tororo') {
+				AIimgSrc.push(message_Path + "model/tororo/moc/tororo.2048/texture_00.png");
+			}
+			var images = [];
+			var imgLength = AIimgSrc.length;
+			var loadingNum = 0;
+			for (var i = 0; i < imgLength; i++) {
+				images[i] = new Image();
+				images[i].src = AIimgSrc[i];
+				images[i].onload = function () {
+					loadingNum++;
+					if (loadingNum === imgLength) {
+						var live2dhidden = localStorage.getItem("live2dhidden");
+						if (live2dhidden === "0") {
+							setTimeout(function () {
+								$('#open_live2d').fadeIn(200);
+							}, 1300);
+						} else {
+							setTimeout(function () {
+								$('#landlord').fadeIn(200);
+							}, 1300);
+						}
+						let model = '';
+						if (chooseLive2d === 'histoire') {
+							model = message_Path + "model/histoire/model.json";
+						} else if (chooseLive2d === 'rem') {
+							model = message_Path + "model/rem/model.json";
+						} else if (chooseLive2d === 'aoba') {
+							model = message_Path + "model/aoba/model.json";
+						} else if (chooseLive2d === 'hijiki') {
+							model = message_Path + "model/hijiki/hijiki.model.json";
+						} else if (chooseLive2d === 'tororo') {
+							model = message_Path + "model/tororo/tororo.model.json";
+						}
+						setTimeout(function () {
+							loadlive2d("live2d", model);
+						}, 1000);
+						initLive2d();
+						images = null;
+					}
+				}
+			}
+		});
+	}
+</script>
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+    back2TopText = document.querySelector('#back_to_top_text'),
+    drawerBox = document.querySelector('#drawer_box'),
+    rightSideBar = document.querySelector('.sidebar'),
+    viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function (e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+
+  window.addEventListener('scroll', function (e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+
+  let hasCacu = false;
+  window.onresize = function () {
+    calcuHeight();
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function () {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, transitionDir, {});
+          }
+        })
+        window.Velocity(viewport, openProp, {
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp, {
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'false'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target", "_blank");
+      }
+    })
+  }
+
+  let faSearch = document.querySelector('#fa_search');
+  faSearch.addEventListener('click', function () {
+    document.querySelector('#search_mask').style = ''
+  })
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+  
+  // 离开当前页title变化
+  var leaveTitle = "";
+  if (leaveTitle) {
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = leaveTitle;
+      } else {
+        document.title = normal_title;
+      }
+    });
+  }
+
+</script>
+  </div>
+</body>
+
+<div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/nWTjEpkSK/"" data-c="
+          &lt;h3 id=&#34;singbox中各个json模块的基本结构&#34;&gt;·singbox中各个json模块的基本结构：&lt;/h3&gt;
+&lt;p&gt;singbox在启动时，会自动将指定目录下的json文件加载及合并运行&lt;/p&gt;
+&lt;p&gt;每个json文件必须具有标准的json结构，否则就会报错&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;log&amp;quot;: {},
+  &amp;quot;dns&amp;quot;: {},
+  &amp;quot;ntp&amp;quot;: {},
+  &amp;quot;certificate&amp;quot;: {},
+  &amp;quot;inbounds&amp;quot;: [],
+  &amp;quot;outbounds&amp;quot;: [],
+  &amp;quot;providers&amp;quot;: [], //限reF1nd分支内核
+  &amp;quot;route&amp;quot;: {},
+  &amp;quot;endpoints&amp;quot;: [],
+  &amp;quot;experimental&amp;quot;: {}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例如如果想要自定义dns.json模块&lt;/p&gt;
+&lt;p&gt;则内部结构必须是如下的形式，即开头和结尾的1级花括号必须存在！&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;dns&amp;quot;: {
+    &amp;quot;servers&amp;quot;: [……]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;具体的格式可以在正确运行singbox内核后，参考&lt;code&gt;/tmp/ShellCrash/jsons&lt;/code&gt; 目录下的相关文件&lt;/p&gt;
+&lt;p&gt;你也可以通过 &lt;a href=&#34;https://www.json.cn/&#34;&gt;https://www.json.cn&lt;/a&gt; 来在线解析json格式是否正确&lt;/p&gt;
+&lt;h3 id=&#34;shellcrash中自定义配置文件的名称及目录&#34;&gt;·ShellCrash中自定义配置文件的名称及目录：&lt;/h3&gt;
+&lt;p&gt;目前 &lt;strong&gt;log dns ntp certificate experimental&lt;/strong&gt;  是替换内置设定而非合并，即自定义的内容会覆盖脚本生成的内容，需要谨慎使用，请确保不会影响脚本内置功能的使用&lt;/p&gt;
+&lt;p&gt;而&lt;strong&gt;endpoints inbounds outbounds providers route services&lt;/strong&gt; 则是与基础的config.json配置文件中的内容合并，注意singbox并不是增量合并，如果自定义内容和配置文件中的原有内容出现重复或者冲突，则内核依然会无法运行&lt;/p&gt;
+&lt;p&gt;各个模块的自定义文件必须放在&lt;strong&gt;ShellCrash安装目录&lt;/strong&gt;下的&lt;strong&gt;jsons文件夹&lt;/strong&gt;内！&lt;/p&gt;
+&lt;p&gt;且文件名必须是&lt;strong&gt;log.json、dns.json、outbounds.json&lt;/strong&gt;…… 等，不得随意更改，否则不会加载！&lt;/p&gt;
+&lt;h3 id=&#34;配置工具&#34;&gt;·配置工具：&lt;/h3&gt;
+&lt;p&gt;Windows下请使用WinSCP软件进行编辑！&lt;br&gt;
+MacOS下请使用SecureFX软件进行编辑！&lt;/p&gt;
+&lt;p&gt;具体参考：&lt;a href=&#34;https://juewuy.github.io/-F7dWmBj5/#scp%E5%B7%A5%E5%85%B7&#34;&gt;各平台好用的SSH客户端软件推荐 | Juewuy&#39;s Blog&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置文件示例&#34;&gt;·配置文件示例：&lt;/h3&gt;
+&lt;h4 id=&#34;示例自定义log等级&#34;&gt;示例：自定义log等级&lt;/h4&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/log.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{ 
+  &amp;quot;log&amp;quot;: { 
+    &amp;quot;level&amp;quot;: &amp;quot;debug&amp;quot;,
+    &amp;quot;timestamp&amp;quot;: true
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例启用ntp服务&#34;&gt;示例：启用ntp服务&lt;/h4&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/ntp.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;ntp&amp;quot;: {
+    &amp;quot;enabled&amp;quot;: true,
+    &amp;quot;server&amp;quot;: &amp;quot;time.apple.com&amp;quot;,
+    &amp;quot;server_port&amp;quot;: 123,
+    &amp;quot;interval&amp;quot;: &amp;quot;30m&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例自定义providers实现在线更新订阅&#34;&gt;示例：自定义providers，实现在线更新订阅&lt;/h4&gt;
+&lt;p&gt;注意：providers功能仅限&lt;a href=&#34;https://github.com/juewuy/ShellCrash/releases/tag/singbox_core_reF1nd&#34;&gt;reF1nd&lt;/a&gt;版内核使用！&lt;/p&gt;
+&lt;p&gt;注意：每个例如&amp;quot;&lt;strong&gt;my_airport1&lt;/strong&gt;&amp;quot;的tag应当在outbounds模块中被正确引用！你可以通过搭配自定义&lt;strong&gt;outbounds.json&lt;/strong&gt;来使用！&lt;/p&gt;
+&lt;p&gt;注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！&lt;/p&gt;
+&lt;p&gt;具体字段内容可以参考：&lt;a href=&#34;https://sing-boxr.dustinwin.us.kg/zh/configuration/provider/&#34;&gt;订阅 - sing-box (dustinwin.us.kg)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/providers.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;providers&amp;quot;: [
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;remote&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;my_airport1&amp;quot;,
+      &amp;quot;url&amp;quot;: &amp;quot;https://my_airport1.com/asdfghjkl123&amp;quot;,
+      &amp;quot;path&amp;quot;: &amp;quot;./providers/my_airport1.yaml&amp;quot;,
+      &amp;quot;user_agent&amp;quot;: &amp;quot;clash.meta;mihomo&amp;quot;,
+      &amp;quot;update_interval&amp;quot;: &amp;quot;24h0m0s&amp;quot;,
+      &amp;quot;health_check&amp;quot;: {
+        &amp;quot;enabled&amp;quot;: true,
+        &amp;quot;url&amp;quot;: &amp;quot;https://www.gstatic.com/generate_204&amp;quot;,
+        &amp;quot;interval&amp;quot;: &amp;quot;10m0s&amp;quot;,
+        &amp;quot;timeout&amp;quot;: &amp;quot;3s&amp;quot;
+      },
+      &amp;quot;override_tls&amp;quot;: {
+        &amp;quot;enabled&amp;quot;: true,
+        &amp;quot;insecure&amp;quot;: true
+      }
+    },
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;remote&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;my_airport2&amp;quot;,
+      &amp;quot;url&amp;quot;: &amp;quot;https://my_airport2.com/asdfghjkl123&amp;quot;,
+      &amp;quot;path&amp;quot;: &amp;quot;./providers/my_airport2.yaml&amp;quot;,
+      &amp;quot;user_agent&amp;quot;: &amp;quot;clash.meta;mihomo&amp;quot;,
+      &amp;quot;update_interval&amp;quot;: &amp;quot;24h0m0s&amp;quot;,
+      &amp;quot;health_check&amp;quot;: {
+        &amp;quot;enabled&amp;quot;: true,
+        &amp;quot;url&amp;quot;: &amp;quot;https://www.gstatic.com/generate_204&amp;quot;,
+        &amp;quot;interval&amp;quot;: &amp;quot;10m0s&amp;quot;,
+        &amp;quot;timeout&amp;quot;: &amp;quot;3s&amp;quot;
+      },
+      &amp;quot;override_tls&amp;quot;: {
+        &amp;quot;enabled&amp;quot;: true,
+        &amp;quot;insecure&amp;quot;: true
+      }
+    }
+  ]
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/outbounds.json&lt;/code&gt;文件以引用providers：&lt;/p&gt;
+&lt;p&gt;注意：如果你还想编辑自定义节点或者其他outbounds模块内容，必须都写在同一个文件内，脚本不会加载诸如outbounds2.json这样的文件，多个平级的{}之间请使用逗号连接，如果只有一个同级{}则不要写逗号！&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;outbounds&amp;quot;: [
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;selector&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;🇭🇰 香港节点&amp;quot;,
+      &amp;quot;providers&amp;quot;: [ &amp;quot;my_airport1&amp;quot; ],
+      &amp;quot;includes&amp;quot;: [ &amp;quot;香港.*BGP&amp;quot; ],
+      &amp;quot;use_all_providers&amp;quot;: true
+    },
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;urltest&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;🇸🇬 新加坡节点&amp;quot;,
+      &amp;quot;tolerance&amp;quot;: 100,
+      &amp;quot;providers&amp;quot;: [ &amp;quot;my_airport2&amp;quot; ],
+      &amp;quot;includes&amp;quot;: [ &amp;quot;新加坡&amp;quot; ],
+      &amp;quot;use_all_providers&amp;quot;: true
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例自定义outbounds实现自定义节点或策略组&#34;&gt;示例：自定义outbounds，实现自定义节点或策略组&lt;/h4&gt;
+&lt;p&gt;注意：每个例如&amp;quot;&lt;strong&gt;my_airport1&lt;/strong&gt;&amp;quot;的tag应当在outbounds模块中被正确引用！你可以通过搭配自定义&lt;strong&gt;outbounds.json&lt;/strong&gt;来使用！&lt;/p&gt;
+&lt;p&gt;注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！&lt;/p&gt;
+&lt;p&gt;具体字段内容可以参考：&lt;a href=&#34;https://sing-box.sagernet.org/zh/configuration/outbound&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/outbounds.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;outbounds&amp;quot;: [
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;trojan&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;my_trojan1&amp;quot;,
+      &amp;quot;server&amp;quot;: &amp;quot;example.my_trojan.com&amp;quot;,
+      &amp;quot;server_port&amp;quot;: 443,
+      &amp;quot;password&amp;quot;: &amp;quot;123321&amp;quot;,
+      &amp;quot;tls&amp;quot;: {
+        &amp;quot;enabled&amp;quot;: true,
+        &amp;quot;insecure&amp;quot;: true
+      }
+    },
+    {
+      &amp;quot;type&amp;quot;:&amp;quot;shadowsocks&amp;quot;,
+      &amp;quot;tag&amp;quot;:&amp;quot;my_ss1&amp;quot;,
+      &amp;quot;server&amp;quot;:&amp;quot;example.my_ss.com&amp;quot;,
+      &amp;quot;server_port&amp;quot;:10001,
+      &amp;quot;method&amp;quot;:&amp;quot;2022-blake3-aes-128-gcm&amp;quot;,
+      &amp;quot;password&amp;quot;:&amp;quot;8JCsPssfgS8tiRwiMlhARg==&amp;quot;,
+      &amp;quot;tcp_fast_open&amp;quot;:false
+    },
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;selector&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;🚀 自建手选&amp;quot;,
+      &amp;quot;outbounds&amp;quot;: [
+        &amp;quot;my_trojan1&amp;quot;,
+        &amp;quot;my_ss1&amp;quot;
+      ]
+    },
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;urltest&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;♻️ 自建自动&amp;quot;,
+      &amp;quot;outbounds&amp;quot;: [
+        &amp;quot;my_trojan1&amp;quot;,
+        &amp;quot;my_ss1&amp;quot;
+      ],
+      &amp;quot;url&amp;quot;: &amp;quot;https://www.gstatic.com/generate_204&amp;quot;,
+      &amp;quot;interval&amp;quot;: &amp;quot;5m0s&amp;quot;,
+      &amp;quot;tolerance&amp;quot;: 50
+    },
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;selector&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;🛑 广告拦截&amp;quot;,
+      &amp;quot;outbounds&amp;quot;: [
+        &amp;quot;DIRECT&amp;quot;,
+        &amp;quot;REJECT&amp;quot;
+      ]
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例自定义入站以连接家中设备及通过家中路由连接公网&#34;&gt;示例：自定义入站以连接家中设备及通过家中路由连接公网&lt;/h4&gt;
+&lt;p&gt;注意：如果你想自定义二级或者更低等级的json字段，则其上级字段也必须包含在文件中，否则singbox内核无法完成合并&lt;/p&gt;
+&lt;p&gt;具体字段内容可以参考：&lt;a href=&#34;https://sing-box.sagernet.org/zh/configuration/inbound&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！&lt;/p&gt;
+&lt;p&gt;进阶玩法：&lt;a href=&#34;https://pickle-paw-5d0.notion.site/ShellCrash-sb-da9f0fad17264fcba4078888079492cd&#34;&gt;使用vmess入站搭建三网免流服务&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/inbounds.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;inbounds&amp;quot;: [
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;shadowsocks&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;ss-in&amp;quot;,
+      &amp;quot;listen&amp;quot;: &amp;quot;::&amp;quot;,
+      &amp;quot;listen_port&amp;quot;: 24678,
+      &amp;quot;sniff&amp;quot;: true,
+      &amp;quot;method&amp;quot;: &amp;quot;2022-blake3-aes-128-gcm&amp;quot;,
+      &amp;quot;password&amp;quot;: &amp;quot;8JCsPssfgS8tiRwiMlhARg==&amp;quot;,
+      &amp;quot;multiplex&amp;quot;: {}
+    },
+    {
+      &amp;quot;type&amp;quot;: &amp;quot;hysteria2&amp;quot;,
+      &amp;quot;tag&amp;quot;: &amp;quot;hy2-in&amp;quot;,
+      &amp;quot;listen&amp;quot;: &amp;quot;::&amp;quot;,
+      &amp;quot;listen_port&amp;quot;: 24678,
+      &amp;quot;sniff&amp;quot;: true,
+      &amp;quot;up_mbps&amp;quot;: 100,
+      &amp;quot;down_mbps&amp;quot;: 100,
+      &amp;quot;obfs&amp;quot;: {
+        &amp;quot;type&amp;quot;: &amp;quot;salamander&amp;quot;,
+        &amp;quot;password&amp;quot;: &amp;quot;cry_me_a_r1ver&amp;quot;
+      },
+      &amp;quot;users&amp;quot;: [
+        {
+          &amp;quot;name&amp;quot;: &amp;quot;tobyxdd&amp;quot;,
+          &amp;quot;password&amp;quot;: &amp;quot;goofy_ahh_password&amp;quot;
+        }
+      ],
+      &amp;quot;ignore_client_bandwidth&amp;quot;: false,
+      &amp;quot;tls&amp;quot;: {},
+      &amp;quot;masquerade&amp;quot;: &amp;quot;&amp;quot;,
+      &amp;quot;brutal_debug&amp;quot;: false
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例启用tailscale异地组网客户端&#34;&gt;示例：启用Tailscale异地组网客户端&lt;/h4&gt;
+&lt;p&gt;注意：默认内核为了节约内存考虑并为编译tailscale支持，请前往更新-内核-自定义内核界面下载安装完整版singbox内核&lt;/p&gt;
+&lt;p&gt;注意：需要在&lt;a href=&#34;https://tailscale.com/&#34;&gt;Tailscale官网&lt;/a&gt;创建账号后，在&lt;a href=&#34;https://login.tailscale.com/admin/settings/keys&#34;&gt;Keys - Tailscale&lt;/a&gt;界面创建Auth key并填入&amp;quot;auth_key&amp;quot;:中方可正确连接！&lt;/p&gt;
+&lt;p&gt;注意：Tailscale占用内存较高，不建议内存较少的设备使用，如果想连接家中设备可以尝试自定义shadowsocks/hysteria2等协议入站&lt;/p&gt;
+&lt;p&gt;具体字段内容可以参考：&lt;a href=&#34;https://sing-box.sagernet.org/zh/configuration/endpoint/tailscale/&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/endpoints.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;endpoints&amp;quot;: [
+    {
+	  &amp;quot;type&amp;quot;: &amp;quot;tailscale&amp;quot;,
+	  &amp;quot;tag&amp;quot;: &amp;quot;ts-ep&amp;quot;,
+	  &amp;quot;state_directory&amp;quot;: &amp;quot;/tmp/ShellCrash/tailscale&amp;quot;,
+	  &amp;quot;auth_key&amp;quot;: &amp;quot;tskey-auth-abcddsfqwe-12315kjdlasjlfjljg&amp;quot;,  //此处换成你自己的auth_key
+	  &amp;quot;control_url&amp;quot;: &amp;quot;&amp;quot;,
+	  &amp;quot;ephemeral&amp;quot;: false,
+	  &amp;quot;hostname&amp;quot;: &amp;quot;ShellCrash&amp;quot;,
+	  &amp;quot;accept_routes&amp;quot;: true,
+	  &amp;quot;exit_node&amp;quot;: &amp;quot;&amp;quot;,    //默认直连，如果延迟高可以尝试换成你希望使用的代理出口，不推荐
+	  &amp;quot;exit_node_allow_lan_access&amp;quot;: false,
+	  &amp;quot;advertise_routes&amp;quot;: [],
+	  &amp;quot;advertise_exit_node&amp;quot;: false,
+	  &amp;quot;udp_timeout&amp;quot;: &amp;quot;5m&amp;quot;
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例启用wireguard异地组网客户端&#34;&gt;示例：启用Wireguard异地组网客户端&lt;/h4&gt;
+&lt;p&gt;注意：默认内核为了节约内存考虑并为编译Wireguard支持，请前往更新-内核-自定义内核界面下载安装完整版singbox内核&lt;/p&gt;
+&lt;p&gt;注意：需要先在具有公网IP的服务器上部署Wireguard作为枢纽，才能连接各个设备，参考：&lt;a href=&#34;https://post.smzdm.com/p/a2x2040n/&#34;&gt;1分钟部署wg-easy面板&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注意：Wireguard用于纯粹充当内网穿透，不透过路由访问其他设备的设置比较简单，但是如果想实现通过路由本身访问下级设备，设置会非常繁琐，不推荐使用&lt;/p&gt;
+&lt;p&gt;具体字段内容可以参考：&lt;a href=&#34;https://sing-box.sagernet.org/zh/configuration/endpoint/wireguard/&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/endpoints.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;endpoints&amp;quot;: [
+	{
+	  &amp;quot;type&amp;quot;: &amp;quot;wireguard&amp;quot;,
+	  &amp;quot;tag&amp;quot;: &amp;quot;wg-ep&amp;quot;,
+	  &amp;quot;system&amp;quot;: false,
+	  &amp;quot;mtu&amp;quot;: 1408,
+	  &amp;quot;address&amp;quot;: [&amp;quot;10.8.8.2/24&amp;quot;, &amp;quot;fdcc:ad94:bacf:1234::4321:2/112&amp;quot;],
+	  &amp;quot;private_key&amp;quot;: &amp;quot;6sadfas0/asdagfsgdgsd12341231314fsfd=&amp;quot;,
+	  &amp;quot;peers&amp;quot;: [
+		{
+		  &amp;quot;address&amp;quot;: &amp;quot;123.123.123.123&amp;quot;,
+		  &amp;quot;port&amp;quot;: 51820,
+		  &amp;quot;public_key&amp;quot;: &amp;quot;1sadasdaf+2131231fdsfdsfsdfsdffs=&amp;quot;,
+		  &amp;quot;pre_shared_key&amp;quot;: &amp;quot;asdsadlajfljljldjflajsldjlasjdlkjl=&amp;quot;,
+		  &amp;quot;allowed_ips&amp;quot;: [&amp;quot;0.0.0.0/0&amp;quot;, &amp;quot;::/0&amp;quot;]
+		}
+	  ]
+	}
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意：如果你想通过该端点出站，那么还必须在route中指定相应的规则，例如：&lt;/p&gt;
+&lt;p&gt;此示例意味着你路由下所有子设备对其他Wireguard设备进行访问时，都可以成功路由(需要在ShellCrash中修改预设的保留地址网段)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;route&amp;quot;: {
+    &amp;quot;rules&amp;quot;: [
+      { 
+        &amp;quot;ip_cidr&amp;quot;: [
+          &amp;quot;10.8.8.2/24&amp;quot;,
+          &amp;quot;fdcc:ad94:bacf:1234::4321:2/112&amp;quot;
+        ], 
+        &amp;quot;outbound&amp;quot;: &amp;quot;wg-ep&amp;quot; 
+      }
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例启用内核内置缓存功能&#34;&gt;示例：启用内核内置缓存功能&lt;/h4&gt;
+&lt;p&gt;注意：本处示例仅支持1.8.0以上版本singbox内核&lt;/p&gt;
+&lt;p&gt;注意：由于experimental.json是完全覆盖脚本内置设置，故如果需要使用clash面板就必须同时写入clash_api相关内容&lt;/p&gt;
+&lt;p&gt;注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/experimental.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;experimental&amp;quot;: {
+    &amp;quot;clash_api&amp;quot;: {
+      &amp;quot;external_controller&amp;quot;: &amp;quot;0.0.0.0:9999&amp;quot;,
+      &amp;quot;external_ui&amp;quot;: &amp;quot;ui&amp;quot;,
+      &amp;quot;external_ui_download_url&amp;quot;: &amp;quot;&amp;quot;,
+      &amp;quot;secret&amp;quot;: &amp;quot;&amp;quot;,
+      &amp;quot;default_mode&amp;quot;: &amp;quot;Rule&amp;quot;
+    },
+    &amp;quot;cache_file&amp;quot;: {
+      &amp;quot;enabled&amp;quot;: true,
+      &amp;quot;path&amp;quot;: &amp;quot;&amp;quot;,
+      &amp;quot;cache_id&amp;quot;: &amp;quot;&amp;quot;,
+      &amp;quot;store_fakeip&amp;quot;: false
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例自定义路由规则&#34;&gt;示例：自定义路由规则&lt;/h4&gt;
+&lt;p&gt;注意：如果你想自定义二级或者更低等级的json字段，则其上级字段也必须包含在文件中，否则singbox内核无法完成合并&lt;/p&gt;
+&lt;p&gt;注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！&lt;/p&gt;
+&lt;p&gt;注意：简单规则推荐使用脚本内置：&lt;strong&gt;6-6-2自定义规则&lt;/strong&gt;功能进行编辑，更简单直观！&lt;/p&gt;
+&lt;p&gt;具体字段内容可以参考：&lt;a href=&#34;https://sing-box.sagernet.org/zh/configuration/route/rule&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/route.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;route&amp;quot;: {
+    &amp;quot;rules&amp;quot;: [
+      { &amp;quot;inbound&amp;quot;: [ &amp;quot;mixed-in&amp;quot; ], &amp;quot;outbound&amp;quot;: &amp;quot;GLOBAL&amp;quot; },
+      {
+        &amp;quot;domain&amp;quot;: [
+          &amp;quot;example.a.com&amp;quot;,
+          &amp;quot;example.b.com&amp;quot;
+        ],
+        &amp;quot;domain_suffix&amp;quot;: [
+          &amp;quot;acl4.ssr&amp;quot;,
+          &amp;quot;ip6-localhost&amp;quot;
+        ],
+        &amp;quot;ip_cidr&amp;quot;: [
+          &amp;quot;0.0.0.0/8&amp;quot;,
+          &amp;quot;10.0.0.0/8&amp;quot;
+        ],
+        &amp;quot;outbound&amp;quot;: &amp;quot;🎯 全球直连&amp;quot;
+      },
+      { &amp;quot;domain_suffix&amp;quot;: [ &amp;quot;example.com&amp;quot; ], &amp;quot;outbound&amp;quot;: &amp;quot;🚀 节点选择&amp;quot; },
+      { &amp;quot;domain_keyword&amp;quot;: [ &amp;quot;baidu&amp;quot; ], &amp;quot;outbound&amp;quot;: &amp;quot;DIRECT&amp;quot; },
+      { &amp;quot;source_ip_cidr&amp;quot;: [ &amp;quot;10.0.0.0/24&amp;quot; ], &amp;quot;outbound&amp;quot;: &amp;quot;REJECT&amp;quot; },
+      { &amp;quot;rule-set&amp;quot;: [ &amp;quot;geoip-cn&amp;quot; ], &amp;quot;outbound&amp;quot;: &amp;quot;DIRECT&amp;quot; }
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例自定义rule-set规则&#34;&gt;示例：自定义rule-set规则&lt;/h4&gt;
+&lt;p&gt;注意：如果你想自定义二级或者更低等级的json字段，则其上级字段也必须包含在文件中，否则singbox内核无法完成合并&lt;/p&gt;
+&lt;p&gt;注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！&lt;/p&gt;
+&lt;p&gt;注意：你需要通过route.json模块或者dns.json模块来调用rule-set规则，详见&lt;strong&gt;示例：自定义路由规则&lt;/strong&gt; 或 &lt;strong&gt;示例：自定义DNS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;具体字段内容可以参考：&lt;a href=&#34;https://sing-box.sagernet.org/zh/configuration/rule-set&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/route.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;route&amp;quot;: {
+    &amp;quot;rule_set&amp;quot;: [
+      {
+        &amp;quot;tag&amp;quot;: &amp;quot;geoip-cn&amp;quot;,
+        &amp;quot;type&amp;quot;: &amp;quot;local&amp;quot;,
+        &amp;quot;format&amp;quot;: &amp;quot;binary&amp;quot;,
+        &amp;quot;path&amp;quot;: &amp;quot;./ruleset/geoip-cn.srs&amp;quot;
+      },
+      {
+        &amp;quot;tag&amp;quot;: &amp;quot;geoip-us&amp;quot;,
+        &amp;quot;type&amp;quot;: &amp;quot;remote&amp;quot;,
+        &amp;quot;format&amp;quot;: &amp;quot;binary&amp;quot;,
+        &amp;quot;path&amp;quot;: &amp;quot;./ruleset/geoip-us.srs&amp;quot;,
+        &amp;quot;url&amp;quot;: &amp;quot;https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-us.srs&amp;quot;,
+        &amp;quot;download_detour&amp;quot;: &amp;quot;proxy&amp;quot;
+      }      
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;示例自定义dns&#34;&gt;示例：自定义DNS&lt;/h4&gt;
+&lt;p&gt;注意：由于dns.json是完全覆盖脚本内置设置，所以如需使用fakeip则切勿更改fakeip_range，以免引起回环！&lt;/p&gt;
+&lt;p&gt;注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！&lt;/p&gt;
+&lt;p&gt;具体字段内容可以参考：&lt;a href=&#34;https://sing-box.sagernet.org/zh/configuration/dns&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;$CRASHDIR/jsons/dns.json&lt;/code&gt;文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;dns&amp;quot;: {
+    &amp;quot;servers&amp;quot;: [
+      {
+        &amp;quot;tag&amp;quot;: &amp;quot;dns_proxy&amp;quot;,
+        &amp;quot;type&amp;quot;: &amp;quot;https&amp;quot;,
+        &amp;quot;server&amp;quot;: &amp;quot;doh.pub&amp;quot;,
+		&amp;quot;routing_mark&amp;quot;: 7894,
+		&amp;quot;detour&amp;quot;: &amp;quot;👑 高级节点&amp;quot;,
+        &amp;quot;domain_resolver&amp;quot;: &amp;quot;dns_resolver&amp;quot;
+      },
+      {
+        &amp;quot;tag&amp;quot;: &amp;quot;dns_direct&amp;quot;,
+        &amp;quot;type&amp;quot;: &amp;quot;https&amp;quot;,
+        &amp;quot;server&amp;quot;: &amp;quot;doh.pub&amp;quot;,
+		&amp;quot;routing_mark&amp;quot;: 7894,
+        &amp;quot;domain_resolver&amp;quot;: &amp;quot;dns_resolver&amp;quot;
+      },
+      {
+        &amp;quot;tag&amp;quot;: &amp;quot;dns_fakeip&amp;quot;,
+        &amp;quot;type&amp;quot;: &amp;quot;fakeip&amp;quot;,
+        &amp;quot;inet4_range&amp;quot;: &amp;quot;28.0.0.1/8&amp;quot;,
+        &amp;quot;inet6_range&amp;quot;: &amp;quot;fc00::/16&amp;quot;
+      },
+      {
+        &amp;quot;tag&amp;quot;: &amp;quot;dns_resolver&amp;quot;,
+        &amp;quot;type&amp;quot;: &amp;quot;https&amp;quot;,
+        &amp;quot;server&amp;quot;: &amp;quot;223.5.5.5&amp;quot;,
+        &amp;quot;routing_mark&amp;quot;: 7894
+      }
+    ],
+    &amp;quot;rules&amp;quot;: [
+      { &amp;quot;clash_mode&amp;quot;: &amp;quot;Direct&amp;quot;, &amp;quot;server&amp;quot;: &amp;quot;dns_direct&amp;quot;, &amp;quot;strategy&amp;quot;: &amp;quot;prefer_ipv4&amp;quot; },  
+      { &amp;quot;domain_suffix&amp;quot;: [&amp;quot;services.googleapis.cn&amp;quot;], &amp;quot;server&amp;quot;: &amp;quot;dns_fakeip&amp;quot;, &amp;quot;strategy&amp;quot;: &amp;quot;prefer_ipv4&amp;quot;, &amp;quot;rewrite_ttl&amp;quot;: 1 },
+      { &amp;quot;domain&amp;quot;: [&amp;quot;time-ios.apple.com&amp;quot;, &amp;quot;time1.cloud.tencent.com&amp;quot;, &amp;quot;music.163.com&amp;quot;, &amp;quot;musicapi.taihe.com&amp;quot;, &amp;quot;music.taihe.com&amp;quot;, &amp;quot;songsearch.kugou.com&amp;quot;, &amp;quot;trackercdn.kugou.com&amp;quot;, &amp;quot;api-jooxtt.sanook.com&amp;quot;, &amp;quot;api.joox.com&amp;quot;, &amp;quot;joox.com&amp;quot;, &amp;quot;y.qq.com&amp;quot;, &amp;quot;streamoc.music.tc.qq.com&amp;quot;, &amp;quot;mobileoc.music.tc.qq.com&amp;quot;, &amp;quot;isure.stream.qqmusic.qq.com&amp;quot;, &amp;quot;dl.stream.qqmusic.qq.com&amp;quot;, &amp;quot;aqqmusic.tc.qq.com&amp;quot;, &amp;quot;amobile.music.tc.qq.com&amp;quot;, &amp;quot;music.migu.cn&amp;quot;, &amp;quot;localhost.ptlogin2.qq.com&amp;quot;, &amp;quot;localhost.sec.qq.com&amp;quot;, &amp;quot;xnotify.xboxlive.com&amp;quot;, &amp;quot;proxy.golang.org&amp;quot;, &amp;quot;heartbeat.belkin.com&amp;quot;, &amp;quot;mesu.apple.com&amp;quot;, &amp;quot;swscan.apple.com&amp;quot;, &amp;quot;swquery.apple.com&amp;quot;, &amp;quot;swdownload.apple.com&amp;quot;, &amp;quot;swcdn.apple.com&amp;quot;, &amp;quot;swdist.apple.com&amp;quot;, &amp;quot;lens.l.google.com&amp;quot;, &amp;quot;na.b.g-tun.com&amp;quot;, &amp;quot;ff.dorado.sdo.com&amp;quot;, &amp;quot;shark007.net&amp;quot;, &amp;quot;adguardteam.github.io&amp;quot;, &amp;quot;adrules.top&amp;quot;, &amp;quot;anti-ad.net&amp;quot;, &amp;quot;local.adguard.org&amp;quot;, &amp;quot;static.adtidy.org&amp;quot;, &amp;quot;ps.res.netease.com&amp;quot;], &amp;quot;server&amp;quot;: &amp;quot;dns_direct&amp;quot; },
+      { &amp;quot;domain_suffix&amp;quot;: [&amp;quot;*&amp;quot;, &amp;quot;lan&amp;quot;, &amp;quot;localdomain&amp;quot;, &amp;quot;example&amp;quot;, &amp;quot;invalid&amp;quot;, &amp;quot;localhost&amp;quot;, &amp;quot;test&amp;quot;, &amp;quot;local&amp;quot;, &amp;quot;home.arpa&amp;quot;, &amp;quot;direct&amp;quot;, &amp;quot;time.edu.cn&amp;quot;, &amp;quot;ntp.org.cn&amp;quot;, &amp;quot;pool.ntp.org&amp;quot;, &amp;quot;music.163.com&amp;quot;, &amp;quot;126.net&amp;quot;, &amp;quot;kuwo.cn&amp;quot;, &amp;quot;y.qq.com&amp;quot;, &amp;quot;xiami.com&amp;quot;, &amp;quot;music.migu.cn&amp;quot;, &amp;quot;msftconnecttest.com&amp;quot;, &amp;quot;msftncsi.com&amp;quot;, &amp;quot;steamcontent.com&amp;quot;, &amp;quot;srv.nintendo.net&amp;quot;, &amp;quot;n.n.srv.nintendo.net&amp;quot;, &amp;quot;cdn.nintendo.net&amp;quot;, &amp;quot;battle.net&amp;quot;, &amp;quot;battlenet.com.cn&amp;quot;, &amp;quot;wotgame.cn&amp;quot;, &amp;quot;wggames.cn&amp;quot;, &amp;quot;wowsgame.cn&amp;quot;, &amp;quot;wargaming.net&amp;quot;, &amp;quot;linksys.com&amp;quot;, &amp;quot;linksyssmartwifi.com&amp;quot;, &amp;quot;router.asus.com&amp;quot;, &amp;quot;nflxvideo.net&amp;quot;, &amp;quot;square-enix.com&amp;quot;, &amp;quot;finalfantasyxiv.com&amp;quot;, &amp;quot;ffxiv.com&amp;quot;, &amp;quot;ff14.sdo.com&amp;quot;, &amp;quot;mcdn.bilivideo.cn&amp;quot;, &amp;quot;media.dssott.com&amp;quot;, &amp;quot;market.xiaomi.com&amp;quot;, &amp;quot;cmbchina.com&amp;quot;, &amp;quot;cmbimg.com&amp;quot;, &amp;quot;sandai.net&amp;quot;, &amp;quot;n0808.com&amp;quot;, &amp;quot;3gppnetwork.org&amp;quot;, &amp;quot;uu.163.com&amp;quot;, &amp;quot;pub.3gppnetwork.org&amp;quot;, &amp;quot;oray.com&amp;quot;, &amp;quot;orayimg.com&amp;quot;, &amp;quot;gcloudcs.com&amp;quot;, &amp;quot;gcloudsdk.com&amp;quot;], &amp;quot;server&amp;quot;: &amp;quot;dns_direct&amp;quot; },
+      { &amp;quot;domain_regex&amp;quot;: [&amp;quot;time.*.com&amp;quot;, &amp;quot;time.*.gov&amp;quot;, &amp;quot;time.*.edu.cn&amp;quot;, &amp;quot;time.*.apple.com&amp;quot;, &amp;quot;time1.*.com&amp;quot;, &amp;quot;time2.*.com&amp;quot;, &amp;quot;time3.*.com&amp;quot;, &amp;quot;time4.*.com&amp;quot;, &amp;quot;time5.*.com&amp;quot;, &amp;quot;time6.*.com&amp;quot;, &amp;quot;time7.*.com&amp;quot;, &amp;quot;ntp.*.com&amp;quot;, &amp;quot;ntp1.*.com&amp;quot;, &amp;quot;ntp2.*.com&amp;quot;, &amp;quot;ntp3.*.com&amp;quot;, &amp;quot;ntp4.*.com&amp;quot;, &amp;quot;ntp5.*.com&amp;quot;, &amp;quot;ntp6.*.com&amp;quot;, &amp;quot;ntp7.*.com&amp;quot;, &amp;quot;localhost.*.weixin.qq.com&amp;quot;, &amp;quot;xbox.*.*.microsoft.com&amp;quot;, &amp;quot;.*.*.xboxlive.com&amp;quot;, &amp;quot;xbox.*.microsoft.com&amp;quot;, &amp;quot;.+.stun.*.*&amp;quot;, &amp;quot;.+.stun.*.*.*&amp;quot;, &amp;quot;.+.stun.*.*.*.*&amp;quot;, &amp;quot;.+.stun.*.*.*.*.*&amp;quot;], &amp;quot;server&amp;quot;: &amp;quot;dns_direct&amp;quot; },
+	  { &amp;quot;clash_mode&amp;quot;: &amp;quot;Global&amp;quot;, &amp;quot;query_type&amp;quot;: [&amp;quot;A&amp;quot;, &amp;quot;AAAA&amp;quot;], &amp;quot;server&amp;quot;: &amp;quot;dns_fakeip&amp;quot;, &amp;quot;strategy&amp;quot;: &amp;quot;prefer_ipv4&amp;quot;, &amp;quot;rewrite_ttl&amp;quot;: 1 },
+      { &amp;quot;rule_set&amp;quot;: [&amp;quot;geosite-cn&amp;quot;], &amp;quot;server&amp;quot;: &amp;quot;dns_direct&amp;quot; },
+      { &amp;quot;query_type&amp;quot;: [&amp;quot;A&amp;quot;, &amp;quot;AAAA&amp;quot;], &amp;quot;server&amp;quot;: &amp;quot;dns_fakeip&amp;quot;, &amp;quot;strategy&amp;quot;: &amp;quot;prefer_ipv4&amp;quot;, &amp;quot;rewrite_ttl&amp;quot;: 1 }
+    ],
+    &amp;quot;final&amp;quot;: &amp;quot;dns_proxy&amp;quot;,
+	&amp;quot;strategy&amp;quot;: &amp;quot;prefer_ipv4&amp;quot;,
+    &amp;quot;independent_cache&amp;quot;: true,
+    &amp;quot;reverse_mapping&amp;quot;: true
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;需要更简单的配置模版&#34;&gt;需要更简单的配置模版？&lt;/h4&gt;
+&lt;p&gt;可参考：&lt;a href=&#34;https://proxy-tutorials.dustinwin.us.kg/posts/share-shellcrash-singboxr-ruleset/&#34;&gt;DustinWin-sing-box教程基础篇&lt;/a&gt; 进行配置！&lt;/p&gt;
+">ShellCrash中如何自定义singbox的各json模块</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/bdaz/"" data-c="
+          &lt;h2 id=&#34;目前有多种本地安装方案请自行酌情使用&#34;&gt;目前有多种本地安装方案，请自行酌情使用：&lt;/h2&gt;
+&lt;h3 id=&#34;〇-首先识别内核及安装版本&#34;&gt;〇、首先识别内核及安装版本：&lt;/h3&gt;
+&lt;p&gt;请连接设备SSH后，执行如下命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;uname -ms | tr &#39; &#39; &#39;_&#39; | tr &#39;[A-Z]&#39; &#39;[a-z]&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在返回的内容中即可看到CPU版本，之后找到对应版本的安装包或者内核即可&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;aarch64=armv8=arm64&lt;/p&gt;
+&lt;p&gt;华硕设备或小米R1D/R2D/R3D使用armv7内核可能无法运行，请尝试使用armv5内核&lt;/p&gt;
+&lt;p&gt;mips设备通常都是mipsle-softfloat，如果无法运行，请逐一尝试其他mips内核&lt;/p&gt;
+&lt;h3 id=&#34;一-通过winscp或其他scp客户端手动上传安装包文件完整安装或覆盖升级&#34;&gt;一、通过WinSCP或其他SCP客户端手动上传安装包文件完整安装或覆盖升级：&lt;/h3&gt;
+&lt;p&gt;1、点击 &lt;a href=&#34;https://github.com/juewuy/ShellCrash/raw/master/ShellCrash.tar.gz&#34;&gt;Github源&lt;/a&gt; 或者 &lt;a href=&#34;https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master/ShellCrash.tar.gz&#34;&gt;Jsdelivr源&lt;/a&gt; 下载本地安装包文件&lt;strong&gt;ShellCrash.tar.gz&lt;/strong&gt;（如果文件名不对或乱码，请自行改名）&lt;/p&gt;
+&lt;p&gt;2、将该压缩文件（请勿解压）使用WinSCP或其他SCP客户端上传至设备/tmp目录&lt;/p&gt;
+&lt;p&gt;3、&lt;/p&gt;
+&lt;p&gt;运行OpenWrt或其他非标准Linux系统的设备（主要是各类路由器），请使用如下命令安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mkdir -p /tmp/SC_tmp &amp;amp;&amp;amp; tar -zxf &#39;/tmp/ShellCrash.tar.gz&#39; -C /tmp/SC_tmp/ &amp;amp;&amp;amp; source /tmp/SC_tmp/init.sh 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行标准Linux系统的设备则使用如下命令进行安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo -i #如提示输入密码，请输入用户密码
+mkdir -p /tmp/SC_tmp &amp;amp;&amp;amp; tar -zxf &#39;/tmp/ShellCrash.tar.gz&#39; -C /tmp/SC_tmp/ &amp;amp;&amp;amp; bash /tmp/SC_tmp/init.sh &amp;amp;&amp;amp; source /etc/profile &amp;gt;/dev/null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;如果你使用的命令安装出错，那么请从第2步开始重新安装，并尝试使用另一个安装命令&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;4、参考&lt;strong&gt;↓↓↓通过WinSCP或其他SCP客户端手动上传内核单独安装/升级内核↓↓↓&lt;/strong&gt;安装所需的内核文件&lt;/p&gt;
+&lt;p&gt;5、运行ShellCrash脚本，如有需要，请使用8-2功能进入新手引导&lt;/p&gt;
+&lt;h3 id=&#34;二-通过winscp或其他scp客户端手动上传内核单独安装升级内核&#34;&gt;二、通过WinSCP或其他SCP客户端手动上传内核单独安装/升级内核：&lt;/h3&gt;
+&lt;p&gt;1、参考&lt;strong&gt;↑↑↑识别内核及安装版本↑↑↑&lt;/strong&gt;识别内核并下载对应内核文件：&lt;/p&gt;
+&lt;p&gt;​	Sing-Box内核：&lt;a href=&#34;https://github.com/juewuy/ShellCrash/tree/update/bin/singboxr&#34;&gt;https://github.com/juewuy/ShellCrash/tree/update/bin/singboxr&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;​	Meta内核：&lt;a href=&#34;https://github.com/juewuy/ShellCrash/tree/update/bin/meta&#34;&gt;https://github.com/juewuy/ShellCrash/tree/update/bin/meta&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、需要标准二进制文件，第三方地址请自行解压，通常无须改名&lt;/p&gt;
+&lt;p&gt;3、之后将该二进制文件使用WinSCP或其他SCP客户端上传至/tmp目录&lt;/p&gt;
+&lt;p&gt;4、之后在SSH中直接运行crash命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;crash 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;5、参考提示完成加载&lt;/p&gt;
+&lt;h3 id=&#34;三-通过winscp或其他scp客户端手动上传yamljson配置文件&#34;&gt;三、通过WinSCP或其他SCP客户端手动上传yaml/json配置文件：&lt;/h3&gt;
+&lt;p&gt;1、使用WinSCP或其他SCP客户端将yaml或yml格式(不限命名)或者名为config.json(文件名必须一致)的配置文件上传至/tmp目录&lt;/p&gt;
+&lt;p&gt;2、运行脚本，参考提示完成加载&lt;/p&gt;
+&lt;h3 id=&#34;四-通过配置局域网http代理的方式一键安装&#34;&gt;四、通过配置局域网http代理的方式一键安装：&lt;/h3&gt;
+&lt;p&gt;1、在PC或手机上运行同类软件，并启用http代理和允许局域网设备访问&lt;/p&gt;
+&lt;p&gt;2、获取其http代理IP和端口，比如192.168.31.101:1080&lt;/p&gt;
+&lt;p&gt;3、进入SSH，运行以下命令设置环境变量,注意替换ip和端口：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;export all_proxy=http://【你的IP:端口】
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;4、运行脚本一键在线安装命令，如果使用wget，需要改用wget -Y on命令执行；如果报错，则说明ip端口不对或者无法连接&lt;/p&gt;
+&lt;p&gt;5、安装完成之后请用以下命令卸载环境变量：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;unset all_proxy
+&lt;/code&gt;&lt;/pre&gt;
+">本地安装ShellCrash的教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/gDyfIPSsZ/"" data-c="
+          &lt;p&gt;教程参考：https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;amp;tid=4046020&lt;br&gt;
+原作者Github地址：https://github.com/paldier/ax3600_tool&lt;/p&gt;
+&lt;h4 id=&#34;首先需要参考此文破解ssh权限已破解则略过&#34;&gt;首先需要参考此文破解SSH权限（已破解则略过）&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/#%E8%8E%B7%E5%8F%96%E8%B7%AF%E7%94%B1%E5%99%A8ssh%E6%9D%83%E9%99%90&#34;&gt;https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/#获取路由器ssh权限&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;之后备份nand运行如下命令&#34;&gt;之后备份nand，运行如下命令：&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cat /proc/mtd | grep bdata
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据返回的结果判定bdata分区所在，比如mtd9&lt;/p&gt;
+&lt;p&gt;之后运行如下命令，注意将/dev/mtd9中的mtd9换成你实际查看到的mtd分区名&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;nanddump -f /tmp/bdata.img /dev/mtd9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行成功后用winscp下载到电脑上备份好（以防万一）&lt;/p&gt;
+&lt;h4 id=&#34;接下来下载破解文件&#34;&gt;接下来下载破解文件&lt;/h4&gt;
+&lt;h6 id=&#34;httpsgithubcompaldierax3600_toolreleasesdownload20221007mitoolzip&#34;&gt;&lt;a href=&#34;https://github.com/paldier/ax3600_tool/releases/download/20221007/mitool.zip&#34;&gt;https://github.com/paldier/ax3600_tool/releases/download/20221007/mitool.zip&lt;/a&gt;&lt;/h6&gt;
+&lt;p&gt;将文件在windows下手动解压&lt;/p&gt;
+&lt;h5 id=&#34;之后用winscp将文件上传到路由器的tmp目录下执行如下代码&#34;&gt;之后用winscp将文件上传到路由器的/tmp目录下，执行如下代码：&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;chmod +x /tmp/mitool.sh &amp;amp;&amp;amp; /tmp/mitool.sh unlock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;机器会自动重启重启后再次用winscp将该文件夹上传到路由器的tmp目录下并执行&#34;&gt;机器会自动重启，重启后再次用winscp将该文件夹上传到路由器的/tmp目录下，并执行：&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;chmod +x /tmp/mitool.sh &amp;amp;&amp;amp; /tmp/mitool.sh sn &amp;amp;&amp;amp; /tmp/mitool.sh hack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;会自动设置永久ssh、telnet、uart权限，同时会计算出默认的root密码&lt;/p&gt;
+&lt;p&gt;注意记录密码，恢复出厂后telnet和ssh需要用&lt;/p&gt;
+&lt;p&gt;注意记录sn号码，如果遇见sn号丢失可以用来还原&lt;/p&gt;
+&lt;h5 id=&#34;最后再次用winscp将该文件夹上传到路由器的tmp目录下执行&#34;&gt;最后再次用winscp将该文件夹上传到路由器的/tmp目录下，执行：&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;chmod +x /tmp/mitool.sh &amp;amp;&amp;amp; /tmp/mitool/mitool.sh lock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启后即使恢复出厂ssid也能正常了&lt;/p&gt;
+&lt;h5 id=&#34;如升级后ssh被禁用可以用telnet登录执行下面代码再次启用ssh&#34;&gt;如升级后ssh被禁用可以用telnet登录，执行下面代码再次启用ssh&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sed -i &#39;s/channel=.*/channel=&amp;quot;debug&amp;quot;/g&#39; /etc/init.d/dropbear
+/etc/init.d/dropbear start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此基本可以保证机器长期拥有root权限&lt;/p&gt;
+&lt;h4 id=&#34;其他&#34;&gt;其他：&lt;/h4&gt;
+&lt;h5 id=&#34;如遇sn号丢失可以重新上传文件夹后使用以下命令还原&#34;&gt;如遇SN号丢失，可以重新上传文件夹后使用以下命令还原&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;chmod +x /tmp/mitool.sh &amp;amp;&amp;amp; /tmp/mitool.sh setsn xxxxxx #将此次内容替换为之前记录的sn号
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;如需恢复bdata分区可以使用以下命令恢复&#34;&gt;如需恢复bdata分区，可以使用以下命令恢复&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mtd write /tmp/bdata.img bdata #注意将文件名bdata.img替换为你实际备份的文件名
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;如果使用以上教程无法成功备份或者遇见注入wifi信号丢失-mesh失效等奇怪问题请恢复bdata分区后&#34;&gt;如果使用以上教程无法成功备份或者遇见注入WiFi信号丢失、mesh失效等奇怪问题，请恢复bdata分区后&lt;/h5&gt;
+&lt;p&gt;参考基础教程手动进行固化 &lt;a href=&#34;https://www.wutaijie.cn/?p=254&#34;&gt;https://www.wutaijie.cn/?p=254&lt;/a&gt;&lt;/p&gt;
+">小米路由设备破解固化永久SSH教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/chang-jian-wen-ti/"" data-c="
+          &lt;p&gt;一些运行中常见的问题汇总，请先在此处了解！&lt;/p&gt;
+&lt;h2 id=&#34;日经问题&#34;&gt;日经问题&lt;/h2&gt;
+&lt;h3 id=&#34;xx设备能不能安装&#34;&gt;·XX设备能不能安装？&lt;/h3&gt;
+&lt;p&gt;理论上只要开启/破解了SSH的Linux设备都可以安装，请先用安装脚本自行尝试，如果无法安装或者无法运行也可以找作者适配&lt;/p&gt;
+&lt;h3 id=&#34;xx设备能跑多快&#34;&gt;·XX设备能跑多快？&lt;/h3&gt;
+&lt;p&gt;设备能跑多快取决于你设备的CPU性能，或者是否支持硬件解码AES加密&lt;/p&gt;
+&lt;p&gt;软解性能：常见的双核mt7621，使用chacha20系加密，极限可以跑满100M；常见的A53 4核SOC，极限可以跑500-700M。&lt;/p&gt;
+&lt;p&gt;硬解性能：AX3600/AX6等支持硬解AES的设备跑单层aes加密可以跑满千兆&lt;/p&gt;
+&lt;h3 id=&#34;xx功能能不能实现&#34;&gt;·XX功能能不能实现？&lt;/h3&gt;
+&lt;p&gt;提问前请先去&lt;strong&gt;2-功能设置&lt;/strong&gt;，&lt;strong&gt;7-进阶设置&lt;/strong&gt;，&lt;strong&gt;8-工具列表&lt;/strong&gt;里确认是否有相关功能！&lt;/p&gt;
+&lt;p&gt;如果是确认没有的功能请去→&lt;a href=&#34;https://github.com/juewuy/ShellCrash/issues&#34;&gt;Github提交issue&lt;/a&gt;！TG群内不再受理此类问题！&lt;/p&gt;
+&lt;p&gt;紧急定制功能的需求请私聊→&lt;a href=&#34;https://t.me/juewuy&#34;&gt;付费支持&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;与xx应用是否兼容&#34;&gt;·与XX应用是否兼容？&lt;/h3&gt;
+&lt;p&gt;由于ShellCrash的Redir/混合/Tun模式在运行中需要劫持局域网流量及DNS才能进行透明代理，所以ShellCrash不能与各类同样基于流量劫持的应用直接共存，例如：&lt;/p&gt;
+&lt;p&gt;​	广告过滤插件、网游加速器、SmartDNS、以及各类同类代理应用&lt;/p&gt;
+&lt;p&gt;但是你依然可以通过以下方式兼容运行&lt;/p&gt;
+&lt;p&gt;​	1、如果是依赖劫持DNS服务的应用比如SmartDNS或者广告过滤插件，请参考：https://t.me/ShellClash/148&lt;/p&gt;
+&lt;p&gt;​	2、使用ShellCrash的局域网过滤功能或纯净模式，分设备进行代理&lt;/p&gt;
+&lt;h3 id=&#34;为什么ping不通&#34;&gt;·为？什？么？PING？不？通？&lt;/h3&gt;
+&lt;p&gt;ping命令基于ICMP协议，clash暂不支持代理ICMP协议，请使用curl或直接浏览器访问进行测试！！！&lt;/p&gt;
+&lt;h3 id=&#34;有视频教程吗&#34;&gt;·有视频教程吗？&lt;/h3&gt;
+&lt;p&gt;有的，在此感谢诸位UP主的付出！&lt;/p&gt;
+&lt;p&gt;教程详见：&lt;a href=&#34;https://www.youtube.com/results?search_query=ShellClash&#34;&gt;https://www.youtube.com/results?search_query=ShellCrash&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;部分教程对应的脚本版本可能已经比较陈旧，请酌情参照！&lt;/p&gt;
+&lt;h2 id=&#34;脚本安装运行相关&#34;&gt;脚本安装运行相关&lt;/h2&gt;
+&lt;h3 id=&#34;安装失败提示无法连接或者完全没反应&#34;&gt;·安装失败，提示无法连接或者完全没反应&lt;/h3&gt;
+&lt;p&gt;​	可能是安装源被运营商屏蔽了，请切换和尝试使用不同的安装源！！！&lt;/p&gt;
+&lt;p&gt;​	具体安装源列表请&lt;a href=&#34;https://github.com/juewuy/ShellCrash/blob/master/README_CN.md&#34;&gt;前往Github&lt;/a&gt;查看&lt;/p&gt;
+&lt;p&gt;​	如果实在无法安装请尝试使用本地安装！参考：&lt;a href=&#34;https://juewuy.github.io/bdaz&#34;&gt;https://juewuy.github.io/bdaz&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装失败提示tar-相关错误&#34;&gt;·安装失败，提示tar 相关错误&lt;/h3&gt;
+&lt;p&gt;​	可能是安装目录剩余空间不足或者权限不足，请切换安装目录或者使用root用户安装&lt;/p&gt;
+&lt;h3 id=&#34;安装失败提示https相关错误&#34;&gt;·安装失败，提示Https相关错误&lt;/h3&gt;
+&lt;p&gt;​	请使用wget及http源安装&lt;/p&gt;
+&lt;h3 id=&#34;安装重装失败提示failed-to-connect-127001&#34;&gt;·安装/重装失败，提示Failed to connect 127.0.0.1……&lt;/h3&gt;
+&lt;p&gt;​	可能是之前设置了本机代理，并且没有正确使用脚本卸载的原因，可以使用如下命令清除本机代理后再安装&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;unset all_proxy &amp;amp;&amp;amp; unset ALL_PROXY
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;下载更新内核-脚本-面板-数据库等文件一直失败&#34;&gt;·下载更新内核、脚本、面板、数据库等文件一直失败&lt;/h3&gt;
+&lt;p&gt;​	请使用0-返回上级菜单，9-更新，7-切换安装源功能，切换安装源，并尝试使用可以正常更新的源&lt;/p&gt;
+&lt;p&gt;​	如果依然无法更新，参考&lt;a href=&#34;https://juewuy.github.io/bdaz&#34;&gt;https://juewuy.github.io/bdaz&lt;/a&gt; 使用本地安装&lt;/p&gt;
+&lt;h3 id=&#34;在线生成配置文件失败或者导入订阅失败&#34;&gt;·在线生成配置文件失败或者导入订阅失败&lt;/h3&gt;
+&lt;p&gt;​	请确保配置文件是标准的clash配置文件格式，如果不确定配置文件格式请使用6-1在线生成配置文件功能&lt;/p&gt;
+&lt;p&gt;​	如果依然无法获取，可以使用脚本提示的链接在浏览器中手动下载该配置文件后并使用Winscp手动上传到/tmp文件夹，之后运行脚本即可导入&lt;/p&gt;
+&lt;h3 id=&#34;安装的新版本有问题如何回退到旧版本&#34;&gt;·安装的新版本有问题，如何回退到旧版本？&lt;/h3&gt;
+&lt;p&gt;​	目前只支持回退到一部分release版本&lt;/p&gt;
+&lt;p&gt;​	使用9-更新，切换安装源，切换版本功能，切换至想回退的版本，之后重新更新脚本或内核文件即可完成回退&lt;/p&gt;
+&lt;h2 id=&#34;脚本服务运行相关&#34;&gt;脚本服务运行相关&lt;/h2&gt;
+&lt;h3 id=&#34;如何导入配置文件-订阅链接-节点分享链接&#34;&gt;·如何导入配置文件、订阅链接、节点分享链接？&lt;/h3&gt;
+&lt;p&gt;​	支持导入各种形式的订阅链接，使用6-1功能即可&lt;/p&gt;
+&lt;p&gt;​	支持导入各种形式的节点分享链接，使用6-1或者6-6自定义节点(限clash内核)功能即可&lt;/p&gt;
+&lt;p&gt;​	不支持直接填写节点数据，请尽量使用分享链接！trojan的分享链接格式为trojan://password@host:port&lt;/p&gt;
+&lt;h3 id=&#34;如何使用自定义的端口-设置-规则以及锚点-ruleset等高级功能&#34;&gt;·如何使用自定义的端口、设置、规则以及锚点、ruleset等高级功能？&lt;/h3&gt;
+&lt;p&gt;​	你可以通过6-配置文件管理，6-自定义配置文件，功能来管理或者调整以上功能&lt;/p&gt;
+&lt;h3 id=&#34;如何使指定站点直连或者使用指定规则&#34;&gt;·如何使指定站点直连或者使用指定规则？&lt;/h3&gt;
+&lt;p&gt;​	你可以通过6-配置文件管理，6-自定义配置文件，&lt;strong&gt;2-管理自定义规则&lt;/strong&gt;功能来管理或者调整以上功能&lt;/p&gt;
+&lt;h3 id=&#34;内核服务无法正常运行&#34;&gt;·内核服务无法正常运行&lt;/h3&gt;
+&lt;p&gt;​	请先使用8-测试菜单，1-查看内核运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。&lt;/p&gt;
+&lt;p&gt;​	~如果提示为 “空” 或者 “Bus error” 或者 “Permission denied” ，则代表内核不完整，请前往更新页面重新安装内核&lt;/p&gt;
+&lt;p&gt;​	~如果提示为 “ERRO[0000] rules [0000]” 则代表自定义配置文件有问题，请自行检查配置规则&lt;/p&gt;
+&lt;p&gt;​	如无法确定问题所在，可以前往tg群：&lt;a href=&#34;&#34;&gt;t.me/ShellClash&lt;/a&gt; 进行咨询&lt;/p&gt;
+&lt;h3 id=&#34;本地面板下载或安装失败&#34;&gt;·本地面板下载或安装失败&lt;/h3&gt;
+&lt;p&gt;​	如果有下载或安装失败，请首先尝试使用9-7更换安装源重新安装&lt;/p&gt;
+&lt;p&gt;​	如果换源安装依然失败，请使用 df -h $clashdir 命令检查设备存储空间是否充足&lt;/p&gt;
+&lt;p&gt;​	如果依然不能解决问题，请前往&lt;a href=&#34;https://github.com/juewuy/ShellCrash/tree/master/bin&#34;&gt;Github&lt;/a&gt; 下载面板文件，解压之后用winscp手动上传到安装目录(echo $clashdir) 的/ui文件夹下&lt;/p&gt;
+&lt;h3 id=&#34;斐讯官方官改固件设备设置开机启动无效必须手动重启clash&#34;&gt;·斐讯官方/官改固件设备设置开机启动无效，必须手动重启clash&lt;/h3&gt;
+&lt;p&gt;​	这是固件启动后会重置iptables的问题导致的，请取消开机启动功能，之后把以下语句&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sleep 120 &amp;amp;&amp;amp; /etc/clash/start.sh start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​	写入路由器管理界面-高级设置-开机启动，功能内即可&lt;/p&gt;
+&lt;h3 id=&#34;其他设备设置开机启动无效必须手动启动clash&#34;&gt;·其他设备设置开机启动无效，必须手动启动clash&lt;/h3&gt;
+&lt;p&gt;​	部分固件可能尚未适配，请自行寻找添加开机启动脚本的方法，并将如下语句添加为开机执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;export clashdir=&amp;quot;你的安装目录&amp;quot;&amp;amp;&amp;amp;$clashdir/start.sh init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;网络相关问题&#34;&gt;网络相关问题&lt;/h2&gt;
+&lt;h3 id=&#34;无法访问一切国外网站但国内正常&#34;&gt;·无法访问一切国外网站但国内正常&lt;/h3&gt;
+&lt;p&gt;​	由于部分&lt;strong&gt;中继设备&lt;/strong&gt;不使用nat转发而是直接使用路由表转发，所以无法配置透明路由，此类设备&lt;strong&gt;无法使用&lt;/strong&gt;主路由模式，如果强行使用，必须依照旁路由设置，将设备的DNS和网关地址都指向运行clash服务的设备&lt;/p&gt;
+&lt;p&gt;​	也可能是&lt;strong&gt;节点配置问题&lt;/strong&gt;，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在&lt;/p&gt;
+&lt;p&gt;​		如果节点测速失败且日志上显示任何与 x509 相关的错误，请使用6-1或6-3重新生成配置文件，并保证启用&lt;strong&gt;跳过本地证书验证&lt;/strong&gt;功能&lt;/p&gt;
+&lt;p&gt;​		如果节点测速成功但依然无法访问，且没有日志显示，则是内核没有正确接管流量，请尝试切换不同的运行模式&lt;/p&gt;
+&lt;h3 id=&#34;无法访问部分国外网站提示证书错误等或者dashboard面板只显示ip没有域名&#34;&gt;·无法访问部分国外网站，提示证书错误等，或者Dashboard面板只显示IP没有域名&lt;/h3&gt;
+&lt;p&gt;​	1、可能是由于本地DNS污染导致的，redir-host模式下，可能需要手动配置dot或者doh类型的加密dns；通常直接把dns模式切换到fake-ip模式都能够解决此类问题；也可以升级到最新版本，在使用Meta或者Pre内核的前提下，启用域名嗅探功能&lt;/p&gt;
+&lt;p&gt;​	2、可能是浏览器启用了安全DNS导致clash内核无法接管DNS服务，请更换浏览器访问，或者在浏览器设置中关闭安全DNS服务&lt;/p&gt;
+&lt;p&gt;​	3、也可能是部分老旧设备固件版本太低不支持iptables-nat协议，此类设备建议使用纯净模式&lt;/p&gt;
+&lt;p&gt;​	4、旁路由请确认子设备没有启用ipv6，否则dns会由ipv6查询不会经过旁路由设备&lt;/p&gt;
+&lt;h3 id=&#34;浏览器内无法访问部分网站但app或更换浏览器则正常&#34;&gt;·浏览器内无法访问部分网站，但APP或更换浏览器则正常&lt;/h3&gt;
+&lt;p&gt;​	这是由于部分浏览器启用了安全DNS导致脚本本身的DNS劫持失效&lt;/p&gt;
+&lt;p&gt;​	请自行使用搜索引擎查找关键词：【{你的浏览器名称}+禁用安全DNS】，以获取禁用安全DNS的办法！&lt;/p&gt;
+&lt;h3 id=&#34;无法访问国内网站但国外地址正常&#34;&gt;·无法访问国内网站但国外地址正常&lt;/h3&gt;
+&lt;p&gt;​	这应该是没有启用IP转发导致的，请在工具界面重新进入新手引导，参考引导指示启用ip转发功能&lt;/p&gt;
+&lt;h3 id=&#34;一部分国内网页打不开网页错版乱码等&#34;&gt;·一部分国内网页打不开，网页错版，乱码等&lt;/h3&gt;
+&lt;p&gt;​	这是由于使用了部分去广告规则，规则误杀导致的，如果不喜欢去广告规则请使用默认不带去广告的规则或者使用自己定义的规则文件，也可以在网页面板中手动开关去广告规则。&lt;/p&gt;
+&lt;h3 id=&#34;正常运行一段时间后断网必须重启服务才能恢复&#34;&gt;·正常运行一段时间后断网，必须重启服务才能恢复&lt;/h3&gt;
+&lt;p&gt;​	这可能是系统中存在某些会重置防火墙的应用或者进程，如果了解相关知识可以尝试禁用这些进程，比如某些端口转发应用或者流量劫持应用、游戏加速器等。&lt;/p&gt;
+&lt;p&gt;​	也可以尝试用5自动任务添加一个&lt;strong&gt;重设透明路由&lt;/strong&gt;-的任务，并设置为&lt;strong&gt;防火墙服务重启后运行&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;无法登录chatgpt&#34;&gt;·无法登录ChatGPT&lt;/h3&gt;
+&lt;p&gt;​	ChatGPT的账号验证部分使用了udp流量，需要代理udp方能连接，请使用&lt;strong&gt;除Redir模式&lt;/strong&gt;之外的代理模式（2-1）&lt;/p&gt;
+&lt;h3 id=&#34;无法使用wireguard或tailscale协议&#34;&gt;·无法使用Wireguard或Tailscale协议&lt;/h3&gt;
+&lt;p&gt;​	为了节省空间及优化内存占用，脚本内置的内核均未编译Wireguard和Tailscale模块，也未编译Gvisor，请使用自定义内核功能，安装原版内核或编译了相关模块的内核（9-2-5）&lt;/p&gt;
+&lt;h3 id=&#34;tv-机顶盒或游戏机设备上的奈飞或类似应用提示检测到代理服务&#34;&gt;·TV、机顶盒或游戏机设备上的奈飞或类似应用提示检测到代理服务&lt;/h3&gt;
+&lt;p&gt;​	可能是由于使用的&lt;strong&gt;规则未能准确覆盖奈飞的IP地址&lt;/strong&gt;导致的，&lt;/p&gt;
+&lt;p&gt;​	解决方式1：使用Meta或者Pre内核，并启用域名嗅探功能&lt;/p&gt;
+&lt;p&gt;​	解决方式2：将面板中的“漏网之鱼”或者“黑名单”代理节点设置为可以解锁奈飞的节点（注意该方式可能会造成奈飞节点流量滥用）&lt;/p&gt;
+&lt;p&gt;​	也可能是你的&lt;strong&gt;机场节点不支持原生的奈飞解锁&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​	解决方式1：使用混合模式+fake-ip的设置组合&lt;/p&gt;
+&lt;p&gt;​	解决方式2：更换支持奈飞解锁的机场，比如https://dler.best/auth/register?affid=89698&lt;/p&gt;
+&lt;h3 id=&#34;无法正确配置旁路由模式&#34;&gt;·无法正确配置旁路由模式&lt;/h3&gt;
+&lt;p&gt;​	配置旁路由的模式与其他类似应用的配置模式是完全一致的&lt;/p&gt;
+&lt;p&gt;​	你需要将&lt;strong&gt;所有需要使用&lt;/strong&gt;ShellCrash服务的设备的&lt;strong&gt;网关地址&lt;/strong&gt;和&lt;strong&gt;DNS服务器&lt;/strong&gt;地址指定为&lt;strong&gt;旁路由的IP地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​	你可以分设备单独使用手动的方式指定，也可以使用主路由或者旁路由（不推荐）的DHCP服务指定&lt;/p&gt;
+&lt;p&gt;​	如果你是搭配路由器的DHCP服务使用，请务必在配置完成后重启全部路由设备&lt;/p&gt;
+&lt;p&gt;​	&lt;strong&gt;注意&lt;/strong&gt;：旁路由模式下，&lt;strong&gt;子设备的ipv6必须关闭&lt;/strong&gt;，否则会出现DNS异常导致网页访问失败的问题&lt;/p&gt;
+&lt;h3 id=&#34;游戏无法连接服务器-谷歌商店应用无法下载&#34;&gt;·游戏无法连接服务器、谷歌商店应用无法下载……&lt;/h3&gt;
+&lt;p&gt;​	请使用2-功能设置，1-切换clash运行模式功能，切换使用支持代理UDP的模式，即可对游戏和应用商店的udp流量进行代理&lt;/p&gt;
+&lt;p&gt;​	部分节点送中之后无法使用谷歌服务，请尝试切换节点&lt;/p&gt;
+&lt;h3 id=&#34;全局模式不生效&#34;&gt;·全局模式不生效&lt;/h3&gt;
+&lt;p&gt;​	全局模式设置后，默认使用的规则其实是全局直连，需要回到节点选择界面手动指定用于全局模式的节点方可正常使用全局代理模式&lt;/p&gt;
+&lt;h3 id=&#34;上传的配置文件导入机场配置文件后面板显示空白&#34;&gt;·上传的配置文件/导入机场配置文件后面板显示空白&lt;/h3&gt;
+&lt;p&gt;​	可能是你的设备缺少openssl根证书文件导致无法正确获取在线规则，请使用9-更新，安装本地根证书功能进行安装&lt;/p&gt;
+&lt;h3 id=&#34;如何添加自定义规则及自定义设定&#34;&gt;·如何添加自定义规则及自定义设定？&lt;/h3&gt;
+&lt;p&gt;​	如果想添加其他自定义设定，或者自定义规则，或者其他配置文件相关功能，可以使用【6-6配置文件覆写】功能&lt;/p&gt;
+&lt;h1 id=&#34;其他问题&#34;&gt;其他问题&lt;/h1&gt;
+&lt;h3 id=&#34;国内测速跑不满带宽&#34;&gt;·国内测速跑不满带宽？&lt;/h3&gt;
+&lt;p&gt;​	默认国内流量也会进内核，DNS模式处于Redir-host模式时可以通过开启【CN_IP绕过内核】功能绕过国内流量以提升速度&lt;/p&gt;
+&lt;p&gt;​	注意：这样做会失去国内分流及去广告效果&lt;/p&gt;
+&lt;h3 id=&#34;如何禁止视频流量使用udp协议提升速度&#34;&gt;·如何禁止视频流量使用UDP协议（提升速度）？&lt;/h3&gt;
+&lt;p&gt;​	可以使用脚本内置的功能设置里的屏蔽QUIC功能进行设置&lt;/p&gt;
+&lt;h3 id=&#34;如何添加自建节点&#34;&gt;·如何添加自建节点？&lt;/h3&gt;
+&lt;p&gt;​	在导入配置文件功能中，使用在线生成配置文件功能，之后输入节点分享链接后选择生成配置文件即可&lt;/p&gt;
+&lt;p&gt;​	trojan的分享链接格式为trojan://password@host:port&lt;/p&gt;
+&lt;h3 id=&#34;如何添加入站协议或使用内网穿透服务&#34;&gt;·如何添加入站协议或使用内网穿透服务？&lt;/h3&gt;
+&lt;p&gt;​	请参考&lt;a href=&#34;https://juewuy.github.io/nWTjEpkSK/#%E7%A4%BA%E4%BE%8B%E8%87%AA%E5%AE%9A%E4%B9%89shadowsockshysteria2%E7%AD%89%E5%8D%8F%E8%AE%AE%E5%85%A5%E7%AB%99&#34;&gt;ShellCrash中如何自定义singbox的各json模块 | Juewuy&#39;s Blog&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;如何代理本机的docker-podman或vmware等容器或虚拟机服务&#34;&gt;·如何代理本机的Docker、podman或vmware等容器或虚拟机服务？&lt;/h3&gt;
+&lt;p&gt;​	Docker网卡需设置为桥接模式，在【2功能设置-1切换防火墙运行模式-7设置劫持范围】中启用6&lt;strong&gt;劫持容器/虚拟机流量&lt;/strong&gt;功能&lt;/p&gt;
+&lt;h3 id=&#34;如何使用自定义host&#34;&gt;·如何使用自定义host？&lt;/h3&gt;
+&lt;p&gt;​	解决方式1：在路由器管理面板或/etc/hosts文件中添加你想要指定的host内容，然后重启clash服务&lt;/p&gt;
+&lt;p&gt;​	解决方式2：使用第三方DNS客户端，之后使用7-6-1，将dns服务器指定为第三方客户端的DNS接口地址&lt;/p&gt;
+&lt;h3 id=&#34;如何使用第三方dns&#34;&gt;·如何使用第三方DNS？&lt;/h3&gt;
+&lt;p&gt;​	请使用7-6-1，将dns服务器指定为第三方客户端的DNS接口地址&lt;/p&gt;
+&lt;h3 id=&#34;部分智能家居多媒体网关等设备网络连接出现问题&#34;&gt;·部分智能家居/多媒体网关等设备网络连接出现问题？&lt;/h3&gt;
+&lt;p&gt;​	请使用功能设置里的局域网设备过滤功能对相关设备进行过滤&lt;/p&gt;
+&lt;h3 id=&#34;是否支持smart策略&#34;&gt;·是否支持smart策略？&lt;/h3&gt;
+&lt;p&gt;​	Smart策略依赖第三方内核实现，可以前往【9更新-2切换内核文件-5自定义内核】功能中，下载相应内核。&lt;/p&gt;
+&lt;h3 id=&#34;ddns服务失效&#34;&gt;·DDNS服务失效？&lt;/h3&gt;
+&lt;p&gt;​	群辉DDNS，请使用6-6自定义规则功能，并添加如下规则&lt;/p&gt;
+&lt;p&gt;​	其他DDNS请在在线面板自行查找日志并截取域名&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;- DOMAIN,checkip.synology.com,DIRECT
+- DOMAIN,ddns.synology.com,DIRECT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;依然没有解决问题&#34;&gt;依然没有解决问题？&lt;/h1&gt;
+&lt;h3 id=&#34;如果你使用的是正式版请先尝试使用9-7-2换源后将脚本更新至测试版&#34;&gt;如果你使用的是正式版，请先尝试使用9-7-2换源后将脚本更新至测试版&lt;/h3&gt;
+&lt;p&gt;如果切换到测试版依然不能解决问题——&lt;/p&gt;
+&lt;h3 id=&#34;请前往tg群tmeshellclash-并严格遵循以下要求发出提问&#34;&gt;请前往TG群：&lt;a href=&#34;https://t.me/ShellClash&#34;&gt;t.me/ShellClash&lt;/a&gt; 并严格遵循以下要求发出提问！&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;注意：如果你的提问不符合以下要求，本作者将不予回复！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、请&lt;strong&gt;务必&lt;/strong&gt;提供&lt;strong&gt;设备信息&lt;/strong&gt;：（例如AX3600官方固件、斐讯N1-Armbian、阿里云-centos，不强求格式，能看懂即可）&lt;/p&gt;
+&lt;p&gt;2、如果是报错问题请&lt;strong&gt;务必&lt;/strong&gt;提供报错问题产生的&lt;strong&gt;相关截图&lt;/strong&gt;或&lt;strong&gt;相关报错文字&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3、&lt;strong&gt;如果是网站或APP无法连接的问题，请&lt;/strong&gt;务必&lt;strong&gt;提供相关Dashboard面板连接日志&lt;/strong&gt;（进入面板的日志界面后，再访问有问题的网站或者APP即可找到相关日志）&lt;/p&gt;
+&lt;p&gt;4、如果是功能问题或其他问题，请&lt;strong&gt;尽量将问题描述清楚&lt;/strong&gt;&lt;/p&gt;
+">ShellCrash使用的常见问题</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/"" data-c="
+          &lt;p&gt;支持Debian、CentOS、Ubuntu、Armbian等绝大多数发行版Linux系统下安装及使用本脚本！&lt;/p&gt;
+&lt;h2 id=&#34;使用步骤&#34;&gt;使用步骤：&lt;/h2&gt;
+&lt;h3 id=&#34;登陆ssh&#34;&gt;登陆SSH&lt;/h3&gt;
+&lt;p&gt;使用SSH连接工具来登陆SSH，推荐putty（体积最小），JuiceSSH（支持安卓手机），或其他工具，SSH工具请自行下载。&lt;/p&gt;
+&lt;p&gt;建议使用root用户登录&lt;/p&gt;
+&lt;p&gt;非root用户请使用sudo -i提权至root用户安装&lt;/p&gt;
+&lt;p&gt;不建议使用sudo +安装命令或者sudo su方式提权安装，会出现环境变量配置相关问题！&lt;/p&gt;
+&lt;h2 id=&#34;使用一键脚本安装shellcrash&#34;&gt;使用一键脚本安装ShellCrash&lt;/h2&gt;
+&lt;p&gt;成功登陆SSH后，直接输入以下命令&lt;/p&gt;
+&lt;p&gt;~&lt;strong&gt;使用curl安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#jsdelivrCDN源
+sudo -i
+bash
+export url=&#39;https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master&#39; &amp;amp;&amp;amp; bash -c &amp;quot;$(curl -kfsSl $url/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;~&lt;strong&gt;使用wget安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#jsdelivrCDN源
+sudo -i
+bash
+export url=&#39;https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master&#39; &amp;amp;&amp;amp; wget -q --no-check-certificate -O /tmp/install.sh $url/install.sh  &amp;amp;&amp;amp; bash /tmp/install.sh &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;~&lt;strong&gt;非root用户安装后&lt;/strong&gt;请额外执行以下命令以读取环境变量：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;source ~/.bashrc &amp;amp;&amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;安装完成后直接在ssh中使用&#34;&gt;安装完成后，直接在SSH中使用：&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;crash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;命令即可管理脚本！&lt;/p&gt;
+&lt;p&gt;你也可以使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;crash -h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;命令查看帮助列表&lt;/p&gt;
+&lt;h5 id=&#34;之后按照新手引导完成配置后即可使用&#34;&gt;之后按照新手引导完成配置后即可使用&lt;/h5&gt;
+&lt;p&gt;如遇使用问题，请先参考&lt;a href=&#34;https://juewuy.github.io/chang-jian-wen-ti/&#34;&gt;常见问题&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题反馈使用交流&#34;&gt;问题反馈&amp;amp;使用交流：&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://t.me/ShellClash&#34;&gt;https://t.me/ShellClash&lt;/a&gt;&lt;/p&gt;
+">在Linux系统安装及使用ShellClash的教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/-F7dWmBj5/"" data-c="
+          &lt;p&gt;使用ShellClash离不开SSH工具，本文就介绍几款各平台体验相对较好的SSH工具&lt;/p&gt;
+&lt;h3 id=&#34;windows-macos平台&#34;&gt;Windows &amp;amp; MacOS平台：&lt;/h3&gt;
+&lt;h4 id=&#34;termius&#34;&gt;Termius&lt;/h4&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://www.v1tx.com/wp-content/uploads/2020/01/20200101100956-1024x670.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&#34;https://termius.com/&#34;&gt;Termius&lt;/a&gt; 是一款全平台的SSH客户端，该软件最大的特点就是支持全部平台，包括Windows、Mac、Linux、iOS、Android等，有了移动设备支持，只要有网络，你可以在任何时间地点管理服务器&lt;/p&gt;
+&lt;p&gt;如果你的工作经常用到SSH连接，还可以升级高级版实现全平台同步，全平台的好处就是只要你在一个平台添加或修改了服务器，其他平台会自动同步，随时随地管理主机，而且也不用在手机上输入复杂的密码了&lt;/p&gt;
+&lt;p&gt;在功能上，Termius 也有很多实用的东西，比如SFTP、代码片段、选项卡等，可以省下很多事情&lt;/p&gt;
+&lt;h4 id=&#34;finalshell&#34;&gt;Finalshell&lt;/h4&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://www.v1tx.com/wp-content/uploads/2019/09/20190911171724.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.hostbuf.com/&#34;&gt;Finalshell&lt;/a&gt; 是一款国人开发的远程连接工具，支持 Windows、Linux 和 macOS，通过界面我们可以看出这款软件非常强大，你不仅可以在远程窗口上执行命令，还可以实时监测到系统的消耗，比如CPU、内存、网络等资源的使用量&lt;/p&gt;
+&lt;p&gt;Finalshell 还有比较方便的一点就是文件的传输，在软件的右下角有一个文件夹管理界面，让你可以像在&lt;a href=&#34;https://www.v1tx.com/post/best-ftp-client/&#34;&gt;FTP软件&lt;/a&gt;中那样传输文件，支持右键上传下载，支持鼠标拖拽文件上传到服务器，省去了很多命令行的繁琐步骤&lt;/p&gt;
+&lt;p&gt;除了基础功能，Finalshell 还可以升级到专业版，包括打包传输、高级网络监控、高级进程管理、多地点ping监控等&lt;/p&gt;
+&lt;h3 id=&#34;安卓平台&#34;&gt;安卓平台：&lt;/h3&gt;
+&lt;h4 id=&#34;juicessh&#34;&gt;JuiceSSH&lt;/h4&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://www.v1tx.com/wp-content/uploads/2020/12/20201202073329-1024x499.jpg&#34; alt=&#34;Android SSH客户端 JuiceSSH&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&#34;https://juicessh.com/&#34;&gt;JuiceSSH&lt;/a&gt; 是一款Android上的免费SSH客户端，你可以用它快速连接到Linux服务器，也可以添加账号密码或密钥保存多台机器，Juice 让你在手机上就能非常方便地执行这些操作&lt;/p&gt;
+&lt;p&gt;它的主要功能有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;全彩色终端显示，多个主题可选&lt;/li&gt;
+&lt;li&gt;轻松输入，弹出键盘可以方便地输入常用的特殊字符&lt;/li&gt;
+&lt;li&gt;Telnet 和 本地 Shell 命令执行&lt;/li&gt;
+&lt;li&gt;第三方插件支持，比如性能监控、OpenSSH导入等&lt;/li&gt;
+&lt;li&gt;其他高级功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于想要在安卓手机上管理服务器的人来说，JuiceSSH 是一个非常好的选择，免费版本以及足够使用，付费版还有更多强大功能，包括端口转发、自动执行代码段、快捷方式等，能够极大提升运维效率&lt;/p&gt;
+&lt;h3 id=&#34;ios平台&#34;&gt;IOS平台：&lt;/h3&gt;
+&lt;h4 id=&#34;servercat&#34;&gt;ServerCat&lt;/h4&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://www.v1tx.com/wp-content/uploads/2020/12/20201202073517-1024x515.jpg&#34; alt=&#34;iOS SSH客户端 ServerCat&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/cn/app/servercat-linux-%E7%9B%91%E6%8E%A7-ssh-%E7%BB%88%E7%AB%AF/id1501532023&#34;&gt;ServerCat&lt;/a&gt; 是一款iOS平台上的Linux管理软件，它可以让你在iPhone上连接远程服务器，用来监视系统性能、管理Docker和执行SSH命令，软件内提供了很多监控参数，比如CPU、内存、系统负载、网速、硬盘等，并且以可视化的形式展示，你可以随时查看自己服务器的系统状态，避免因负载过高则影响产品服务&lt;/p&gt;
+&lt;h4 id=&#34;shellfish&#34;&gt;ShellFish&lt;/h4&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;https://www.v1tx.com/wp-content/uploads/2021/07/20210719141114-1024x517.jpg&#34; alt=&#34;iPhone和iPad上的SSH客户端 ShellFish&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&#34;https://apps.apple.com/cn/app/secure-shellfish/id1336634154&#34;&gt;ShellFish&lt;/a&gt; 是一款SFTP和SSH结合的软件，支持iPhone和iPad，你可以用它来连接远程服务并管理上面的文件，它专为移动设备做了很多优化，比如你可以使用SFTP管理服务器上的文件，使用专用键盘执行命令，创建代码片段快速使用等，而且还有一个很不错的地方在于它是支持&lt;a href=&#34;https://www.v1tx.com/post/shortcuts/&#34;&gt;快捷指令&lt;/a&gt;的，你可以和其他APP配合使用，使用语音执行命令等&lt;/p&gt;
+&lt;h3 id=&#34;scp工具&#34;&gt;SCP工具：&lt;/h3&gt;
+&lt;h4 id=&#34;winscp&#34;&gt;WinSCP&lt;/h4&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;6&#34;&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/9/93/WinSCP-5.13.png&#34; alt=&#34;image-20220518210537261&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&#34;https://winscp.net/eng/index.php&#34;&gt;WinSCP&lt;/a&gt;是windows上仅有的SCP工具，支持通过SCP协议访问各种OpenWrt设备的文件系统&lt;/p&gt;
+&lt;p&gt;也可以通过绑定putty实现SSH客户端的功能&lt;/p&gt;
+&lt;p&gt;界面非常友好便捷！&lt;/p&gt;
+&lt;h4 id=&#34;securefx-for-mac&#34;&gt;SecureFX for Mac&lt;/h4&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;7&#34;&gt;&lt;img src=&#34;https://www.vandyke.com/images/screenshots/securefx/sfx_91_mac_tabbed_ui.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.vandyke.com/products/securefx/mac_osx.html&#34;&gt;SecureFX for Mac&lt;/a&gt;是一款适用于MacOS系统的FTP/SCP客户端应用，支持FTP、SFTP、SCP等传输协议&lt;/p&gt;
+&lt;p&gt;事实上也有对应的SecureFX for Windows及Linux版本&lt;/p&gt;
+">各平台好用的SSH客户端软件推荐</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/gW0BsHgVU/"" data-c="
+          &lt;p&gt;转自：&lt;a href=&#34;https://qust.me/post/ax9000_shellclash/&#34;&gt;https://qust.me/post/ax9000_shellclash/&lt;/a&gt;&lt;br&gt;
+原作者视频教程：&lt;a href=&#34;https://www.youtube.com/watch?v=L_F9cT8soPI&#34;&gt;https://www.youtube.com/watch?v=L_F9cT8soPI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;PS :AX6000解锁和安装过程应该是一样的，参考食用即可。&lt;/p&gt;
+&lt;h3 id=&#34;准备&#34;&gt;🔧 准备&lt;/h3&gt;
+&lt;p&gt;一台能插网线的电脑（Windows 需要安装 Putty 和 WinSCP｜Mac 使用命令行即可）&lt;br&gt;
+另外一台已经是 openwrt 的路由器（打开了 SSH，用来当服务器）&lt;br&gt;
+下载好降级固件和解锁脚本（链接: https://pan.baidu.com/s/13IalDMY5qREidIClIO7CIA 密码: fl3r）&lt;/p&gt;
+&lt;h4 id=&#34;️-第一步降级&#34;&gt;⬇️ 第一步｜降级&lt;/h4&gt;
+&lt;p&gt;解压好下载的文件，登录小米路由器的后台，选择手动升级下载好的 1.0.108.bin 固件，选择开始升级（降级），等待重启降级完成。&lt;/p&gt;
+&lt;h4 id=&#34;️-第二步准备-openwrt-服务&#34;&gt;💁‍♂️ 第二步｜准备 openwrt 服务&lt;/h4&gt;
+&lt;p&gt;IMG_1734&lt;br&gt;
+我这里准备的是一台刷了 openwrt 的 k2p，只需要接上电源有 Wi-Fi 信号，然后使用网线连接此 openwrt 路由器。我的这台 openwrt 路由器的地址是 10.0.0.1 你的应该不是，下面也记得根据你自己的修改。scp 上传 wireless-ax9000.sh 到 openwrt 路由器。（把解压好的文件夹拖到命令里回车，在文件夹目录里执行；如果你是 Windows 命令提示符里没有 scp 功能的话你可以单独下载一个 WinSCP）&lt;/p&gt;
+&lt;p&gt;scp wireless-ax9000.sh root@10.0.0.1:/root/wireless-ax9000.sh&lt;br&gt;
+然后 ssh 连接到这台 openwrt 路由器。&lt;/p&gt;
+&lt;p&gt;ssh root@10.0.0.1&lt;br&gt;
+再执行脚本（执行本脚本会更改您的网络和无线设定，执行之前请务必备份相关数据）&lt;/p&gt;
+&lt;p&gt;sh /root/wireless-ax9000.sh&lt;/p&gt;
+&lt;p&gt;这里回车选择继续&lt;/p&gt;
+&lt;p&gt;操作后这个脚本会修改我们 openwrt 路由器的 Wi-Fi 密码的一些设置，稍微等待一会，openwrt 插着电放在旁边即可，等会小米 AX9000 会连到 openwrt 的 Wi-Fi。&lt;/p&gt;
+&lt;h4 id=&#34;第三步小米-ax9000-破解-ssh&#34;&gt;😈 第三步｜小米 AX9000 破解 SSH&lt;/h4&gt;
+&lt;p&gt;将电脑用网线和 小米 AX9000 连接（因为小米 AX9000 解锁 Wi-Fi 可能会掉线）。&lt;/p&gt;
+&lt;p&gt;登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。&lt;/p&gt;
+&lt;p&gt;浏览器请求&lt;br&gt;
+打开浏览器，复制下面的内容到地址栏，并替换 &lt;STOK&gt;&lt;/p&gt;
+&lt;p&gt;http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/xqsystem/extendwifi_connect_inited_router?ssid=MEDIATEK-ARM-IS-GREAT&amp;amp;password=ARE-YOU-OK&amp;amp;admin_username=root&amp;amp;admin_password=admin&amp;amp;admin_nonce=xxx&lt;br&gt;
+&lt;STOK&gt; 替换为上面的值&lt;br&gt;
+我的替换后如下。将替换好的值复制到浏览器请求，如果显示如下内容则表示成功。(请求可能需要等待一会)&lt;/p&gt;
+&lt;p&gt;再次打开路由器后台查看 5G 频段 Wi-Fi 密码，这个 Wi-Fi 密码就是我们默认的 ssh 密码，保存好！！！（没保存好可以去这个页面输入SN码计算出来（路由后台右下角 SN 码））&lt;/p&gt;
+&lt;h4 id=&#34;第四步-安装使用-shellclash&#34;&gt;👅 第四步 ｜ 安装使用 ShellClash&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/&#34;&gt;参考此文安装即可&lt;/a&gt;&lt;/p&gt;
+">小米 AX9000/6000 解锁 SSH 安装 ShellClash 教程｜地表最强硬路由💪</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/yOF4Yf06Q/"" data-c="
+          &lt;p&gt;感谢您的捐赠！项目会变得越来越好！&lt;/p&gt;
+&lt;p&gt;USDT钱包：&lt;br&gt;
+&lt;img src=&#34;file://F:/Github/Gridea/post-images/1717655212740.jpg&#34; style=&#34;zoom: 33%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;支付宝扫码：&lt;/p&gt;
+&lt;img src=&#34;http://juewuy.github.io/post-images/1604390977172.png&#34; style=&#34;zoom: 50%;&#34; /&gt;
+微信扫码：
+&lt;img src=&#34;http://juewuy.github.io/post-images/1604391042406.png&#34; style=&#34;zoom: 50%;&#34; /&gt;">捐赠ShellClash项目！</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/ehRUeewcv/"" data-c="
+          &lt;p&gt;ShellClash提供局域网的PAC自动配置方式，可以在各个操作系统上快速完成PROXY配置而无需启用静态路由&lt;/p&gt;
+&lt;h2 id=&#34;windows-10&#34;&gt;Windows 10&lt;/h2&gt;
+&lt;p&gt;设置 -&amp;gt; 网络和intentnet -&amp;gt; 代理 -&amp;gt; 使用设置脚本（开） -&amp;gt; 脚本地址 -&amp;gt; 填入PAC地址 -&amp;gt; 保存&lt;/p&gt;
+&lt;h2 id=&#34;windows-7&#34;&gt;Windows 7&lt;/h2&gt;
+&lt;p&gt;Internet选项 -&amp;gt; 连接 选项卡 -&amp;gt; 局域网设置(如果是电脑拨号上网, 这里点&#39;设置&#39;) -&amp;gt; 使用自动配置脚本 -&amp;gt; 填入PAC地址 -&amp;gt; 确定&lt;/p&gt;
+&lt;h2 id=&#34;macox&#34;&gt;MacOX&lt;/h2&gt;
+&lt;p&gt;系统设置 -&amp;gt; 网络 -&amp;gt; 高级 -&amp;gt; 代理 -&amp;gt; 自动代理配置 -&amp;gt; URL中填入PAC地址 -&amp;gt; 好&lt;/p&gt;
+&lt;h2 id=&#34;安卓&#34;&gt;安卓&lt;/h2&gt;
+&lt;p&gt;设置 -&amp;gt; 连接 -&amp;gt; 当前网络 -&amp;gt; 高级设置 -&amp;gt; 代理服务器 -&amp;gt; 自动配置 -&amp;gt; 填入PAC地址 -&amp;gt; 保存&lt;/p&gt;
+&lt;h2 id=&#34;ios&#34;&gt;IOS&lt;/h2&gt;
+&lt;p&gt;设置 WiFi 当前WiFi 代理设置 自动 填入PAC地址&lt;/p&gt;
+&lt;h2 id=&#34;更多设备请参考&#34;&gt;更多设备请参考：&lt;/h2&gt;
+&lt;p&gt;https://www.wervps.com/we/3113.html&lt;/p&gt;
+">各个操作系统或软件中使用PAC的方式</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/"" data-c="
+          &lt;p&gt;在小米等基于OpenWrt内核定制的路由器原生系统上使用clash做透明代理&lt;/p&gt;
+&lt;h2 id=&#34;使用步骤&#34;&gt;使用步骤：&lt;/h2&gt;
+&lt;h3 id=&#34;获取路由器ssh权限&#34;&gt;获取路由器SSH权限&lt;/h3&gt;
+&lt;p&gt;不同路由器开启SSH权限的方法不同，请使用“路由器型号+开启SSH”的关键词使用搜索引擎搜索即可获取路由器SSH权限的开启方法教程，本文只详解小米AX3600,AX1800,AX5这3款路由器的SSH开启方法。&lt;/p&gt;
+&lt;p&gt;可用于开启SSH权限的固件版本为：AX3600 1.0.17版本/AX1800 1.0.34/1.0.328/1.0.336版本/AX5 1.0.16/1.0.26版本，如果您的固件版本高于以上版本，请先执行降级操作！否则请直接跳到“开启SSH权限”&lt;/p&gt;
+&lt;h3 id=&#34;手动降级&#34;&gt;手动降级&lt;/h3&gt;
+&lt;p&gt;降级的具体固件下载地址为：&lt;a href=&#34;https://www.right.com.cn/forum/thread-4032490-1-1.html&#34;&gt;https://www.right.com.cn/forum/thread-4032490-1-1.html&lt;/a&gt; ，下载合适的固件到本地后，登陆路由器的管理界面：Miwifi.com ，然后在：常用设置——系统状态——升级检测中，点击手动升级按钮。之后在弹出的界面中点击选择文件——选择您刚刚下载的固件bin文件，之后点击开始上传即可。降级之前，建议在此界面下方先使用备份功能新建一份配置备份。&lt;/p&gt;
+&lt;p&gt;成功降级后，请重新设置及登陆路由器。&lt;br&gt;
+如需要升级到最新版本，需要使用此贴提供的方式设置永久保留SSH：https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;amp;tid=4046020&lt;/p&gt;
+&lt;h3 id=&#34;开启ssh权限&#34;&gt;开启SSH权限&lt;/h3&gt;
+&lt;p&gt;首先登陆你的路由器管理界面，点击路由状态页签，此时地址栏应该显示如下地址：&lt;/p&gt;
+&lt;p&gt;http://miwifi.com/cgi-bin/luci/;stok=xxxxxxx****/web/home#router****&lt;/p&gt;
+&lt;p&gt;将我加粗的/web/home#router（注意不要把那一串xxxx代表的密码替换掉）替换为如下文本，之后输入回车访问，此时页面返回{“code”:0}，即可使用ssh工具测试是否开启成功。&lt;/p&gt;
+&lt;p&gt;（注意不要使用mac或iOS自带的safari浏览器）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;amp;user_id=longdike&amp;amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20&#39;s%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg&#39;%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B%20echo%20-e%20&#39;admin%5Cnadmin&#39;%20%7C%20passwd%20root%3B&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;最终应该是（http://miwifi.com/cgi-bin/luci/;stok=一小串密码/api/misystem/后面一大串）这样的形式，如果不对，可能无法开启，请认真检查，不要弄错！！！&lt;/p&gt;
+&lt;p&gt;如果以上方式无法开启SSH，请参考：&lt;a href=&#34;https://www.right.com.cn/forum/thread-4032490-1-1.html&#34;&gt;https://www.right.com.cn/forum/thread-4032490-1-1.html&lt;/a&gt;或者参考：&lt;a href=&#34;https://www.right.com.cn/forum/thread-4039512-1-1.html&#34;&gt;https://www.right.com.cn/forum/thread-4039512-1-1.html&lt;/a&gt; 尝试更多方法开启。&lt;/p&gt;
+&lt;h3 id=&#34;固化ssh权限&#34;&gt;固化SSH权限&lt;/h3&gt;
+&lt;p&gt;部分设备升级系统后会丢失SSH权限且无法使用上面的开启方式直接开启，这里提供小米AX3600固化SSH权限的相关教程：&lt;/p&gt;
+&lt;p&gt;https://juewuy.github.io/gDyfIPSsZ/&lt;/p&gt;
+&lt;p&gt;其他小米AX设备请参考此教程进行设置（未测试）&lt;/p&gt;
+&lt;p&gt;其他品牌设备请自行搜索相关教程。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;您也可以通过路由器web或app中的相关设置，禁止其自动升级以防止其丢失SSH权限。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;登陆ssh&#34;&gt;登陆SSH&lt;/h3&gt;
+&lt;p&gt;使用SSH连接工具来登陆SSH，参考：https://juewuy.github.io/-F7dWmBj5/。&lt;/p&gt;
+&lt;p&gt;打开SSH工具，在IP（或者host）一栏填写你路由器的网关IP，即刚刚登陆路由器管理界面的IP地址或网址（例如192.168.31.1或者miwifi.com）,端口为默认的22端口不变，密码为admin（刚刚那串破解码中设定的密码），设置好之后点击连接即可登陆路由器SSH！&lt;/p&gt;
+&lt;p&gt;建议修改默认的登陆密码，在SSH界面输入passwd即可修改密码，注意修改时需要输入2次密码，且输入的密码不会显示，输入好直接回车即可完成修改。&lt;/p&gt;
+&lt;h2 id=&#34;使用一键脚本安装shellcrash&#34;&gt;使用一键脚本安装ShellCrash&lt;/h2&gt;
+&lt;p&gt;成功登陆SSH后，直接输入以下命令&lt;/p&gt;
+&lt;p&gt;~&lt;strong&gt;使用curl安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#jsdelivrCDN源
+export url=&#39;https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master&#39; &amp;amp;&amp;amp; sh -c &amp;quot;$(curl -kfsSl $url/install.sh)&amp;quot; &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;~&lt;strong&gt;使用wget安装&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#Release版本-jsdelivrCDN源
+export url=&#39;https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master&#39; &amp;amp;&amp;amp; wget -q --no-check-certificate -O /tmp/install.sh $url/install.sh  &amp;amp;&amp;amp; sh /tmp/install.sh &amp;amp;&amp;amp; source /etc/profile &amp;amp;&amp;gt; /dev/null 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;安装完成后直接在ssh中使用&#34;&gt;安装完成后，直接在SSH中使用：&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;crash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;命令即可管理脚本！&lt;/p&gt;
+&lt;p&gt;你也可以使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;crash -h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;命令查看帮助列表&lt;/p&gt;
+&lt;h5 id=&#34;之后按照新手引导完成配置后即可使用&#34;&gt;之后按照新手引导完成配置后即可使用&lt;/h5&gt;
+&lt;p&gt;如遇使用问题，请先参考[常见问题](&lt;/p&gt;
+&lt;h2 id=&#34;问题反馈使用交流&#34;&gt;问题反馈&amp;amp;使用交流：&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://t.me/ShellClash&#34;&gt;https://t.me/ShellClash&lt;/a&gt;&lt;/p&gt;
+">在路由器上安装及使用ShellClash的教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://juewuy.github.io/shellclash-shuo-ming-wen-dang/"" data-c="
+          &lt;h3 id=&#34;目录结构&#34;&gt;目录结构&lt;/h3&gt;
+&lt;h3 id=&#34;安装目录&#34;&gt;·安装目录&lt;/h3&gt;
+&lt;p&gt;默认安装目录为/etc/clash或/data/clash等&lt;/p&gt;
+&lt;p&gt;可手动指定任意目录安装，安装完成后可以使用【echo $CRASHDIR】命令查询安装目录&lt;/p&gt;
+&lt;p&gt;目录包含以下文件：&lt;/p&gt;
+&lt;p&gt;~CrashCore：clash或者singbox核心文件&lt;/p&gt;
+&lt;p&gt;~menu.sh/start.sh/getdate.sh：ShellCrash运行脚本文件&lt;/p&gt;
+&lt;p&gt;~Country.mmdb：Geoip数据库文件&lt;/p&gt;
+&lt;p&gt;~configs/：脚本设置相关文件&lt;/p&gt;
+&lt;p&gt;~yamls/：clash的yaml相关配置文件&lt;/p&gt;
+&lt;p&gt;~jsons/：singbox的json相关配置文件&lt;/p&gt;
+&lt;p&gt;~/ui/*：本地dashboard网页文件及PAC文件&lt;/p&gt;
+&lt;h3 id=&#34;服务文件&#34;&gt;·服务文件&lt;/h3&gt;
+&lt;p&gt;OpenWrt的服务文件为/etc/init.d/shellcrash&lt;/p&gt;
+&lt;p&gt;Debian/Centos/Armbian等标准Linux系统的服务文件在/etc/systemd/system或者/usr/lib/systemd/system/下，名为shellcrash.service&lt;/p&gt;
+&lt;h3 id=&#34;功能说明&#34;&gt;功能说明&lt;/h3&gt;
+&lt;h3 id=&#34;1-启动重启内核服务&#34;&gt;1 启动/重启内核服务&lt;/h3&gt;
+&lt;h3 id=&#34;2-功能设置&#34;&gt;2 功能设置：&lt;/h3&gt;
+&lt;p&gt;​	1 切换运行模式：支持切换多种运行模式，主要涉及iptables或nftables的不同配置&lt;/p&gt;
+&lt;p&gt;​	2 切换DNS模式：支持切换fake-ip或者真实ip的dns模式&lt;/p&gt;
+&lt;p&gt;​	3 跳过本地证书验证：当节点出现证书验证错误时使用此选项可以使节点正常使用&lt;/p&gt;
+&lt;p&gt;​	4 只代理常用端口：只代理22,53,587,465,995,993,143,80,443等常用端口，主要用于屏蔽p2p流量&lt;/p&gt;
+&lt;p&gt;​	5 过滤局域网mac地址：使用黑名单或白名单方式依照局域网设备的网卡mac地址进行过滤，被过滤的设备不会走clash的dns以及透明路由&lt;/p&gt;
+&lt;p&gt;​	6 设置本机代理服务：使用环境变量或者iptables/nftables对本机发出的流量进行路由，路由设备通常无需开启&lt;/p&gt;
+&lt;p&gt;​	7 屏蔽QUIC流量：使用iptables或者nftables，对443端口的udp请求进行reject，由于改善YouTube访问速度，如果你需要使用ChatGPT，建议不要开启&lt;/p&gt;
+&lt;p&gt;​	8 绕过CN-IP（Redir-Host模式）：使所有在CNIP列表内的地址不走clash内核的透明路由，以提升对应地址的访问速度&lt;/p&gt;
+&lt;p&gt;​	8 管理Fake-ip过滤列表：用以自定义额外的Fake-ip-filter域名，防止部分地址因fake-ip导致无法访问&lt;/p&gt;
+&lt;h3 id=&#34;3-停止内核服务&#34;&gt;3 停止内核服务：&lt;/h3&gt;
+&lt;p&gt;停止内核服务并且停止相关的一切路由、防火墙以及本机代理规则&lt;/p&gt;
+&lt;h3 id=&#34;4-内核启动设置&#34;&gt;4 内核启动设置：&lt;/h3&gt;
+&lt;p&gt;​	1 允许/禁止开机启动：禁止或者启用开机启动服务&lt;/p&gt;
+&lt;p&gt;​	2 使用保守模式：不使用OpenWrt的procd或者Linux的Systemd服务进行启动，改为使用linux系统通用的nohup &amp;amp;方式启动并配合crond服务进行进程守护&lt;/p&gt;
+&lt;p&gt;​	3 设置自启延时：首次开机启动时，延迟若干秒进行启动，用于解决部分设备直接启动时无法正确启动或者无法正确配置透明路由的问题&lt;/p&gt;
+&lt;p&gt;​	4 启用小闪存模式：将体积较大的内核文件、GeoIP数据库文件等放在内存或者自定义的外置存储目录中，减少闪存占用&lt;/p&gt;
+&lt;h3 id=&#34;5-管理自动任务&#34;&gt;5 管理自动任务&lt;/h3&gt;
+&lt;p&gt;功能强大的自动任务，可智能配置各种定时任务及条件任务。&lt;/p&gt;
+&lt;h3 id=&#34;6-管理配置文件&#34;&gt;6 管理配置文件&lt;/h3&gt;
+&lt;p&gt;生成、下载、管理clash及singbox配置文件，并配置相关内容自定义覆写&lt;/p&gt;
+&lt;h3 id=&#34;7-进阶设置&#34;&gt;7 进阶设置&lt;/h3&gt;
+&lt;p&gt;​	1 ipv6相关：对ipv6进行支持的相关配置&lt;/p&gt;
+&lt;p&gt;​	3 配置公网及局域网防火墙：脚本默认屏蔽了面板及http代理端口从公网的访问流量，可以通过此处进行开启&lt;/p&gt;
+&lt;p&gt;​	4 启用域名嗅探：Meta专属功能，通过读取ip链接中的域名信息，对域名进行还原，可以优化TV平台视频软件的连接效果&lt;/p&gt;
+&lt;p&gt;​	6 配置内置DNS服务：对clash的内置DNS进行额外配置&lt;/p&gt;
+&lt;p&gt;​	9 重置/备份/还原脚本设置&lt;/p&gt;
+&lt;h3 id=&#34;8-其他工具&#34;&gt;8 其他工具&lt;/h3&gt;
+&lt;p&gt;​	1 测试菜单：一些用于debug或者测试运行的快捷命令&lt;/p&gt;
+&lt;p&gt;​	2 新手引导：用于重新进入新手引导&lt;/p&gt;
+&lt;p&gt;​	3 日志及推送工具：用于查看ShellCrash脚本的运行日志，或者配置日志推送通道将相关日志推送到Telegram等软件&lt;/p&gt;
+&lt;p&gt;​	5 小米系统自动更新：用于禁止小米路由系统的自动更新&lt;/p&gt;
+&lt;p&gt;​	6 小米设备软固化SSH：用于小米路由官方系统通过脚本内置软件在开机启动时自动打开SSH服务&lt;/p&gt;
+&lt;p&gt;​	7 配置DDNS服务(限OpenWrt)：下载额外的脚本，可以打开OpenWrt定制系统更多的DDNS设置&lt;/p&gt;
+&lt;p&gt;​	8 小米设备Tun模块修复：由于部分小米路由设备，修复因刷机等导致的Tun模块丢失问题&lt;/p&gt;
+&lt;h3 id=&#34;9-更新卸载&#34;&gt;9 更新/卸载&lt;/h3&gt;
+&lt;p&gt;​	1 更新管理脚本：在线更新管理脚本&lt;/p&gt;
+&lt;p&gt;​	2 切换核心：在线更新/切换核心&lt;/p&gt;
+&lt;p&gt;​	3 更新Geo数据库：在线更新各种Geo数据库文件&lt;/p&gt;
+&lt;p&gt;​	4 安装本地Dashboard面板：安装本地面板&lt;/p&gt;
+&lt;p&gt;​	5 安装更新本地根证书文件：用于解决部分设备出现SSL证书验证失败的问题&lt;/p&gt;
+&lt;p&gt;​	6 查看本地PAC文件：用户部分设备快捷配置本地http代理&lt;/p&gt;
+&lt;p&gt;​	7 切换安装源及安装版本：内置了多个不同安装源以及安装版本用以切换，也包括版本回退&lt;/p&gt;
+&lt;p&gt;​	9 卸载：完全移除所有ShellCrash的相关文件和相关环境变量，该操作不可逆&lt;/p&gt;
+&lt;h3 id=&#34;快捷命令&#34;&gt;快捷命令&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;	crash -t #测试模式
+	crash -h #帮助列表
+	crash -u #卸载脚本
+	crash -s start #启动/重启服务
+	crash -s stop #停止服务
+	crash -s updateyaml #更新配置文件
+	安装目录/start.sh init #开机初始化
+	#在线求助：t.me/ShellClash
+	#官方博客：juewuy.github.io
+	#发布页面：github.com/juewuy/ShellCrash
+&lt;/code&gt;&lt;/pre&gt;
+">ShellClash说明文档</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
+
+<input hidden id="copy" />
+<script>
+  !function () {
+    let times = document.querySelectorAll('.publish-time');
+    for (let i = 0; i < times.length; i++) {
+      let date = times[i].dataset.t;
+      let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
+      if (time < 60) {
+        str = time + '秒之前';
+      } else if (time < 3600) {
+        str = Math.floor(time / 60) + '分钟之前';
+      } else if (time >= 3600 && time < 86400) {
+        str = Math.floor(time / 3600) + '小时之前';
+      } else if (time >= 86400 && time < 259200) {
+        str = Math.floor(time / 86400) + '天之前';
+      } else {
+        str = times[i].textContent;
+      }
+      times[i].textContent = str;
+    }
+  }();
+</script>
+
+<script>
+  let language = '';
+  if (language !== '') {
+    let map = new Map();
+    if (language === 'en') {
+      map.set('search', 'Search');
+      map.set('category', 'Categories');
+      map.set('article', 'Articles');
+      map.set('tag', 'Tags');
+      map.set('top', 'Top');
+      map.set('publish', 'published');
+      map.set('minute', ' minutes');
+      map.set('read-more', 'Read More');
+      map.set('view', 'View');
+      map.set('words', ' words');
+      map.set('category-in', 'category in');
+      map.set('preview', 'Meta');
+      map.set('index', 'Toc');
+      map.set('no-archives', "You haven't created yet");
+      map.set('archives', " articles in total");
+      map.set('cloud-tags', " tags in total");
+      map.set('copyright', "Copyright: ");
+      map.set('author', "Author: ");
+      map.set('link', "Link: ");
+      map.set('leave-message', "Leave a message");
+      map.set('format', "Links Format");
+      map.set('site-name', "Name: ");
+      map.set('site-link', "Link: ");
+      map.set('site-desc', "Desc: ");
+      map.set('stat', " related results, taking ");
+      map.set('stat-time', " ms");
+      map.set('site-img', "Image: ");
+    }
+
+    if (map.size > 0) {
+      let lanElems = document.querySelectorAll('.language');
+      lanElems.forEach(elem => {
+        let lan = elem.dataset.lan, text = map.get(lan);
+        if (elem.__proto__ === HTMLInputElement.prototype) {
+          elem.placeholder = text
+        } else {
+          if (elem.dataset.count) {
+            text = elem.dataset.count + text;
+          }
+          elem.textContent = text;
+        }
+      })
+    }
+  }
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+
+</script>
+<script src="/media/js/motion.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
+</script>
+
+
+
+<script src="/media/js/cool.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://juewuy.github.io</id>
+    <title>Juewuy&apos;s Blog</title>
+    <updated>2025-12-17T14:19:30.765Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://juewuy.github.io"/>
+    <link rel="self" href="http://juewuy.github.io/atom.xml"/>
+    <subtitle>欢迎使用ShellClash！</subtitle>
+    <logo>http://juewuy.github.io/images/avatar.png</logo>
+    <icon>http://juewuy.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2025, Juewuy&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[ShellCrash中如何自定义singbox的各json模块]]></title>
+        <id>http://juewuy.github.io/nWTjEpkSK/</id>
+        <link href="http://juewuy.github.io/nWTjEpkSK/">
+        </link>
+        <updated>2024-01-27T14:58:41.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="singbox中各个json模块的基本结构">·singbox中各个json模块的基本结构：</h3>
+<p>singbox在启动时，会自动将指定目录下的json文件加载及合并运行</p>
+<p>每个json文件必须具有标准的json结构，否则就会报错</p>
+<pre><code class="language-json">{
+  &quot;log&quot;: {},
+  &quot;dns&quot;: {},
+  &quot;ntp&quot;: {},
+  &quot;certificate&quot;: {},
+  &quot;inbounds&quot;: [],
+  &quot;outbounds&quot;: [],
+  &quot;providers&quot;: [], //限reF1nd分支内核
+  &quot;route&quot;: {},
+  &quot;endpoints&quot;: [],
+  &quot;experimental&quot;: {}
+}
+</code></pre>
+<p>例如如果想要自定义dns.json模块</p>
+<p>则内部结构必须是如下的形式，即开头和结尾的1级花括号必须存在！</p>
+<pre><code class="language-json">{
+  &quot;dns&quot;: {
+    &quot;servers&quot;: [……]
+  }
+}
+</code></pre>
+<p>具体的格式可以在正确运行singbox内核后，参考<code>/tmp/ShellCrash/jsons</code> 目录下的相关文件</p>
+<p>你也可以通过 <a href="https://www.json.cn/">https://www.json.cn</a> 来在线解析json格式是否正确</p>
+<h3 id="shellcrash中自定义配置文件的名称及目录">·ShellCrash中自定义配置文件的名称及目录：</h3>
+<p>目前 <strong>log dns ntp certificate experimental</strong>  是替换内置设定而非合并，即自定义的内容会覆盖脚本生成的内容，需要谨慎使用，请确保不会影响脚本内置功能的使用</p>
+<p>而<strong>endpoints inbounds outbounds providers route services</strong> 则是与基础的config.json配置文件中的内容合并，注意singbox并不是增量合并，如果自定义内容和配置文件中的原有内容出现重复或者冲突，则内核依然会无法运行</p>
+<p>各个模块的自定义文件必须放在<strong>ShellCrash安装目录</strong>下的<strong>jsons文件夹</strong>内！</p>
+<p>且文件名必须是<strong>log.json、dns.json、outbounds.json</strong>…… 等，不得随意更改，否则不会加载！</p>
+<h3 id="配置工具">·配置工具：</h3>
+<p>Windows下请使用WinSCP软件进行编辑！<br>
+MacOS下请使用SecureFX软件进行编辑！</p>
+<p>具体参考：<a href="https://juewuy.github.io/-F7dWmBj5/#scp%E5%B7%A5%E5%85%B7">各平台好用的SSH客户端软件推荐 | Juewuy's Blog</a></p>
+<h3 id="配置文件示例">·配置文件示例：</h3>
+<h4 id="示例自定义log等级">示例：自定义log等级</h4>
+<p>编辑<code>$CRASHDIR/jsons/log.json</code>文件：</p>
+<pre><code class="language-json">{ 
+  &quot;log&quot;: { 
+    &quot;level&quot;: &quot;debug&quot;,
+    &quot;timestamp&quot;: true
+  }
+}
+</code></pre>
+<h4 id="示例启用ntp服务">示例：启用ntp服务</h4>
+<p>编辑<code>$CRASHDIR/jsons/ntp.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;ntp&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;server&quot;: &quot;time.apple.com&quot;,
+    &quot;server_port&quot;: 123,
+    &quot;interval&quot;: &quot;30m&quot;
+  }
+}
+</code></pre>
+<h4 id="示例自定义providers实现在线更新订阅">示例：自定义providers，实现在线更新订阅</h4>
+<p>注意：providers功能仅限<a href="https://github.com/juewuy/ShellCrash/releases/tag/singbox_core_reF1nd">reF1nd</a>版内核使用！</p>
+<p>注意：每个例如&quot;<strong>my_airport1</strong>&quot;的tag应当在outbounds模块中被正确引用！你可以通过搭配自定义<strong>outbounds.json</strong>来使用！</p>
+<p>注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！</p>
+<p>具体字段内容可以参考：<a href="https://sing-boxr.dustinwin.us.kg/zh/configuration/provider/">订阅 - sing-box (dustinwin.us.kg)</a></p>
+<p>编辑<code>$CRASHDIR/jsons/providers.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;providers&quot;: [
+    {
+      &quot;type&quot;: &quot;remote&quot;,
+      &quot;tag&quot;: &quot;my_airport1&quot;,
+      &quot;url&quot;: &quot;https://my_airport1.com/asdfghjkl123&quot;,
+      &quot;path&quot;: &quot;./providers/my_airport1.yaml&quot;,
+      &quot;user_agent&quot;: &quot;clash.meta;mihomo&quot;,
+      &quot;update_interval&quot;: &quot;24h0m0s&quot;,
+      &quot;health_check&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;url&quot;: &quot;https://www.gstatic.com/generate_204&quot;,
+        &quot;interval&quot;: &quot;10m0s&quot;,
+        &quot;timeout&quot;: &quot;3s&quot;
+      },
+      &quot;override_tls&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;insecure&quot;: true
+      }
+    },
+    {
+      &quot;type&quot;: &quot;remote&quot;,
+      &quot;tag&quot;: &quot;my_airport2&quot;,
+      &quot;url&quot;: &quot;https://my_airport2.com/asdfghjkl123&quot;,
+      &quot;path&quot;: &quot;./providers/my_airport2.yaml&quot;,
+      &quot;user_agent&quot;: &quot;clash.meta;mihomo&quot;,
+      &quot;update_interval&quot;: &quot;24h0m0s&quot;,
+      &quot;health_check&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;url&quot;: &quot;https://www.gstatic.com/generate_204&quot;,
+        &quot;interval&quot;: &quot;10m0s&quot;,
+        &quot;timeout&quot;: &quot;3s&quot;
+      },
+      &quot;override_tls&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;insecure&quot;: true
+      }
+    }
+  ]
+}
+
+</code></pre>
+<p>编辑<code>$CRASHDIR/jsons/outbounds.json</code>文件以引用providers：</p>
+<p>注意：如果你还想编辑自定义节点或者其他outbounds模块内容，必须都写在同一个文件内，脚本不会加载诸如outbounds2.json这样的文件，多个平级的{}之间请使用逗号连接，如果只有一个同级{}则不要写逗号！</p>
+<pre><code class="language-json">{
+  &quot;outbounds&quot;: [
+    {
+      &quot;type&quot;: &quot;selector&quot;,
+      &quot;tag&quot;: &quot;🇭🇰 香港节点&quot;,
+      &quot;providers&quot;: [ &quot;my_airport1&quot; ],
+      &quot;includes&quot;: [ &quot;香港.*BGP&quot; ],
+      &quot;use_all_providers&quot;: true
+    },
+    {
+      &quot;type&quot;: &quot;urltest&quot;,
+      &quot;tag&quot;: &quot;🇸🇬 新加坡节点&quot;,
+      &quot;tolerance&quot;: 100,
+      &quot;providers&quot;: [ &quot;my_airport2&quot; ],
+      &quot;includes&quot;: [ &quot;新加坡&quot; ],
+      &quot;use_all_providers&quot;: true
+    }
+  ]
+}
+</code></pre>
+<h4 id="示例自定义outbounds实现自定义节点或策略组">示例：自定义outbounds，实现自定义节点或策略组</h4>
+<p>注意：每个例如&quot;<strong>my_airport1</strong>&quot;的tag应当在outbounds模块中被正确引用！你可以通过搭配自定义<strong>outbounds.json</strong>来使用！</p>
+<p>注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！</p>
+<p>具体字段内容可以参考：<a href="https://sing-box.sagernet.org/zh/configuration/outbound">官方文档</a></p>
+<p>编辑<code>$CRASHDIR/jsons/outbounds.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;outbounds&quot;: [
+    {
+      &quot;type&quot;: &quot;trojan&quot;,
+      &quot;tag&quot;: &quot;my_trojan1&quot;,
+      &quot;server&quot;: &quot;example.my_trojan.com&quot;,
+      &quot;server_port&quot;: 443,
+      &quot;password&quot;: &quot;123321&quot;,
+      &quot;tls&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;insecure&quot;: true
+      }
+    },
+    {
+      &quot;type&quot;:&quot;shadowsocks&quot;,
+      &quot;tag&quot;:&quot;my_ss1&quot;,
+      &quot;server&quot;:&quot;example.my_ss.com&quot;,
+      &quot;server_port&quot;:10001,
+      &quot;method&quot;:&quot;2022-blake3-aes-128-gcm&quot;,
+      &quot;password&quot;:&quot;8JCsPssfgS8tiRwiMlhARg==&quot;,
+      &quot;tcp_fast_open&quot;:false
+    },
+    {
+      &quot;type&quot;: &quot;selector&quot;,
+      &quot;tag&quot;: &quot;🚀 自建手选&quot;,
+      &quot;outbounds&quot;: [
+        &quot;my_trojan1&quot;,
+        &quot;my_ss1&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;urltest&quot;,
+      &quot;tag&quot;: &quot;♻️ 自建自动&quot;,
+      &quot;outbounds&quot;: [
+        &quot;my_trojan1&quot;,
+        &quot;my_ss1&quot;
+      ],
+      &quot;url&quot;: &quot;https://www.gstatic.com/generate_204&quot;,
+      &quot;interval&quot;: &quot;5m0s&quot;,
+      &quot;tolerance&quot;: 50
+    },
+    {
+      &quot;type&quot;: &quot;selector&quot;,
+      &quot;tag&quot;: &quot;🛑 广告拦截&quot;,
+      &quot;outbounds&quot;: [
+        &quot;DIRECT&quot;,
+        &quot;REJECT&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+<h4 id="示例自定义入站以连接家中设备及通过家中路由连接公网">示例：自定义入站以连接家中设备及通过家中路由连接公网</h4>
+<p>注意：如果你想自定义二级或者更低等级的json字段，则其上级字段也必须包含在文件中，否则singbox内核无法完成合并</p>
+<p>具体字段内容可以参考：<a href="https://sing-box.sagernet.org/zh/configuration/inbound">官方文档</a></p>
+<p>注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！</p>
+<p>进阶玩法：<a href="https://pickle-paw-5d0.notion.site/ShellCrash-sb-da9f0fad17264fcba4078888079492cd">使用vmess入站搭建三网免流服务</a></p>
+<p>编辑<code>$CRASHDIR/jsons/inbounds.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;inbounds&quot;: [
+    {
+      &quot;type&quot;: &quot;shadowsocks&quot;,
+      &quot;tag&quot;: &quot;ss-in&quot;,
+      &quot;listen&quot;: &quot;::&quot;,
+      &quot;listen_port&quot;: 24678,
+      &quot;sniff&quot;: true,
+      &quot;method&quot;: &quot;2022-blake3-aes-128-gcm&quot;,
+      &quot;password&quot;: &quot;8JCsPssfgS8tiRwiMlhARg==&quot;,
+      &quot;multiplex&quot;: {}
+    },
+    {
+      &quot;type&quot;: &quot;hysteria2&quot;,
+      &quot;tag&quot;: &quot;hy2-in&quot;,
+      &quot;listen&quot;: &quot;::&quot;,
+      &quot;listen_port&quot;: 24678,
+      &quot;sniff&quot;: true,
+      &quot;up_mbps&quot;: 100,
+      &quot;down_mbps&quot;: 100,
+      &quot;obfs&quot;: {
+        &quot;type&quot;: &quot;salamander&quot;,
+        &quot;password&quot;: &quot;cry_me_a_r1ver&quot;
+      },
+      &quot;users&quot;: [
+        {
+          &quot;name&quot;: &quot;tobyxdd&quot;,
+          &quot;password&quot;: &quot;goofy_ahh_password&quot;
+        }
+      ],
+      &quot;ignore_client_bandwidth&quot;: false,
+      &quot;tls&quot;: {},
+      &quot;masquerade&quot;: &quot;&quot;,
+      &quot;brutal_debug&quot;: false
+    }
+  ]
+}
+</code></pre>
+<h4 id="示例启用tailscale异地组网客户端">示例：启用Tailscale异地组网客户端</h4>
+<p>注意：默认内核为了节约内存考虑并为编译tailscale支持，请前往更新-内核-自定义内核界面下载安装完整版singbox内核</p>
+<p>注意：需要在<a href="https://tailscale.com/">Tailscale官网</a>创建账号后，在<a href="https://login.tailscale.com/admin/settings/keys">Keys - Tailscale</a>界面创建Auth key并填入&quot;auth_key&quot;:中方可正确连接！</p>
+<p>注意：Tailscale占用内存较高，不建议内存较少的设备使用，如果想连接家中设备可以尝试自定义shadowsocks/hysteria2等协议入站</p>
+<p>具体字段内容可以参考：<a href="https://sing-box.sagernet.org/zh/configuration/endpoint/tailscale/">官方文档</a></p>
+<p>编辑<code>$CRASHDIR/jsons/endpoints.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;endpoints&quot;: [
+    {
+	  &quot;type&quot;: &quot;tailscale&quot;,
+	  &quot;tag&quot;: &quot;ts-ep&quot;,
+	  &quot;state_directory&quot;: &quot;/tmp/ShellCrash/tailscale&quot;,
+	  &quot;auth_key&quot;: &quot;tskey-auth-abcddsfqwe-12315kjdlasjlfjljg&quot;,  //此处换成你自己的auth_key
+	  &quot;control_url&quot;: &quot;&quot;,
+	  &quot;ephemeral&quot;: false,
+	  &quot;hostname&quot;: &quot;ShellCrash&quot;,
+	  &quot;accept_routes&quot;: true,
+	  &quot;exit_node&quot;: &quot;&quot;,    //默认直连，如果延迟高可以尝试换成你希望使用的代理出口，不推荐
+	  &quot;exit_node_allow_lan_access&quot;: false,
+	  &quot;advertise_routes&quot;: [],
+	  &quot;advertise_exit_node&quot;: false,
+	  &quot;udp_timeout&quot;: &quot;5m&quot;
+    }
+  ]
+}
+</code></pre>
+<h4 id="示例启用wireguard异地组网客户端">示例：启用Wireguard异地组网客户端</h4>
+<p>注意：默认内核为了节约内存考虑并为编译Wireguard支持，请前往更新-内核-自定义内核界面下载安装完整版singbox内核</p>
+<p>注意：需要先在具有公网IP的服务器上部署Wireguard作为枢纽，才能连接各个设备，参考：<a href="https://post.smzdm.com/p/a2x2040n/">1分钟部署wg-easy面板</a></p>
+<p>注意：Wireguard用于纯粹充当内网穿透，不透过路由访问其他设备的设置比较简单，但是如果想实现通过路由本身访问下级设备，设置会非常繁琐，不推荐使用</p>
+<p>具体字段内容可以参考：<a href="https://sing-box.sagernet.org/zh/configuration/endpoint/wireguard/">官方文档</a></p>
+<p>编辑<code>$CRASHDIR/jsons/endpoints.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;endpoints&quot;: [
+	{
+	  &quot;type&quot;: &quot;wireguard&quot;,
+	  &quot;tag&quot;: &quot;wg-ep&quot;,
+	  &quot;system&quot;: false,
+	  &quot;mtu&quot;: 1408,
+	  &quot;address&quot;: [&quot;10.8.8.2/24&quot;, &quot;fdcc:ad94:bacf:1234::4321:2/112&quot;],
+	  &quot;private_key&quot;: &quot;6sadfas0/asdagfsgdgsd12341231314fsfd=&quot;,
+	  &quot;peers&quot;: [
+		{
+		  &quot;address&quot;: &quot;123.123.123.123&quot;,
+		  &quot;port&quot;: 51820,
+		  &quot;public_key&quot;: &quot;1sadasdaf+2131231fdsfdsfsdfsdffs=&quot;,
+		  &quot;pre_shared_key&quot;: &quot;asdsadlajfljljldjflajsldjlasjdlkjl=&quot;,
+		  &quot;allowed_ips&quot;: [&quot;0.0.0.0/0&quot;, &quot;::/0&quot;]
+		}
+	  ]
+	}
+  ]
+}
+</code></pre>
+<p>注意：如果你想通过该端点出站，那么还必须在route中指定相应的规则，例如：</p>
+<p>此示例意味着你路由下所有子设备对其他Wireguard设备进行访问时，都可以成功路由(需要在ShellCrash中修改预设的保留地址网段)</p>
+<pre><code class="language-json">{
+  &quot;route&quot;: {
+    &quot;rules&quot;: [
+      { 
+        &quot;ip_cidr&quot;: [
+          &quot;10.8.8.2/24&quot;,
+          &quot;fdcc:ad94:bacf:1234::4321:2/112&quot;
+        ], 
+        &quot;outbound&quot;: &quot;wg-ep&quot; 
+      }
+    ]
+  }
+}
+</code></pre>
+<h4 id="示例启用内核内置缓存功能">示例：启用内核内置缓存功能</h4>
+<p>注意：本处示例仅支持1.8.0以上版本singbox内核</p>
+<p>注意：由于experimental.json是完全覆盖脚本内置设置，故如果需要使用clash面板就必须同时写入clash_api相关内容</p>
+<p>注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！</p>
+<p>编辑<code>$CRASHDIR/jsons/experimental.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;experimental&quot;: {
+    &quot;clash_api&quot;: {
+      &quot;external_controller&quot;: &quot;0.0.0.0:9999&quot;,
+      &quot;external_ui&quot;: &quot;ui&quot;,
+      &quot;external_ui_download_url&quot;: &quot;&quot;,
+      &quot;secret&quot;: &quot;&quot;,
+      &quot;default_mode&quot;: &quot;Rule&quot;
+    },
+    &quot;cache_file&quot;: {
+      &quot;enabled&quot;: true,
+      &quot;path&quot;: &quot;&quot;,
+      &quot;cache_id&quot;: &quot;&quot;,
+      &quot;store_fakeip&quot;: false
+    }
+  }
+}
+</code></pre>
+<h4 id="示例自定义路由规则">示例：自定义路由规则</h4>
+<p>注意：如果你想自定义二级或者更低等级的json字段，则其上级字段也必须包含在文件中，否则singbox内核无法完成合并</p>
+<p>注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！</p>
+<p>注意：简单规则推荐使用脚本内置：<strong>6-6-2自定义规则</strong>功能进行编辑，更简单直观！</p>
+<p>具体字段内容可以参考：<a href="https://sing-box.sagernet.org/zh/configuration/route/rule">官方文档</a></p>
+<p>编辑<code>$CRASHDIR/jsons/route.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;route&quot;: {
+    &quot;rules&quot;: [
+      { &quot;inbound&quot;: [ &quot;mixed-in&quot; ], &quot;outbound&quot;: &quot;GLOBAL&quot; },
+      {
+        &quot;domain&quot;: [
+          &quot;example.a.com&quot;,
+          &quot;example.b.com&quot;
+        ],
+        &quot;domain_suffix&quot;: [
+          &quot;acl4.ssr&quot;,
+          &quot;ip6-localhost&quot;
+        ],
+        &quot;ip_cidr&quot;: [
+          &quot;0.0.0.0/8&quot;,
+          &quot;10.0.0.0/8&quot;
+        ],
+        &quot;outbound&quot;: &quot;🎯 全球直连&quot;
+      },
+      { &quot;domain_suffix&quot;: [ &quot;example.com&quot; ], &quot;outbound&quot;: &quot;🚀 节点选择&quot; },
+      { &quot;domain_keyword&quot;: [ &quot;baidu&quot; ], &quot;outbound&quot;: &quot;DIRECT&quot; },
+      { &quot;source_ip_cidr&quot;: [ &quot;10.0.0.0/24&quot; ], &quot;outbound&quot;: &quot;REJECT&quot; },
+      { &quot;rule-set&quot;: [ &quot;geoip-cn&quot; ], &quot;outbound&quot;: &quot;DIRECT&quot; }
+    ]
+  }
+}
+</code></pre>
+<h4 id="示例自定义rule-set规则">示例：自定义rule-set规则</h4>
+<p>注意：如果你想自定义二级或者更低等级的json字段，则其上级字段也必须包含在文件中，否则singbox内核无法完成合并</p>
+<p>注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！</p>
+<p>注意：你需要通过route.json模块或者dns.json模块来调用rule-set规则，详见<strong>示例：自定义路由规则</strong> 或 <strong>示例：自定义DNS</strong></p>
+<p>具体字段内容可以参考：<a href="https://sing-box.sagernet.org/zh/configuration/rule-set">官方文档</a></p>
+<p>编辑<code>$CRASHDIR/jsons/route.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;route&quot;: {
+    &quot;rule_set&quot;: [
+      {
+        &quot;tag&quot;: &quot;geoip-cn&quot;,
+        &quot;type&quot;: &quot;local&quot;,
+        &quot;format&quot;: &quot;binary&quot;,
+        &quot;path&quot;: &quot;./ruleset/geoip-cn.srs&quot;
+      },
+      {
+        &quot;tag&quot;: &quot;geoip-us&quot;,
+        &quot;type&quot;: &quot;remote&quot;,
+        &quot;format&quot;: &quot;binary&quot;,
+        &quot;path&quot;: &quot;./ruleset/geoip-us.srs&quot;,
+        &quot;url&quot;: &quot;https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-us.srs&quot;,
+        &quot;download_detour&quot;: &quot;proxy&quot;
+      }      
+    ]
+  }
+}
+</code></pre>
+<h4 id="示例自定义dns">示例：自定义DNS</h4>
+<p>注意：由于dns.json是完全覆盖脚本内置设置，所以如需使用fakeip则切勿更改fakeip_range，以免引起回环！</p>
+<p>注意：多个平级的{}之间需要使用逗号连接，如果只有一个同级{}则不要写逗号！</p>
+<p>具体字段内容可以参考：<a href="https://sing-box.sagernet.org/zh/configuration/dns">官方文档</a></p>
+<p>编辑<code>$CRASHDIR/jsons/dns.json</code>文件：</p>
+<pre><code class="language-json">{
+  &quot;dns&quot;: {
+    &quot;servers&quot;: [
+      {
+        &quot;tag&quot;: &quot;dns_proxy&quot;,
+        &quot;type&quot;: &quot;https&quot;,
+        &quot;server&quot;: &quot;doh.pub&quot;,
+		&quot;routing_mark&quot;: 7894,
+		&quot;detour&quot;: &quot;👑 高级节点&quot;,
+        &quot;domain_resolver&quot;: &quot;dns_resolver&quot;
+      },
+      {
+        &quot;tag&quot;: &quot;dns_direct&quot;,
+        &quot;type&quot;: &quot;https&quot;,
+        &quot;server&quot;: &quot;doh.pub&quot;,
+		&quot;routing_mark&quot;: 7894,
+        &quot;domain_resolver&quot;: &quot;dns_resolver&quot;
+      },
+      {
+        &quot;tag&quot;: &quot;dns_fakeip&quot;,
+        &quot;type&quot;: &quot;fakeip&quot;,
+        &quot;inet4_range&quot;: &quot;28.0.0.1/8&quot;,
+        &quot;inet6_range&quot;: &quot;fc00::/16&quot;
+      },
+      {
+        &quot;tag&quot;: &quot;dns_resolver&quot;,
+        &quot;type&quot;: &quot;https&quot;,
+        &quot;server&quot;: &quot;223.5.5.5&quot;,
+        &quot;routing_mark&quot;: 7894
+      }
+    ],
+    &quot;rules&quot;: [
+      { &quot;clash_mode&quot;: &quot;Direct&quot;, &quot;server&quot;: &quot;dns_direct&quot;, &quot;strategy&quot;: &quot;prefer_ipv4&quot; },  
+      { &quot;domain_suffix&quot;: [&quot;services.googleapis.cn&quot;], &quot;server&quot;: &quot;dns_fakeip&quot;, &quot;strategy&quot;: &quot;prefer_ipv4&quot;, &quot;rewrite_ttl&quot;: 1 },
+      { &quot;domain&quot;: [&quot;time-ios.apple.com&quot;, &quot;time1.cloud.tencent.com&quot;, &quot;music.163.com&quot;, &quot;musicapi.taihe.com&quot;, &quot;music.taihe.com&quot;, &quot;songsearch.kugou.com&quot;, &quot;trackercdn.kugou.com&quot;, &quot;api-jooxtt.sanook.com&quot;, &quot;api.joox.com&quot;, &quot;joox.com&quot;, &quot;y.qq.com&quot;, &quot;streamoc.music.tc.qq.com&quot;, &quot;mobileoc.music.tc.qq.com&quot;, &quot;isure.stream.qqmusic.qq.com&quot;, &quot;dl.stream.qqmusic.qq.com&quot;, &quot;aqqmusic.tc.qq.com&quot;, &quot;amobile.music.tc.qq.com&quot;, &quot;music.migu.cn&quot;, &quot;localhost.ptlogin2.qq.com&quot;, &quot;localhost.sec.qq.com&quot;, &quot;xnotify.xboxlive.com&quot;, &quot;proxy.golang.org&quot;, &quot;heartbeat.belkin.com&quot;, &quot;mesu.apple.com&quot;, &quot;swscan.apple.com&quot;, &quot;swquery.apple.com&quot;, &quot;swdownload.apple.com&quot;, &quot;swcdn.apple.com&quot;, &quot;swdist.apple.com&quot;, &quot;lens.l.google.com&quot;, &quot;na.b.g-tun.com&quot;, &quot;ff.dorado.sdo.com&quot;, &quot;shark007.net&quot;, &quot;adguardteam.github.io&quot;, &quot;adrules.top&quot;, &quot;anti-ad.net&quot;, &quot;local.adguard.org&quot;, &quot;static.adtidy.org&quot;, &quot;ps.res.netease.com&quot;], &quot;server&quot;: &quot;dns_direct&quot; },
+      { &quot;domain_suffix&quot;: [&quot;*&quot;, &quot;lan&quot;, &quot;localdomain&quot;, &quot;example&quot;, &quot;invalid&quot;, &quot;localhost&quot;, &quot;test&quot;, &quot;local&quot;, &quot;home.arpa&quot;, &quot;direct&quot;, &quot;time.edu.cn&quot;, &quot;ntp.org.cn&quot;, &quot;pool.ntp.org&quot;, &quot;music.163.com&quot;, &quot;126.net&quot;, &quot;kuwo.cn&quot;, &quot;y.qq.com&quot;, &quot;xiami.com&quot;, &quot;music.migu.cn&quot;, &quot;msftconnecttest.com&quot;, &quot;msftncsi.com&quot;, &quot;steamcontent.com&quot;, &quot;srv.nintendo.net&quot;, &quot;n.n.srv.nintendo.net&quot;, &quot;cdn.nintendo.net&quot;, &quot;battle.net&quot;, &quot;battlenet.com.cn&quot;, &quot;wotgame.cn&quot;, &quot;wggames.cn&quot;, &quot;wowsgame.cn&quot;, &quot;wargaming.net&quot;, &quot;linksys.com&quot;, &quot;linksyssmartwifi.com&quot;, &quot;router.asus.com&quot;, &quot;nflxvideo.net&quot;, &quot;square-enix.com&quot;, &quot;finalfantasyxiv.com&quot;, &quot;ffxiv.com&quot;, &quot;ff14.sdo.com&quot;, &quot;mcdn.bilivideo.cn&quot;, &quot;media.dssott.com&quot;, &quot;market.xiaomi.com&quot;, &quot;cmbchina.com&quot;, &quot;cmbimg.com&quot;, &quot;sandai.net&quot;, &quot;n0808.com&quot;, &quot;3gppnetwork.org&quot;, &quot;uu.163.com&quot;, &quot;pub.3gppnetwork.org&quot;, &quot;oray.com&quot;, &quot;orayimg.com&quot;, &quot;gcloudcs.com&quot;, &quot;gcloudsdk.com&quot;], &quot;server&quot;: &quot;dns_direct&quot; },
+      { &quot;domain_regex&quot;: [&quot;time.*.com&quot;, &quot;time.*.gov&quot;, &quot;time.*.edu.cn&quot;, &quot;time.*.apple.com&quot;, &quot;time1.*.com&quot;, &quot;time2.*.com&quot;, &quot;time3.*.com&quot;, &quot;time4.*.com&quot;, &quot;time5.*.com&quot;, &quot;time6.*.com&quot;, &quot;time7.*.com&quot;, &quot;ntp.*.com&quot;, &quot;ntp1.*.com&quot;, &quot;ntp2.*.com&quot;, &quot;ntp3.*.com&quot;, &quot;ntp4.*.com&quot;, &quot;ntp5.*.com&quot;, &quot;ntp6.*.com&quot;, &quot;ntp7.*.com&quot;, &quot;localhost.*.weixin.qq.com&quot;, &quot;xbox.*.*.microsoft.com&quot;, &quot;.*.*.xboxlive.com&quot;, &quot;xbox.*.microsoft.com&quot;, &quot;.+.stun.*.*&quot;, &quot;.+.stun.*.*.*&quot;, &quot;.+.stun.*.*.*.*&quot;, &quot;.+.stun.*.*.*.*.*&quot;], &quot;server&quot;: &quot;dns_direct&quot; },
+	  { &quot;clash_mode&quot;: &quot;Global&quot;, &quot;query_type&quot;: [&quot;A&quot;, &quot;AAAA&quot;], &quot;server&quot;: &quot;dns_fakeip&quot;, &quot;strategy&quot;: &quot;prefer_ipv4&quot;, &quot;rewrite_ttl&quot;: 1 },
+      { &quot;rule_set&quot;: [&quot;geosite-cn&quot;], &quot;server&quot;: &quot;dns_direct&quot; },
+      { &quot;query_type&quot;: [&quot;A&quot;, &quot;AAAA&quot;], &quot;server&quot;: &quot;dns_fakeip&quot;, &quot;strategy&quot;: &quot;prefer_ipv4&quot;, &quot;rewrite_ttl&quot;: 1 }
+    ],
+    &quot;final&quot;: &quot;dns_proxy&quot;,
+	&quot;strategy&quot;: &quot;prefer_ipv4&quot;,
+    &quot;independent_cache&quot;: true,
+    &quot;reverse_mapping&quot;: true
+  }
+}
+</code></pre>
+<h4 id="需要更简单的配置模版">需要更简单的配置模版？</h4>
+<p>可参考：<a href="https://proxy-tutorials.dustinwin.us.kg/posts/share-shellcrash-singboxr-ruleset/">DustinWin-sing-box教程基础篇</a> 进行配置！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[本地安装ShellCrash的教程]]></title>
+        <id>http://juewuy.github.io/bdaz/</id>
+        <link href="http://juewuy.github.io/bdaz/">
+        </link>
+        <updated>2023-01-19T13:46:07.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="目前有多种本地安装方案请自行酌情使用">目前有多种本地安装方案，请自行酌情使用：</h2>
+<h3 id="〇-首先识别内核及安装版本">〇、首先识别内核及安装版本：</h3>
+<p>请连接设备SSH后，执行如下命令：</p>
+<pre><code class="language-shell">uname -ms | tr ' ' '_' | tr '[A-Z]' '[a-z]'
+</code></pre>
+<p>在返回的内容中即可看到CPU版本，之后找到对应版本的安装包或者内核即可</p>
+<p><strong>注意：</strong></p>
+<p>aarch64=armv8=arm64</p>
+<p>华硕设备或小米R1D/R2D/R3D使用armv7内核可能无法运行，请尝试使用armv5内核</p>
+<p>mips设备通常都是mipsle-softfloat，如果无法运行，请逐一尝试其他mips内核</p>
+<h3 id="一-通过winscp或其他scp客户端手动上传安装包文件完整安装或覆盖升级">一、通过WinSCP或其他SCP客户端手动上传安装包文件完整安装或覆盖升级：</h3>
+<p>1、点击 <a href="https://github.com/juewuy/ShellCrash/raw/master/ShellCrash.tar.gz">Github源</a> 或者 <a href="https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master/ShellCrash.tar.gz">Jsdelivr源</a> 下载本地安装包文件<strong>ShellCrash.tar.gz</strong>（如果文件名不对或乱码，请自行改名）</p>
+<p>2、将该压缩文件（请勿解压）使用WinSCP或其他SCP客户端上传至设备/tmp目录</p>
+<p>3、</p>
+<p>运行OpenWrt或其他非标准Linux系统的设备（主要是各类路由器），请使用如下命令安装：</p>
+<pre><code class="language-shell">mkdir -p /tmp/SC_tmp &amp;&amp; tar -zxf '/tmp/ShellCrash.tar.gz' -C /tmp/SC_tmp/ &amp;&amp; source /tmp/SC_tmp/init.sh 
+</code></pre>
+<p>运行标准Linux系统的设备则使用如下命令进行安装：</p>
+<pre><code class="language-shell">sudo -i #如提示输入密码，请输入用户密码
+mkdir -p /tmp/SC_tmp &amp;&amp; tar -zxf '/tmp/ShellCrash.tar.gz' -C /tmp/SC_tmp/ &amp;&amp; bash /tmp/SC_tmp/init.sh &amp;&amp; source /etc/profile &gt;/dev/null
+</code></pre>
+<p><em><strong>如果你使用的命令安装出错，那么请从第2步开始重新安装，并尝试使用另一个安装命令</strong></em></p>
+<p>4、参考<strong>↓↓↓通过WinSCP或其他SCP客户端手动上传内核单独安装/升级内核↓↓↓</strong>安装所需的内核文件</p>
+<p>5、运行ShellCrash脚本，如有需要，请使用8-2功能进入新手引导</p>
+<h3 id="二-通过winscp或其他scp客户端手动上传内核单独安装升级内核">二、通过WinSCP或其他SCP客户端手动上传内核单独安装/升级内核：</h3>
+<p>1、参考<strong>↑↑↑识别内核及安装版本↑↑↑</strong>识别内核并下载对应内核文件：</p>
+<p>​	Sing-Box内核：<a href="https://github.com/juewuy/ShellCrash/tree/update/bin/singboxr">https://github.com/juewuy/ShellCrash/tree/update/bin/singboxr</a></p>
+<p>​	Meta内核：<a href="https://github.com/juewuy/ShellCrash/tree/update/bin/meta">https://github.com/juewuy/ShellCrash/tree/update/bin/meta</a></p>
+<p>2、需要标准二进制文件，第三方地址请自行解压，通常无须改名</p>
+<p>3、之后将该二进制文件使用WinSCP或其他SCP客户端上传至/tmp目录</p>
+<p>4、之后在SSH中直接运行crash命令</p>
+<pre><code class="language-shell">crash 
+</code></pre>
+<p>5、参考提示完成加载</p>
+<h3 id="三-通过winscp或其他scp客户端手动上传yamljson配置文件">三、通过WinSCP或其他SCP客户端手动上传yaml/json配置文件：</h3>
+<p>1、使用WinSCP或其他SCP客户端将yaml或yml格式(不限命名)或者名为config.json(文件名必须一致)的配置文件上传至/tmp目录</p>
+<p>2、运行脚本，参考提示完成加载</p>
+<h3 id="四-通过配置局域网http代理的方式一键安装">四、通过配置局域网http代理的方式一键安装：</h3>
+<p>1、在PC或手机上运行同类软件，并启用http代理和允许局域网设备访问</p>
+<p>2、获取其http代理IP和端口，比如192.168.31.101:1080</p>
+<p>3、进入SSH，运行以下命令设置环境变量,注意替换ip和端口：</p>
+<pre><code class="language-shell">export all_proxy=http://【你的IP:端口】
+</code></pre>
+<p>4、运行脚本一键在线安装命令，如果使用wget，需要改用wget -Y on命令执行；如果报错，则说明ip端口不对或者无法连接</p>
+<p>5、安装完成之后请用以下命令卸载环境变量：</p>
+<pre><code class="language-shell">unset all_proxy
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小米路由设备破解固化永久SSH教程]]></title>
+        <id>http://juewuy.github.io/gDyfIPSsZ/</id>
+        <link href="http://juewuy.github.io/gDyfIPSsZ/">
+        </link>
+        <updated>2022-06-01T06:39:00.000Z</updated>
+        <content type="html"><![CDATA[<p>教程参考：https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=4046020<br>
+原作者Github地址：https://github.com/paldier/ax3600_tool</p>
+<h4 id="首先需要参考此文破解ssh权限已破解则略过">首先需要参考此文破解SSH权限（已破解则略过）</h4>
+<p><a href="https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/#%E8%8E%B7%E5%8F%96%E8%B7%AF%E7%94%B1%E5%99%A8ssh%E6%9D%83%E9%99%90">https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/#获取路由器ssh权限</a></p>
+<h4 id="之后备份nand运行如下命令">之后备份nand，运行如下命令：</h4>
+<pre><code class="language-shell">cat /proc/mtd | grep bdata
+</code></pre>
+<p>根据返回的结果判定bdata分区所在，比如mtd9</p>
+<p>之后运行如下命令，注意将/dev/mtd9中的mtd9换成你实际查看到的mtd分区名</p>
+<pre><code class="language-sh">nanddump -f /tmp/bdata.img /dev/mtd9
+</code></pre>
+<p>运行成功后用winscp下载到电脑上备份好（以防万一）</p>
+<h4 id="接下来下载破解文件">接下来下载破解文件</h4>
+<h6 id="httpsgithubcompaldierax3600_toolreleasesdownload20221007mitoolzip"><a href="https://github.com/paldier/ax3600_tool/releases/download/20221007/mitool.zip">https://github.com/paldier/ax3600_tool/releases/download/20221007/mitool.zip</a></h6>
+<p>将文件在windows下手动解压</p>
+<h5 id="之后用winscp将文件上传到路由器的tmp目录下执行如下代码">之后用winscp将文件上传到路由器的/tmp目录下，执行如下代码：</h5>
+<pre><code class="language-sh">chmod +x /tmp/mitool.sh &amp;&amp; /tmp/mitool.sh unlock
+</code></pre>
+<h5 id="机器会自动重启重启后再次用winscp将该文件夹上传到路由器的tmp目录下并执行">机器会自动重启，重启后再次用winscp将该文件夹上传到路由器的/tmp目录下，并执行：</h5>
+<pre><code class="language-sh">chmod +x /tmp/mitool.sh &amp;&amp; /tmp/mitool.sh sn &amp;&amp; /tmp/mitool.sh hack
+</code></pre>
+<p>会自动设置永久ssh、telnet、uart权限，同时会计算出默认的root密码</p>
+<p>注意记录密码，恢复出厂后telnet和ssh需要用</p>
+<p>注意记录sn号码，如果遇见sn号丢失可以用来还原</p>
+<h5 id="最后再次用winscp将该文件夹上传到路由器的tmp目录下执行">最后再次用winscp将该文件夹上传到路由器的/tmp目录下，执行：</h5>
+<pre><code>chmod +x /tmp/mitool.sh &amp;&amp; /tmp/mitool/mitool.sh lock
+</code></pre>
+<p>重启后即使恢复出厂ssid也能正常了</p>
+<h5 id="如升级后ssh被禁用可以用telnet登录执行下面代码再次启用ssh">如升级后ssh被禁用可以用telnet登录，执行下面代码再次启用ssh</h5>
+<pre><code class="language-sh">sed -i 's/channel=.*/channel=&quot;debug&quot;/g' /etc/init.d/dropbear
+/etc/init.d/dropbear start
+</code></pre>
+<p>至此基本可以保证机器长期拥有root权限</p>
+<h4 id="其他">其他：</h4>
+<h5 id="如遇sn号丢失可以重新上传文件夹后使用以下命令还原">如遇SN号丢失，可以重新上传文件夹后使用以下命令还原</h5>
+<pre><code class="language-shell">chmod +x /tmp/mitool.sh &amp;&amp; /tmp/mitool.sh setsn xxxxxx #将此次内容替换为之前记录的sn号
+</code></pre>
+<h5 id="如需恢复bdata分区可以使用以下命令恢复">如需恢复bdata分区，可以使用以下命令恢复</h5>
+<pre><code class="language-shell">mtd write /tmp/bdata.img bdata #注意将文件名bdata.img替换为你实际备份的文件名
+</code></pre>
+<h5 id="如果使用以上教程无法成功备份或者遇见注入wifi信号丢失-mesh失效等奇怪问题请恢复bdata分区后">如果使用以上教程无法成功备份或者遇见注入WiFi信号丢失、mesh失效等奇怪问题，请恢复bdata分区后</h5>
+<p>参考基础教程手动进行固化 <a href="https://www.wutaijie.cn/?p=254">https://www.wutaijie.cn/?p=254</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ShellCrash使用的常见问题]]></title>
+        <id>http://juewuy.github.io/chang-jian-wen-ti/</id>
+        <link href="http://juewuy.github.io/chang-jian-wen-ti/">
+        </link>
+        <updated>2022-06-01T06:38:26.000Z</updated>
+        <content type="html"><![CDATA[<p>一些运行中常见的问题汇总，请先在此处了解！</p>
+<h2 id="日经问题">日经问题</h2>
+<h3 id="xx设备能不能安装">·XX设备能不能安装？</h3>
+<p>理论上只要开启/破解了SSH的Linux设备都可以安装，请先用安装脚本自行尝试，如果无法安装或者无法运行也可以找作者适配</p>
+<h3 id="xx设备能跑多快">·XX设备能跑多快？</h3>
+<p>设备能跑多快取决于你设备的CPU性能，或者是否支持硬件解码AES加密</p>
+<p>软解性能：常见的双核mt7621，使用chacha20系加密，极限可以跑满100M；常见的A53 4核SOC，极限可以跑500-700M。</p>
+<p>硬解性能：AX3600/AX6等支持硬解AES的设备跑单层aes加密可以跑满千兆</p>
+<h3 id="xx功能能不能实现">·XX功能能不能实现？</h3>
+<p>提问前请先去<strong>2-功能设置</strong>，<strong>7-进阶设置</strong>，<strong>8-工具列表</strong>里确认是否有相关功能！</p>
+<p>如果是确认没有的功能请去→<a href="https://github.com/juewuy/ShellCrash/issues">Github提交issue</a>！TG群内不再受理此类问题！</p>
+<p>紧急定制功能的需求请私聊→<a href="https://t.me/juewuy">付费支持</a></p>
+<h3 id="与xx应用是否兼容">·与XX应用是否兼容？</h3>
+<p>由于ShellCrash的Redir/混合/Tun模式在运行中需要劫持局域网流量及DNS才能进行透明代理，所以ShellCrash不能与各类同样基于流量劫持的应用直接共存，例如：</p>
+<p>​	广告过滤插件、网游加速器、SmartDNS、以及各类同类代理应用</p>
+<p>但是你依然可以通过以下方式兼容运行</p>
+<p>​	1、如果是依赖劫持DNS服务的应用比如SmartDNS或者广告过滤插件，请参考：https://t.me/ShellClash/148</p>
+<p>​	2、使用ShellCrash的局域网过滤功能或纯净模式，分设备进行代理</p>
+<h3 id="为什么ping不通">·为？什？么？PING？不？通？</h3>
+<p>ping命令基于ICMP协议，clash暂不支持代理ICMP协议，请使用curl或直接浏览器访问进行测试！！！</p>
+<h3 id="有视频教程吗">·有视频教程吗？</h3>
+<p>有的，在此感谢诸位UP主的付出！</p>
+<p>教程详见：<a href="https://www.youtube.com/results?search_query=ShellClash">https://www.youtube.com/results?search_query=ShellCrash</a></p>
+<p>部分教程对应的脚本版本可能已经比较陈旧，请酌情参照！</p>
+<h2 id="脚本安装运行相关">脚本安装运行相关</h2>
+<h3 id="安装失败提示无法连接或者完全没反应">·安装失败，提示无法连接或者完全没反应</h3>
+<p>​	可能是安装源被运营商屏蔽了，请切换和尝试使用不同的安装源！！！</p>
+<p>​	具体安装源列表请<a href="https://github.com/juewuy/ShellCrash/blob/master/README_CN.md">前往Github</a>查看</p>
+<p>​	如果实在无法安装请尝试使用本地安装！参考：<a href="https://juewuy.github.io/bdaz">https://juewuy.github.io/bdaz</a></p>
+<h3 id="安装失败提示tar-相关错误">·安装失败，提示tar 相关错误</h3>
+<p>​	可能是安装目录剩余空间不足或者权限不足，请切换安装目录或者使用root用户安装</p>
+<h3 id="安装失败提示https相关错误">·安装失败，提示Https相关错误</h3>
+<p>​	请使用wget及http源安装</p>
+<h3 id="安装重装失败提示failed-to-connect-127001">·安装/重装失败，提示Failed to connect 127.0.0.1……</h3>
+<p>​	可能是之前设置了本机代理，并且没有正确使用脚本卸载的原因，可以使用如下命令清除本机代理后再安装</p>
+<pre><code class="language-sh">unset all_proxy &amp;&amp; unset ALL_PROXY
+</code></pre>
+<h3 id="下载更新内核-脚本-面板-数据库等文件一直失败">·下载更新内核、脚本、面板、数据库等文件一直失败</h3>
+<p>​	请使用0-返回上级菜单，9-更新，7-切换安装源功能，切换安装源，并尝试使用可以正常更新的源</p>
+<p>​	如果依然无法更新，参考<a href="https://juewuy.github.io/bdaz">https://juewuy.github.io/bdaz</a> 使用本地安装</p>
+<h3 id="在线生成配置文件失败或者导入订阅失败">·在线生成配置文件失败或者导入订阅失败</h3>
+<p>​	请确保配置文件是标准的clash配置文件格式，如果不确定配置文件格式请使用6-1在线生成配置文件功能</p>
+<p>​	如果依然无法获取，可以使用脚本提示的链接在浏览器中手动下载该配置文件后并使用Winscp手动上传到/tmp文件夹，之后运行脚本即可导入</p>
+<h3 id="安装的新版本有问题如何回退到旧版本">·安装的新版本有问题，如何回退到旧版本？</h3>
+<p>​	目前只支持回退到一部分release版本</p>
+<p>​	使用9-更新，切换安装源，切换版本功能，切换至想回退的版本，之后重新更新脚本或内核文件即可完成回退</p>
+<h2 id="脚本服务运行相关">脚本服务运行相关</h2>
+<h3 id="如何导入配置文件-订阅链接-节点分享链接">·如何导入配置文件、订阅链接、节点分享链接？</h3>
+<p>​	支持导入各种形式的订阅链接，使用6-1功能即可</p>
+<p>​	支持导入各种形式的节点分享链接，使用6-1或者6-6自定义节点(限clash内核)功能即可</p>
+<p>​	不支持直接填写节点数据，请尽量使用分享链接！trojan的分享链接格式为trojan://password@host:port</p>
+<h3 id="如何使用自定义的端口-设置-规则以及锚点-ruleset等高级功能">·如何使用自定义的端口、设置、规则以及锚点、ruleset等高级功能？</h3>
+<p>​	你可以通过6-配置文件管理，6-自定义配置文件，功能来管理或者调整以上功能</p>
+<h3 id="如何使指定站点直连或者使用指定规则">·如何使指定站点直连或者使用指定规则？</h3>
+<p>​	你可以通过6-配置文件管理，6-自定义配置文件，<strong>2-管理自定义规则</strong>功能来管理或者调整以上功能</p>
+<h3 id="内核服务无法正常运行">·内核服务无法正常运行</h3>
+<p>​	请先使用8-测试菜单，1-查看内核运行报错信息 ，查看运行时的报错并根据报错内容排查是否是配置文件有问题。</p>
+<p>​	~如果提示为 “空” 或者 “Bus error” 或者 “Permission denied” ，则代表内核不完整，请前往更新页面重新安装内核</p>
+<p>​	~如果提示为 “ERRO[0000] rules [0000]” 则代表自定义配置文件有问题，请自行检查配置规则</p>
+<p>​	如无法确定问题所在，可以前往tg群：<a href="">t.me/ShellClash</a> 进行咨询</p>
+<h3 id="本地面板下载或安装失败">·本地面板下载或安装失败</h3>
+<p>​	如果有下载或安装失败，请首先尝试使用9-7更换安装源重新安装</p>
+<p>​	如果换源安装依然失败，请使用 df -h $clashdir 命令检查设备存储空间是否充足</p>
+<p>​	如果依然不能解决问题，请前往<a href="https://github.com/juewuy/ShellCrash/tree/master/bin">Github</a> 下载面板文件，解压之后用winscp手动上传到安装目录(echo $clashdir) 的/ui文件夹下</p>
+<h3 id="斐讯官方官改固件设备设置开机启动无效必须手动重启clash">·斐讯官方/官改固件设备设置开机启动无效，必须手动重启clash</h3>
+<p>​	这是固件启动后会重置iptables的问题导致的，请取消开机启动功能，之后把以下语句</p>
+<pre><code>sleep 120 &amp;&amp; /etc/clash/start.sh start
+</code></pre>
+<p>​	写入路由器管理界面-高级设置-开机启动，功能内即可</p>
+<h3 id="其他设备设置开机启动无效必须手动启动clash">·其他设备设置开机启动无效，必须手动启动clash</h3>
+<p>​	部分固件可能尚未适配，请自行寻找添加开机启动脚本的方法，并将如下语句添加为开机执行：</p>
+<pre><code class="language-shell">export clashdir=&quot;你的安装目录&quot;&amp;&amp;$clashdir/start.sh init
+</code></pre>
+<h2 id="网络相关问题">网络相关问题</h2>
+<h3 id="无法访问一切国外网站但国内正常">·无法访问一切国外网站但国内正常</h3>
+<p>​	由于部分<strong>中继设备</strong>不使用nat转发而是直接使用路由表转发，所以无法配置透明路由，此类设备<strong>无法使用</strong>主路由模式，如果强行使用，必须依照旁路由设置，将设备的DNS和网关地址都指向运行clash服务的设备</p>
+<p>​	也可能是<strong>节点配置问题</strong>，请先确认节点可用。之后在Dashboard面板中对节点进行手动测速，以及查看访问日志，判断问题所在</p>
+<p>​		如果节点测速失败且日志上显示任何与 x509 相关的错误，请使用6-1或6-3重新生成配置文件，并保证启用<strong>跳过本地证书验证</strong>功能</p>
+<p>​		如果节点测速成功但依然无法访问，且没有日志显示，则是内核没有正确接管流量，请尝试切换不同的运行模式</p>
+<h3 id="无法访问部分国外网站提示证书错误等或者dashboard面板只显示ip没有域名">·无法访问部分国外网站，提示证书错误等，或者Dashboard面板只显示IP没有域名</h3>
+<p>​	1、可能是由于本地DNS污染导致的，redir-host模式下，可能需要手动配置dot或者doh类型的加密dns；通常直接把dns模式切换到fake-ip模式都能够解决此类问题；也可以升级到最新版本，在使用Meta或者Pre内核的前提下，启用域名嗅探功能</p>
+<p>​	2、可能是浏览器启用了安全DNS导致clash内核无法接管DNS服务，请更换浏览器访问，或者在浏览器设置中关闭安全DNS服务</p>
+<p>​	3、也可能是部分老旧设备固件版本太低不支持iptables-nat协议，此类设备建议使用纯净模式</p>
+<p>​	4、旁路由请确认子设备没有启用ipv6，否则dns会由ipv6查询不会经过旁路由设备</p>
+<h3 id="浏览器内无法访问部分网站但app或更换浏览器则正常">·浏览器内无法访问部分网站，但APP或更换浏览器则正常</h3>
+<p>​	这是由于部分浏览器启用了安全DNS导致脚本本身的DNS劫持失效</p>
+<p>​	请自行使用搜索引擎查找关键词：【{你的浏览器名称}+禁用安全DNS】，以获取禁用安全DNS的办法！</p>
+<h3 id="无法访问国内网站但国外地址正常">·无法访问国内网站但国外地址正常</h3>
+<p>​	这应该是没有启用IP转发导致的，请在工具界面重新进入新手引导，参考引导指示启用ip转发功能</p>
+<h3 id="一部分国内网页打不开网页错版乱码等">·一部分国内网页打不开，网页错版，乱码等</h3>
+<p>​	这是由于使用了部分去广告规则，规则误杀导致的，如果不喜欢去广告规则请使用默认不带去广告的规则或者使用自己定义的规则文件，也可以在网页面板中手动开关去广告规则。</p>
+<h3 id="正常运行一段时间后断网必须重启服务才能恢复">·正常运行一段时间后断网，必须重启服务才能恢复</h3>
+<p>​	这可能是系统中存在某些会重置防火墙的应用或者进程，如果了解相关知识可以尝试禁用这些进程，比如某些端口转发应用或者流量劫持应用、游戏加速器等。</p>
+<p>​	也可以尝试用5自动任务添加一个<strong>重设透明路由</strong>-的任务，并设置为<strong>防火墙服务重启后运行</strong></p>
+<h3 id="无法登录chatgpt">·无法登录ChatGPT</h3>
+<p>​	ChatGPT的账号验证部分使用了udp流量，需要代理udp方能连接，请使用<strong>除Redir模式</strong>之外的代理模式（2-1）</p>
+<h3 id="无法使用wireguard或tailscale协议">·无法使用Wireguard或Tailscale协议</h3>
+<p>​	为了节省空间及优化内存占用，脚本内置的内核均未编译Wireguard和Tailscale模块，也未编译Gvisor，请使用自定义内核功能，安装原版内核或编译了相关模块的内核（9-2-5）</p>
+<h3 id="tv-机顶盒或游戏机设备上的奈飞或类似应用提示检测到代理服务">·TV、机顶盒或游戏机设备上的奈飞或类似应用提示检测到代理服务</h3>
+<p>​	可能是由于使用的<strong>规则未能准确覆盖奈飞的IP地址</strong>导致的，</p>
+<p>​	解决方式1：使用Meta或者Pre内核，并启用域名嗅探功能</p>
+<p>​	解决方式2：将面板中的“漏网之鱼”或者“黑名单”代理节点设置为可以解锁奈飞的节点（注意该方式可能会造成奈飞节点流量滥用）</p>
+<p>​	也可能是你的<strong>机场节点不支持原生的奈飞解锁</strong></p>
+<p>​	解决方式1：使用混合模式+fake-ip的设置组合</p>
+<p>​	解决方式2：更换支持奈飞解锁的机场，比如https://dler.best/auth/register?affid=89698</p>
+<h3 id="无法正确配置旁路由模式">·无法正确配置旁路由模式</h3>
+<p>​	配置旁路由的模式与其他类似应用的配置模式是完全一致的</p>
+<p>​	你需要将<strong>所有需要使用</strong>ShellCrash服务的设备的<strong>网关地址</strong>和<strong>DNS服务器</strong>地址指定为<strong>旁路由的IP地址</strong></p>
+<p>​	你可以分设备单独使用手动的方式指定，也可以使用主路由或者旁路由（不推荐）的DHCP服务指定</p>
+<p>​	如果你是搭配路由器的DHCP服务使用，请务必在配置完成后重启全部路由设备</p>
+<p>​	<strong>注意</strong>：旁路由模式下，<strong>子设备的ipv6必须关闭</strong>，否则会出现DNS异常导致网页访问失败的问题</p>
+<h3 id="游戏无法连接服务器-谷歌商店应用无法下载">·游戏无法连接服务器、谷歌商店应用无法下载……</h3>
+<p>​	请使用2-功能设置，1-切换clash运行模式功能，切换使用支持代理UDP的模式，即可对游戏和应用商店的udp流量进行代理</p>
+<p>​	部分节点送中之后无法使用谷歌服务，请尝试切换节点</p>
+<h3 id="全局模式不生效">·全局模式不生效</h3>
+<p>​	全局模式设置后，默认使用的规则其实是全局直连，需要回到节点选择界面手动指定用于全局模式的节点方可正常使用全局代理模式</p>
+<h3 id="上传的配置文件导入机场配置文件后面板显示空白">·上传的配置文件/导入机场配置文件后面板显示空白</h3>
+<p>​	可能是你的设备缺少openssl根证书文件导致无法正确获取在线规则，请使用9-更新，安装本地根证书功能进行安装</p>
+<h3 id="如何添加自定义规则及自定义设定">·如何添加自定义规则及自定义设定？</h3>
+<p>​	如果想添加其他自定义设定，或者自定义规则，或者其他配置文件相关功能，可以使用【6-6配置文件覆写】功能</p>
+<h1 id="其他问题">其他问题</h1>
+<h3 id="国内测速跑不满带宽">·国内测速跑不满带宽？</h3>
+<p>​	默认国内流量也会进内核，DNS模式处于Redir-host模式时可以通过开启【CN_IP绕过内核】功能绕过国内流量以提升速度</p>
+<p>​	注意：这样做会失去国内分流及去广告效果</p>
+<h3 id="如何禁止视频流量使用udp协议提升速度">·如何禁止视频流量使用UDP协议（提升速度）？</h3>
+<p>​	可以使用脚本内置的功能设置里的屏蔽QUIC功能进行设置</p>
+<h3 id="如何添加自建节点">·如何添加自建节点？</h3>
+<p>​	在导入配置文件功能中，使用在线生成配置文件功能，之后输入节点分享链接后选择生成配置文件即可</p>
+<p>​	trojan的分享链接格式为trojan://password@host:port</p>
+<h3 id="如何添加入站协议或使用内网穿透服务">·如何添加入站协议或使用内网穿透服务？</h3>
+<p>​	请参考<a href="https://juewuy.github.io/nWTjEpkSK/#%E7%A4%BA%E4%BE%8B%E8%87%AA%E5%AE%9A%E4%B9%89shadowsockshysteria2%E7%AD%89%E5%8D%8F%E8%AE%AE%E5%85%A5%E7%AB%99">ShellCrash中如何自定义singbox的各json模块 | Juewuy's Blog</a></p>
+<h3 id="如何代理本机的docker-podman或vmware等容器或虚拟机服务">·如何代理本机的Docker、podman或vmware等容器或虚拟机服务？</h3>
+<p>​	Docker网卡需设置为桥接模式，在【2功能设置-1切换防火墙运行模式-7设置劫持范围】中启用6<strong>劫持容器/虚拟机流量</strong>功能</p>
+<h3 id="如何使用自定义host">·如何使用自定义host？</h3>
+<p>​	解决方式1：在路由器管理面板或/etc/hosts文件中添加你想要指定的host内容，然后重启clash服务</p>
+<p>​	解决方式2：使用第三方DNS客户端，之后使用7-6-1，将dns服务器指定为第三方客户端的DNS接口地址</p>
+<h3 id="如何使用第三方dns">·如何使用第三方DNS？</h3>
+<p>​	请使用7-6-1，将dns服务器指定为第三方客户端的DNS接口地址</p>
+<h3 id="部分智能家居多媒体网关等设备网络连接出现问题">·部分智能家居/多媒体网关等设备网络连接出现问题？</h3>
+<p>​	请使用功能设置里的局域网设备过滤功能对相关设备进行过滤</p>
+<h3 id="是否支持smart策略">·是否支持smart策略？</h3>
+<p>​	Smart策略依赖第三方内核实现，可以前往【9更新-2切换内核文件-5自定义内核】功能中，下载相应内核。</p>
+<h3 id="ddns服务失效">·DDNS服务失效？</h3>
+<p>​	群辉DDNS，请使用6-6自定义规则功能，并添加如下规则</p>
+<p>​	其他DDNS请在在线面板自行查找日志并截取域名</p>
+<pre><code class="language-yaml">- DOMAIN,checkip.synology.com,DIRECT
+- DOMAIN,ddns.synology.com,DIRECT
+</code></pre>
+<h1 id="依然没有解决问题">依然没有解决问题？</h1>
+<h3 id="如果你使用的是正式版请先尝试使用9-7-2换源后将脚本更新至测试版">如果你使用的是正式版，请先尝试使用9-7-2换源后将脚本更新至测试版</h3>
+<p>如果切换到测试版依然不能解决问题——</p>
+<h3 id="请前往tg群tmeshellclash-并严格遵循以下要求发出提问">请前往TG群：<a href="https://t.me/ShellClash">t.me/ShellClash</a> 并严格遵循以下要求发出提问！</h3>
+<p><strong>注意：如果你的提问不符合以下要求，本作者将不予回复！！！</strong></p>
+<p>1、请<strong>务必</strong>提供<strong>设备信息</strong>：（例如AX3600官方固件、斐讯N1-Armbian、阿里云-centos，不强求格式，能看懂即可）</p>
+<p>2、如果是报错问题请<strong>务必</strong>提供报错问题产生的<strong>相关截图</strong>或<strong>相关报错文字</strong></p>
+<p>3、<strong>如果是网站或APP无法连接的问题，请</strong>务必<strong>提供相关Dashboard面板连接日志</strong>（进入面板的日志界面后，再访问有问题的网站或者APP即可找到相关日志）</p>
+<p>4、如果是功能问题或其他问题，请<strong>尽量将问题描述清楚</strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在Linux系统安装及使用ShellClash的教程]]></title>
+        <id>http://juewuy.github.io/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/</id>
+        <link href="http://juewuy.github.io/zai-linux-xi-tong-an-zhuang-ji-shi-yong-shellclash-de-jiao-cheng/">
+        </link>
+        <updated>2022-06-01T03:39:34.000Z</updated>
+        <content type="html"><![CDATA[<p>支持Debian、CentOS、Ubuntu、Armbian等绝大多数发行版Linux系统下安装及使用本脚本！</p>
+<h2 id="使用步骤">使用步骤：</h2>
+<h3 id="登陆ssh">登陆SSH</h3>
+<p>使用SSH连接工具来登陆SSH，推荐putty（体积最小），JuiceSSH（支持安卓手机），或其他工具，SSH工具请自行下载。</p>
+<p>建议使用root用户登录</p>
+<p>非root用户请使用sudo -i提权至root用户安装</p>
+<p>不建议使用sudo +安装命令或者sudo su方式提权安装，会出现环境变量配置相关问题！</p>
+<h2 id="使用一键脚本安装shellcrash">使用一键脚本安装ShellCrash</h2>
+<p>成功登陆SSH后，直接输入以下命令</p>
+<p>~<strong>使用curl安装</strong>：</p>
+<pre><code class="language-sh">#jsdelivrCDN源
+sudo -i
+bash
+export url='https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master' &amp;&amp; bash -c &quot;$(curl -kfsSl $url/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<p>~<strong>使用wget安装</strong>：</p>
+<pre><code class="language-sh">#jsdelivrCDN源
+sudo -i
+bash
+export url='https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master' &amp;&amp; wget -q --no-check-certificate -O /tmp/install.sh $url/install.sh  &amp;&amp; bash /tmp/install.sh &amp;&amp; source /etc/profile &amp;&gt; /dev/null 
+</code></pre>
+<p>~<strong>非root用户安装后</strong>请额外执行以下命令以读取环境变量：</p>
+<pre><code class="language-sh">source ~/.bashrc &amp;&gt; /dev/null
+</code></pre>
+<h5 id="安装完成后直接在ssh中使用">安装完成后，直接在SSH中使用：</h5>
+<pre><code>crash
+</code></pre>
+<p>命令即可管理脚本！</p>
+<p>你也可以使用</p>
+<pre><code>crash -h
+</code></pre>
+<p>命令查看帮助列表</p>
+<h5 id="之后按照新手引导完成配置后即可使用">之后按照新手引导完成配置后即可使用</h5>
+<p>如遇使用问题，请先参考<a href="https://juewuy.github.io/chang-jian-wen-ti/">常见问题</a></p>
+<h2 id="问题反馈使用交流">问题反馈&amp;使用交流：</h2>
+<p><a href="https://t.me/ShellClash">https://t.me/ShellClash</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[各平台好用的SSH客户端软件推荐]]></title>
+        <id>http://juewuy.github.io/-F7dWmBj5/</id>
+        <link href="http://juewuy.github.io/-F7dWmBj5/">
+        </link>
+        <updated>2022-05-14T14:47:03.000Z</updated>
+        <content type="html"><![CDATA[<p>使用ShellClash离不开SSH工具，本文就介绍几款各平台体验相对较好的SSH工具</p>
+<h3 id="windows-macos平台">Windows &amp; MacOS平台：</h3>
+<h4 id="termius">Termius</h4>
+<figure data-type="image" tabindex="1"><img src="https://www.v1tx.com/wp-content/uploads/2020/01/20200101100956-1024x670.jpg" alt="img" loading="lazy"></figure>
+<p><a href="https://termius.com/">Termius</a> 是一款全平台的SSH客户端，该软件最大的特点就是支持全部平台，包括Windows、Mac、Linux、iOS、Android等，有了移动设备支持，只要有网络，你可以在任何时间地点管理服务器</p>
+<p>如果你的工作经常用到SSH连接，还可以升级高级版实现全平台同步，全平台的好处就是只要你在一个平台添加或修改了服务器，其他平台会自动同步，随时随地管理主机，而且也不用在手机上输入复杂的密码了</p>
+<p>在功能上，Termius 也有很多实用的东西，比如SFTP、代码片段、选项卡等，可以省下很多事情</p>
+<h4 id="finalshell">Finalshell</h4>
+<figure data-type="image" tabindex="2"><img src="https://www.v1tx.com/wp-content/uploads/2019/09/20190911171724.jpg" alt="img" loading="lazy"></figure>
+<p><a href="http://www.hostbuf.com/">Finalshell</a> 是一款国人开发的远程连接工具，支持 Windows、Linux 和 macOS，通过界面我们可以看出这款软件非常强大，你不仅可以在远程窗口上执行命令，还可以实时监测到系统的消耗，比如CPU、内存、网络等资源的使用量</p>
+<p>Finalshell 还有比较方便的一点就是文件的传输，在软件的右下角有一个文件夹管理界面，让你可以像在<a href="https://www.v1tx.com/post/best-ftp-client/">FTP软件</a>中那样传输文件，支持右键上传下载，支持鼠标拖拽文件上传到服务器，省去了很多命令行的繁琐步骤</p>
+<p>除了基础功能，Finalshell 还可以升级到专业版，包括打包传输、高级网络监控、高级进程管理、多地点ping监控等</p>
+<h3 id="安卓平台">安卓平台：</h3>
+<h4 id="juicessh">JuiceSSH</h4>
+<figure data-type="image" tabindex="3"><img src="https://www.v1tx.com/wp-content/uploads/2020/12/20201202073329-1024x499.jpg" alt="Android SSH客户端 JuiceSSH" loading="lazy"></figure>
+<p><a href="https://juicessh.com/">JuiceSSH</a> 是一款Android上的免费SSH客户端，你可以用它快速连接到Linux服务器，也可以添加账号密码或密钥保存多台机器，Juice 让你在手机上就能非常方便地执行这些操作</p>
+<p>它的主要功能有</p>
+<ul>
+<li>全彩色终端显示，多个主题可选</li>
+<li>轻松输入，弹出键盘可以方便地输入常用的特殊字符</li>
+<li>Telnet 和 本地 Shell 命令执行</li>
+<li>第三方插件支持，比如性能监控、OpenSSH导入等</li>
+<li>其他高级功能</li>
+</ul>
+<p>对于想要在安卓手机上管理服务器的人来说，JuiceSSH 是一个非常好的选择，免费版本以及足够使用，付费版还有更多强大功能，包括端口转发、自动执行代码段、快捷方式等，能够极大提升运维效率</p>
+<h3 id="ios平台">IOS平台：</h3>
+<h4 id="servercat">ServerCat</h4>
+<figure data-type="image" tabindex="4"><img src="https://www.v1tx.com/wp-content/uploads/2020/12/20201202073517-1024x515.jpg" alt="iOS SSH客户端 ServerCat" loading="lazy"></figure>
+<p><a href="https://apps.apple.com/cn/app/servercat-linux-%E7%9B%91%E6%8E%A7-ssh-%E7%BB%88%E7%AB%AF/id1501532023">ServerCat</a> 是一款iOS平台上的Linux管理软件，它可以让你在iPhone上连接远程服务器，用来监视系统性能、管理Docker和执行SSH命令，软件内提供了很多监控参数，比如CPU、内存、系统负载、网速、硬盘等，并且以可视化的形式展示，你可以随时查看自己服务器的系统状态，避免因负载过高则影响产品服务</p>
+<h4 id="shellfish">ShellFish</h4>
+<figure data-type="image" tabindex="5"><img src="https://www.v1tx.com/wp-content/uploads/2021/07/20210719141114-1024x517.jpg" alt="iPhone和iPad上的SSH客户端 ShellFish" loading="lazy"></figure>
+<p><a href="https://apps.apple.com/cn/app/secure-shellfish/id1336634154">ShellFish</a> 是一款SFTP和SSH结合的软件，支持iPhone和iPad，你可以用它来连接远程服务并管理上面的文件，它专为移动设备做了很多优化，比如你可以使用SFTP管理服务器上的文件，使用专用键盘执行命令，创建代码片段快速使用等，而且还有一个很不错的地方在于它是支持<a href="https://www.v1tx.com/post/shortcuts/">快捷指令</a>的，你可以和其他APP配合使用，使用语音执行命令等</p>
+<h3 id="scp工具">SCP工具：</h3>
+<h4 id="winscp">WinSCP</h4>
+<figure data-type="image" tabindex="6"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/WinSCP-5.13.png" alt="image-20220518210537261" loading="lazy"></figure>
+<p><a href="https://winscp.net/eng/index.php">WinSCP</a>是windows上仅有的SCP工具，支持通过SCP协议访问各种OpenWrt设备的文件系统</p>
+<p>也可以通过绑定putty实现SSH客户端的功能</p>
+<p>界面非常友好便捷！</p>
+<h4 id="securefx-for-mac">SecureFX for Mac</h4>
+<figure data-type="image" tabindex="7"><img src="https://www.vandyke.com/images/screenshots/securefx/sfx_91_mac_tabbed_ui.png" alt="img" loading="lazy"></figure>
+<p><a href="https://www.vandyke.com/products/securefx/mac_osx.html">SecureFX for Mac</a>是一款适用于MacOS系统的FTP/SCP客户端应用，支持FTP、SFTP、SCP等传输协议</p>
+<p>事实上也有对应的SecureFX for Windows及Linux版本</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小米 AX9000/6000 解锁 SSH 安装 ShellClash 教程｜地表最强硬路由💪]]></title>
+        <id>http://juewuy.github.io/gW0BsHgVU/</id>
+        <link href="http://juewuy.github.io/gW0BsHgVU/">
+        </link>
+        <updated>2021-06-22T15:13:25.000Z</updated>
+        <content type="html"><![CDATA[<p>转自：<a href="https://qust.me/post/ax9000_shellclash/">https://qust.me/post/ax9000_shellclash/</a><br>
+原作者视频教程：<a href="https://www.youtube.com/watch?v=L_F9cT8soPI">https://www.youtube.com/watch?v=L_F9cT8soPI</a></p>
+<p>PS :AX6000解锁和安装过程应该是一样的，参考食用即可。</p>
+<h3 id="准备">🔧 准备</h3>
+<p>一台能插网线的电脑（Windows 需要安装 Putty 和 WinSCP｜Mac 使用命令行即可）<br>
+另外一台已经是 openwrt 的路由器（打开了 SSH，用来当服务器）<br>
+下载好降级固件和解锁脚本（链接: https://pan.baidu.com/s/13IalDMY5qREidIClIO7CIA 密码: fl3r）</p>
+<h4 id="️-第一步降级">⬇️ 第一步｜降级</h4>
+<p>解压好下载的文件，登录小米路由器的后台，选择手动升级下载好的 1.0.108.bin 固件，选择开始升级（降级），等待重启降级完成。</p>
+<h4 id="️-第二步准备-openwrt-服务">💁‍♂️ 第二步｜准备 openwrt 服务</h4>
+<p>IMG_1734<br>
+我这里准备的是一台刷了 openwrt 的 k2p，只需要接上电源有 Wi-Fi 信号，然后使用网线连接此 openwrt 路由器。我的这台 openwrt 路由器的地址是 10.0.0.1 你的应该不是，下面也记得根据你自己的修改。scp 上传 wireless-ax9000.sh 到 openwrt 路由器。（把解压好的文件夹拖到命令里回车，在文件夹目录里执行；如果你是 Windows 命令提示符里没有 scp 功能的话你可以单独下载一个 WinSCP）</p>
+<p>scp wireless-ax9000.sh root@10.0.0.1:/root/wireless-ax9000.sh<br>
+然后 ssh 连接到这台 openwrt 路由器。</p>
+<p>ssh root@10.0.0.1<br>
+再执行脚本（执行本脚本会更改您的网络和无线设定，执行之前请务必备份相关数据）</p>
+<p>sh /root/wireless-ax9000.sh</p>
+<p>这里回车选择继续</p>
+<p>操作后这个脚本会修改我们 openwrt 路由器的 Wi-Fi 密码的一些设置，稍微等待一会，openwrt 插着电放在旁边即可，等会小米 AX9000 会连到 openwrt 的 Wi-Fi。</p>
+<h4 id="第三步小米-ax9000-破解-ssh">😈 第三步｜小米 AX9000 破解 SSH</h4>
+<p>将电脑用网线和 小米 AX9000 连接（因为小米 AX9000 解锁 Wi-Fi 可能会掉线）。</p>
+<p>登陆小米路由器后台后，浏览器地址栏 stok= 后面的一段内容即是（选中部分），准备好备用。</p>
+<p>浏览器请求<br>
+打开浏览器，复制下面的内容到地址栏，并替换 <STOK></p>
+<p>http://192.168.31.1/cgi-bin/luci/;stok=<STOK>/api/xqsystem/extendwifi_connect_inited_router?ssid=MEDIATEK-ARM-IS-GREAT&amp;password=ARE-YOU-OK&amp;admin_username=root&amp;admin_password=admin&amp;admin_nonce=xxx<br>
+<STOK> 替换为上面的值<br>
+我的替换后如下。将替换好的值复制到浏览器请求，如果显示如下内容则表示成功。(请求可能需要等待一会)</p>
+<p>再次打开路由器后台查看 5G 频段 Wi-Fi 密码，这个 Wi-Fi 密码就是我们默认的 ssh 密码，保存好！！！（没保存好可以去这个页面输入SN码计算出来（路由后台右下角 SN 码））</p>
+<h4 id="第四步-安装使用-shellclash">👅 第四步 ｜ 安装使用 ShellClash</h4>
+<p><a href="https://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">参考此文安装即可</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[捐赠ShellClash项目！]]></title>
+        <id>http://juewuy.github.io/yOF4Yf06Q/</id>
+        <link href="http://juewuy.github.io/yOF4Yf06Q/">
+        </link>
+        <updated>2020-11-03T08:05:51.000Z</updated>
+        <content type="html"><![CDATA[<p>感谢您的捐赠！项目会变得越来越好！</p>
+<p>USDT钱包：<br>
+<img src="file://F:/Github/Gridea/post-images/1717655212740.jpg" style="zoom: 33%;" /></p>
+<p>支付宝扫码：</p>
+<img src="http://juewuy.github.io/post-images/1604390977172.png" style="zoom: 50%;" />
+微信扫码：
+<img src="http://juewuy.github.io/post-images/1604391042406.png" style="zoom: 50%;" />]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[各个操作系统或软件中使用PAC的方式]]></title>
+        <id>http://juewuy.github.io/ehRUeewcv/</id>
+        <link href="http://juewuy.github.io/ehRUeewcv/">
+        </link>
+        <updated>2020-10-25T06:38:11.000Z</updated>
+        <content type="html"><![CDATA[<p>ShellClash提供局域网的PAC自动配置方式，可以在各个操作系统上快速完成PROXY配置而无需启用静态路由</p>
+<h2 id="windows-10">Windows 10</h2>
+<p>设置 -&gt; 网络和intentnet -&gt; 代理 -&gt; 使用设置脚本（开） -&gt; 脚本地址 -&gt; 填入PAC地址 -&gt; 保存</p>
+<h2 id="windows-7">Windows 7</h2>
+<p>Internet选项 -&gt; 连接 选项卡 -&gt; 局域网设置(如果是电脑拨号上网, 这里点'设置') -&gt; 使用自动配置脚本 -&gt; 填入PAC地址 -&gt; 确定</p>
+<h2 id="macox">MacOX</h2>
+<p>系统设置 -&gt; 网络 -&gt; 高级 -&gt; 代理 -&gt; 自动代理配置 -&gt; URL中填入PAC地址 -&gt; 好</p>
+<h2 id="安卓">安卓</h2>
+<p>设置 -&gt; 连接 -&gt; 当前网络 -&gt; 高级设置 -&gt; 代理服务器 -&gt; 自动配置 -&gt; 填入PAC地址 -&gt; 保存</p>
+<h2 id="ios">IOS</h2>
+<p>设置 WiFi 当前WiFi 代理设置 自动 填入PAC地址</p>
+<h2 id="更多设备请参考">更多设备请参考：</h2>
+<p>https://www.wervps.com/we/3113.html</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在路由器上安装及使用ShellClash的教程]]></title>
+        <id>http://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/</id>
+        <link href="http://juewuy.github.io/clash-for-miwifi-an-zhuang-ji-shi-yong-jiao-cheng/">
+        </link>
+        <updated>2020-09-20T12:54:52.000Z</updated>
+        <content type="html"><![CDATA[<p>在小米等基于OpenWrt内核定制的路由器原生系统上使用clash做透明代理</p>
+<h2 id="使用步骤">使用步骤：</h2>
+<h3 id="获取路由器ssh权限">获取路由器SSH权限</h3>
+<p>不同路由器开启SSH权限的方法不同，请使用“路由器型号+开启SSH”的关键词使用搜索引擎搜索即可获取路由器SSH权限的开启方法教程，本文只详解小米AX3600,AX1800,AX5这3款路由器的SSH开启方法。</p>
+<p>可用于开启SSH权限的固件版本为：AX3600 1.0.17版本/AX1800 1.0.34/1.0.328/1.0.336版本/AX5 1.0.16/1.0.26版本，如果您的固件版本高于以上版本，请先执行降级操作！否则请直接跳到“开启SSH权限”</p>
+<h3 id="手动降级">手动降级</h3>
+<p>降级的具体固件下载地址为：<a href="https://www.right.com.cn/forum/thread-4032490-1-1.html">https://www.right.com.cn/forum/thread-4032490-1-1.html</a> ，下载合适的固件到本地后，登陆路由器的管理界面：Miwifi.com ，然后在：常用设置——系统状态——升级检测中，点击手动升级按钮。之后在弹出的界面中点击选择文件——选择您刚刚下载的固件bin文件，之后点击开始上传即可。降级之前，建议在此界面下方先使用备份功能新建一份配置备份。</p>
+<p>成功降级后，请重新设置及登陆路由器。<br>
+如需要升级到最新版本，需要使用此贴提供的方式设置永久保留SSH：https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=4046020</p>
+<h3 id="开启ssh权限">开启SSH权限</h3>
+<p>首先登陆你的路由器管理界面，点击路由状态页签，此时地址栏应该显示如下地址：</p>
+<p>http://miwifi.com/cgi-bin/luci/;stok=xxxxxxx****/web/home#router****</p>
+<p>将我加粗的/web/home#router（注意不要把那一串xxxx代表的密码替换掉）替换为如下文本，之后输入回车访问，此时页面返回{“code”:0}，即可使用ssh工具测试是否开启成功。</p>
+<p>（注意不要使用mac或iOS自带的safari浏览器）</p>
+<p><code>/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20's%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg'%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B%20echo%20-e%20'admin%5Cnadmin'%20%7C%20passwd%20root%3B</code></p>
+<p>最终应该是（http://miwifi.com/cgi-bin/luci/;stok=一小串密码/api/misystem/后面一大串）这样的形式，如果不对，可能无法开启，请认真检查，不要弄错！！！</p>
+<p>如果以上方式无法开启SSH，请参考：<a href="https://www.right.com.cn/forum/thread-4032490-1-1.html">https://www.right.com.cn/forum/thread-4032490-1-1.html</a>或者参考：<a href="https://www.right.com.cn/forum/thread-4039512-1-1.html">https://www.right.com.cn/forum/thread-4039512-1-1.html</a> 尝试更多方法开启。</p>
+<h3 id="固化ssh权限">固化SSH权限</h3>
+<p>部分设备升级系统后会丢失SSH权限且无法使用上面的开启方式直接开启，这里提供小米AX3600固化SSH权限的相关教程：</p>
+<p>https://juewuy.github.io/gDyfIPSsZ/</p>
+<p>其他小米AX设备请参考此教程进行设置（未测试）</p>
+<p>其他品牌设备请自行搜索相关教程。</p>
+<p><strong>您也可以通过路由器web或app中的相关设置，禁止其自动升级以防止其丢失SSH权限。</strong></p>
+<h3 id="登陆ssh">登陆SSH</h3>
+<p>使用SSH连接工具来登陆SSH，参考：https://juewuy.github.io/-F7dWmBj5/。</p>
+<p>打开SSH工具，在IP（或者host）一栏填写你路由器的网关IP，即刚刚登陆路由器管理界面的IP地址或网址（例如192.168.31.1或者miwifi.com）,端口为默认的22端口不变，密码为admin（刚刚那串破解码中设定的密码），设置好之后点击连接即可登陆路由器SSH！</p>
+<p>建议修改默认的登陆密码，在SSH界面输入passwd即可修改密码，注意修改时需要输入2次密码，且输入的密码不会显示，输入好直接回车即可完成修改。</p>
+<h2 id="使用一键脚本安装shellcrash">使用一键脚本安装ShellCrash</h2>
+<p>成功登陆SSH后，直接输入以下命令</p>
+<p>~<strong>使用curl安装</strong>：</p>
+<pre><code class="language-sh">#jsdelivrCDN源
+export url='https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master' &amp;&amp; sh -c &quot;$(curl -kfsSl $url/install.sh)&quot; &amp;&amp; source /etc/profile &amp;&gt; /dev/null
+</code></pre>
+<p>~<strong>使用wget安装</strong>：</p>
+<pre><code class="language-sh">#Release版本-jsdelivrCDN源
+export url='https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master' &amp;&amp; wget -q --no-check-certificate -O /tmp/install.sh $url/install.sh  &amp;&amp; sh /tmp/install.sh &amp;&amp; source /etc/profile &amp;&gt; /dev/null 
+</code></pre>
+<h5 id="安装完成后直接在ssh中使用">安装完成后，直接在SSH中使用：</h5>
+<pre><code>crash
+</code></pre>
+<p>命令即可管理脚本！</p>
+<p>你也可以使用</p>
+<pre><code>crash -h
+</code></pre>
+<p>命令查看帮助列表</p>
+<h5 id="之后按照新手引导完成配置后即可使用">之后按照新手引导完成配置后即可使用</h5>
+<p>如遇使用问题，请先参考[常见问题](</p>
+<h2 id="问题反馈使用交流">问题反馈&amp;使用交流：</h2>
+<p><a href="https://t.me/ShellClash">https://t.me/ShellClash</a></p>
+]]></content>
+    </entry>
+</feed>
